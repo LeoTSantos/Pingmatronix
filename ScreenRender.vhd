@@ -67,13 +67,13 @@ begin
 				blue <= (others => '0');
 			
 			-- Missle Player 1
-			elsif (x_screen <= x_missle_p1 + 1 and x_screen >= x_missle_p1 - 1) and y_screen = y_missle_p1 then
+			elsif (x_missle_p1 /= 0) and (x_screen <= x_missle_p1 + 1 and x_screen >= x_missle_p1 - 1) and y_screen = y_missle_p1 then
 				red <= (others => '0');
 				green <= (others => '0');
 				blue <= (others => '1');
 			
 			-- Missle Player 2
-			elsif (x_screen <= x_missle_p2 + 1 and x_screen >= x_missle_p2 - 1) and y_screen = y_missle_p2 then
+			elsif (x_missle_p2 /= 0) and (x_screen <= x_missle_p2 + 1 and x_screen >= x_missle_p2 - 1) and y_screen = y_missle_p2 then
 				red <= (others => '1');
 				green <= (others => '0');
 				blue <= (others => '0');

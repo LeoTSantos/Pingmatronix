@@ -27,7 +27,6 @@ db
 simulation
 output_files
 incremental_db
-*.rpt
 *.done
 *.smsg
 *.summary
