@@ -33,7 +33,6 @@ incremental_db
 *.summary
 *.jdi
 *.pin
-*.qsf
 *.sof
 work
 *.cr.mti
