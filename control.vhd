@@ -12,7 +12,7 @@ ENTITY control IS
 	);
 	PORT (
 		clk: IN STD_LOGIC;
-		
+		start: IN STD_LOGIC;
 		output_debug1, output_debug2: OUT SSDARRAY (NATURAL(CEIL(LOG10(REAL(NUM_MAX))))-1 DOWNTO 0);
 		
 		in_sobe_raquete1, in_desce_raquete1, in_missil1:  IN STD_LOGIC;
@@ -42,6 +42,7 @@ ARCHITECTURE arch OF control IS
 	SIGNAL X: NATURAL RANGE 0 TO 63 := 32;
 	SIGNAL Y: NATURAL RANGE 0 TO 47 := 24;
 	SIGNAL RAQUETE1, RAQUETE2: NATURAL RANGE 3 TO 44;
+	SIGNAL RANDOM_VX, RANDOM_VY: STD_LOGIC := '0';
 	
 	SIGNAL y_racket_p1, y_racket_p2: NATURAL RANGE 0 TO VGA_MAX_VERTICAL;
 	SIGNAL sobe_raquete1, desce_raquete1, missil1: STD_LOGIC;
@@ -72,28 +73,29 @@ VGA: ENTITY WORK.ScreenRender PORT MAP (  clock => clk,
 														y_missle_p2 => y_missle_p2,
 														x_ball		=> x,
 														y_ball 		=> y	);
-														
+																												
 -- ATUALIZA POSICAO BOLA
 PROCESS(CLK)
 VARIABLE counter: NATURAL RANGE 0 TO tmax;
 VARIABLE counter_aumenta_tempo: NATURAL RANGE 0 TO TEMPO_AUMENTA_VELOCIDADE;
 VARIABLE TEMPO_ATUALIZACAO_AUX: NATURAL RANGE 0 TO FCLK := TEMPO_300MS;
 BEGIN
-	IF rising_edge(clk) THEN
+	IF rising_edge(clk) AND start = '1' THEN
 		counter := counter + 1;
 		counter_aumenta_tempo := counter_aumenta_tempo + 1;
 
-		IF X < VX THEN
-			TEMPO_ATUALIZACAO_AUX := TEMPO_300MS;
-		END IF;
-		
 		IF counter_aumenta_tempo = TEMPO_AUMENTA_VELOCIDADE - 1 THEN
 			IF TEMPO_ATUALIZACAO_AUX > TEMPO_10MS THEN
 				TEMPO_ATUALIZACAO_AUX := TEMPO_ATUALIZACAO_AUX - TEMPO_10MS;
 			END IF;
 			counter := 0;
 		END IF;
-	
+		
+		-- SE UM JOGADOR MORREU, RESETA A VELOCIDADE PARA A LENTA
+		IF X < VX OR X > VGA_MAX_HORIZONTAL - VX THEN
+			TEMPO_ATUALIZACAO_AUX := TEMPO_300MS;
+		END IF;
+		
 		--MISSIL ACERTOU RAQUETE 2 -> VOLTA BOLA PRO CENTRO
 		IF x_missle_p1 = VGA_MAX_HORIZONTAL - 2 THEN
 			IF y_missle_p1 < y_racket_p2 + 2 AND y_missle_p1 > y_racket_p2 - 2 THEN
@@ -113,16 +115,14 @@ BEGIN
 		IF counter = TEMPO_ATUALIZACAO - 1 THEN
 			counter := 0;
 			
+			-- ATUALIZA POSICAO X
 			IF DIR_X = '1' THEN
-				IF X  > 63 - VX THEN
-					X <= 63;
-				ELSE
-					X <= X + VX;
-				END IF;
+				X <= X + VX;
 			ELSE
 				X <= X - VX;
 			END IF;
 			
+			-- ATUALIZA POSICAO Y
 			IF DIR_Y = '1' THEN
 				IF Y > 47 - VY THEN
 					Y <= 47;
@@ -137,17 +137,35 @@ BEGIN
 				END IF;
 			END IF;
 			
-			-- ACONTECEU PONTO 
-			-- ADICIONAR PONTO DO OUTRO LADO
+			-- CHEGOU NA PAREDE ESQUERDA: PONTO DO JGOADOR 2
 			IF X < VX THEN
 				X <= 32;
 				Y <= 24;
 			END IF;
-			-- ADICIONAR PONTO DO OUTRO LADO
+			-- CHEGOU NA PAREDE DIREITA: PONTO DO JOGADOR 1
 			IF X > VGA_MAX_HORIZONTAL - VX THEN
 				X <= 32;
 				Y <= 24;
 			END IF;
+		END IF;
+	END IF;
+END PROCESS;
+
+-- GERA DIR_X E DIR_Y ALEATORIOS
+PROCESS(clk)
+VARIABLE COUNTER_1, COUNTER_2: NATURAL RANGE 0 TO 14;
+BEGIN
+	IF rising_edge(clk) THEN
+		COUNTER_1 := COUNTER_1 + 1;
+		IF COUNTER_1 = 7 THEN
+			COUNTER_1 := 0;
+			RANDOM_VX <= NOT RANDOM_VX;
+		END IF;
+		
+		COUNTER_2 := COUNTER_2 + 1;
+		IF COUNTER_2 = 14 THEN
+			COUNTER_2 := 0;
+			RANDOM_VY <= NOT RANDOM_VY;
 		END IF;
 	END IF;
 END PROCESS;
@@ -158,11 +176,11 @@ VARIABLE counter: NATURAL RANGE 0 TO tmax;
 VARIABLE counter_aumenta_tempo: NATURAL RANGE 0 TO TEMPO_AUMENTA_VELOCIDADE;
 VARIABLE TEMPO_ATUALIZACAO_AUX: NATURAL RANGE 0 TO FCLK := TEMPO_300MS;
 BEGIN
-	IF rising_edge(clk) THEN
+	IF rising_edge(clk) AND start = '1' THEN
 		counter := counter + 1;
 		counter_aumenta_tempo := counter_aumenta_tempo + 1;
 		
-		IF X < VX THEN
+		IF X < VX OR X > VGA_MAX_HORIZONTAL - VX THEN
 			TEMPO_ATUALIZACAO_AUX := TEMPO_300MS;
 		END IF;
 		
@@ -177,6 +195,9 @@ BEGIN
 		IF x_missle_p1 = VGA_MAX_HORIZONTAL - 2 THEN
 			IF y_missle_p1 < y_racket_p2 + 2 AND y_missle_p1 > y_racket_p2 - 2 THEN
 				PONTOS1 <= PONTOS1 + 1;
+				DIR_X <= RANDOM_VX;
+				DIR_Y <= RANDOM_VY;
+				VY <= 1;
 			END IF;
 		END IF;
 		
@@ -184,20 +205,35 @@ BEGIN
 		IF x_missle_p2 = 2 THEN
 			IF y_missle_p2 < y_racket_p1 + 2 AND y_missle_p2 > y_racket_p1 - 2 THEN
 				PONTOS2 <= PONTOS2 + 1;
+				DIR_X <= RANDOM_VX;
+				DIR_Y <= RANDOM_VY;
+				VY <= 1;
 			END IF;
 		END IF;
 		
 		IF counter = TEMPO_ATUALIZACAO - 1 THEN
 			counter := 0;
+			
+			-- INICIALIZA ALEATORIAMENTE
+			IF PONTOS1 = 0 AND PONTOS2 = 0 AND X = 32 AND Y = 24 THEN
+				DIR_X <= RANDOM_VX;
+				DIR_Y <= RANDOM_VY;
+			END IF;
 					
 			--BOLA CHEGOU NA PAREDE ESQUERDA -> PONTO DO JOGADOR 2
 			IF DIR_X = '0' AND X = 0 THEN
 				PONTOS2 <= PONTOS2 + 1;
+				DIR_X <= RANDOM_VX;
+				DIR_Y <= RANDOM_VY;
+				VY <= 1;
 			END IF;
 			
-			--BOLA CHEGOU NA PAREDE ESQUERDA -> PONTO DO JOGADOR 2
+			--BOLA CHEGOU NA PAREDE DIREITA -> PONTO DO JOGADOR 1
 			IF DIR_X = '1' AND X = VGA_MAX_HORIZONTAL THEN
 				PONTOS1 <= PONTOS1 + 1;
+				DIR_X <= RANDOM_VX;
+				DIR_Y <= RANDOM_VY;
+				VY <= 1;
 			END IF;
 			
 			-- REBATE EM CIMA E EM BAIXO		
@@ -210,8 +246,8 @@ BEGIN
 			END IF;
 			
 			-- REBATE RAQUETE ESQUERDA
-			IF X = 3 AND DIR_X = '0' THEN
-				IF Y <= y_racket_p1 + 2 AND Y >= y_racket_p1 - 2  THEN
+			IF X = 4 AND DIR_X = '0' THEN
+				IF Y  <= y_racket_p1 + 2 AND Y >= y_racket_p1 - 2  THEN
 					DIR_X <= '1';
 					IF Y = y_racket_p1 + 2 OR Y = y_racket_p1 - 2 THEN
 						VY <= 3;
@@ -226,7 +262,7 @@ BEGIN
 			END IF;
 			
 			-- REBATE NA REQUETE DIREITA
-			IF X = VGA_MAX_HORIZONTAL - 2 AND DIR_X = '1' THEN
+			IF X = VGA_MAX_HORIZONTAL - 4 AND DIR_X = '1' THEN
 				IF Y <= y_racket_p2 + 2 AND Y >= y_racket_p2 - 2  THEN
 					DIR_X <= '0';
 					IF Y = y_racket_p2 + 2 OR Y = y_racket_p2 - 2 THEN
@@ -253,8 +289,7 @@ VARIABLE IS_MISSIL2 : STD_LOGIC := '0';
 VARIABLE counter_missi2: NATURAL RANGE 0 TO TEMPO_10MS;
 VARIABLE counter_permite_missil2: NATURAL RANGE 0 TO tmax;
 BEGIN
-	IF rising_edge(clk) THEN
-	
+	IF rising_edge(clk) AND start = '1' THEN
 		-- MISSIL 1 ACERTOU -> SOME DA TELA
 		IF x_missle_p1 = VGA_MAX_HORIZONTAL - 2 THEN
 			IF y_missle_p1 < y_racket_p2 + 2 AND y_missle_p1 > y_racket_p2 - 2 THEN
@@ -268,8 +303,7 @@ BEGIN
 		IF counter_permite_missil1 /= TEMPO_15S - 1 THEN	
 			counter_permite_missil1 := counter_permite_missil1 + 1;
 		END IF;
-	
-		
+			
 		counter_missil:= counter_missil + 1;
 		IF counter_missil = TEMPO_10MS - 1 THEN
 			counter_missil := 0;
@@ -301,8 +335,7 @@ BEGIN
 		IF counter_permite_missil2 /= TEMPO_15S - 1 THEN	
 			counter_permite_missil2 := counter_permite_missil2 + 1;
 		END IF;
-	
-		
+			
 		counter_missi2:= counter_missi2 + 1;
 		IF counter_missi2 = TEMPO_10MS - 1 THEN
 			counter_missi2 := 0;
@@ -340,7 +373,7 @@ END PROCESS;
 --ATUALIZA POSICAO DA RAQUETE
 PROCESS (clk)
 BEGIN
-	IF rising_edge(clk) THEN
+	IF rising_edge(clk) AND start = '1' THEN
 		IF sobe_raquete1 = '1' THEN
 			y_racket_p1 <= y_racket_p1 + 1;
 		END IF;
@@ -386,10 +419,9 @@ G6: FOR i IN 0 TO NATURAL(CEIL(LOG10(REAL(NUM_MAX))))-1 GENERATE
 	END GENERATE G6;
 
 --PRINTA PONTOS POR DEBUG  2
-
 G3: FOR i IN 0 TO NATURAL(CEIL(LOG10(REAL(NUM_MAX))))-1 GENERATE
 		aux_disp2(i) <= (PONTOS2	/ divisor(i)) MOD 10;
-		output_debug2(i) <= num_0 WHEN aux_disp(i) = 0 ELSE
+		output_debug2(i) <= num_0 WHEN aux_disp2(i) = 0 ELSE
 		  num_1 WHEN aux_disp2(i) = 1 ELSE
 		  num_2 WHEN aux_disp2(i) = 2 ELSE
 		  num_3 WHEN aux_disp2(i) = 3 ELSE

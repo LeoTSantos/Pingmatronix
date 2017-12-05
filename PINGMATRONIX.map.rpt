@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PINGMATRONIX
-Mon Dec 04 20:50:14 2017
+Tue Dec 05 20:10:35 2017
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -57,16 +57,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Dec 04 20:50:14 2017      ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec 05 20:10:35 2017      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; PINGMATRONIX                               ;
 ; Top-level Entity Name              ; control                                    ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 1,377                                      ;
-;     Total combinational functions  ; 1,374                                      ;
-;     Dedicated logic registers      ; 316                                        ;
-; Total registers                    ; 316                                        ;
-; Total pins                         ; 47                                         ;
+; Total logic elements               ; 1,380                                      ;
+;     Total combinational functions  ; 1,377                                      ;
+;     Dedicated logic registers      ; 326                                        ;
+; Total registers                    ; 326                                        ;
+; Total pins                         ; 48                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -214,28 +214,28 @@ applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 1,377     ;
+; Estimated Total logic elements              ; 1,380     ;
 ;                                             ;           ;
-; Total combinational functions               ; 1374      ;
+; Total combinational functions               ; 1377      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 347       ;
-;     -- 3 input functions                    ; 323       ;
-;     -- <=2 input functions                  ; 704       ;
+;     -- 4 input functions                    ; 358       ;
+;     -- 3 input functions                    ; 339       ;
+;     -- <=2 input functions                  ; 680       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 850       ;
-;     -- arithmetic mode                      ; 524       ;
+;     -- normal mode                          ; 858       ;
+;     -- arithmetic mode                      ; 519       ;
 ;                                             ;           ;
-; Total registers                             ; 316       ;
-;     -- Dedicated logic registers            ; 316       ;
+; Total registers                             ; 326       ;
+;     -- Dedicated logic registers            ; 326       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 47        ;
+; I/O pins                                    ; 48        ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 316       ;
-; Total fan-out                               ; 4475      ;
-; Average fan-out                             ; 2.51      ;
+; Maximum fan-out                             ; 326       ;
+; Total fan-out                               ; 4686      ;
+; Average fan-out                             ; 2.60      ;
 +---------------------------------------------+-----------+
 
 
@@ -244,8 +244,8 @@ applicable agreement for further details.
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                       ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------+--------------+
-; |control                                  ; 1374 (650)        ; 316 (199)    ; 0           ; 0            ; 0       ; 0         ; 47   ; 0            ; |control                                                                                                                  ; work         ;
-;    |ScreenRender:VGA|                     ; 348 (115)         ; 42 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|ScreenRender:VGA                                                                                                 ; work         ;
+; |control                                  ; 1377 (651)        ; 326 (208)    ; 0           ; 0            ; 0       ; 0         ; 48   ; 0            ; |control                                                                                                                  ; work         ;
+;    |ScreenRender:VGA|                     ; 350 (116)         ; 43 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|ScreenRender:VGA                                                                                                 ; work         ;
 ;       |lpm_divide:Div0|                   ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|ScreenRender:VGA|lpm_divide:Div0                                                                                 ; work         ;
 ;          |lpm_divide_jhm:auto_generated|  ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|ScreenRender:VGA|lpm_divide:Div0|lpm_divide_jhm:auto_generated                                                   ; work         ;
 ;             |sign_div_unsign_klh:divider| ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|ScreenRender:VGA|lpm_divide:Div0|lpm_divide_jhm:auto_generated|sign_div_unsign_klh:divider                       ; work         ;
@@ -254,7 +254,7 @@ applicable agreement for further details.
 ;          |lpm_divide_jhm:auto_generated|  ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|ScreenRender:VGA|lpm_divide:Div1|lpm_divide_jhm:auto_generated                                                   ; work         ;
 ;             |sign_div_unsign_klh:divider| ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|ScreenRender:VGA|lpm_divide:Div1|lpm_divide_jhm:auto_generated|sign_div_unsign_klh:divider                       ; work         ;
 ;                |alt_u_div_j5f:divider|    ; 82 (82)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|ScreenRender:VGA|lpm_divide:Div1|lpm_divide_jhm:auto_generated|sign_div_unsign_klh:divider|alt_u_div_j5f:divider ; work         ;
-;       |sync_mod:vga_sync|                 ; 69 (69)           ; 42 (42)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|ScreenRender:VGA|sync_mod:vga_sync                                                                               ; work         ;
+;       |sync_mod:vga_sync|                 ; 70 (70)           ; 43 (43)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|ScreenRender:VGA|sync_mod:vga_sync                                                                               ; work         ;
 ;    |debounce:DB1|                         ; 52 (52)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|debounce:DB1                                                                                                     ; work         ;
 ;    |debounce:DB2|                         ; 52 (52)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|debounce:DB2                                                                                                     ; work         ;
 ;    |debounce:DB3|                         ; 52 (52)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|debounce:DB3                                                                                                     ; work         ;
@@ -286,98 +286,98 @@ applicable agreement for further details.
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+----------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                 ;
-+-------------------------------------------------+--------------------------------------------------+
-; Register name                                   ; Reason for Removal                               ;
-+-------------------------------------------------+--------------------------------------------------+
-; y_racket_p2[5]                                  ; Merged with y_racket_p1[5]                       ;
-; y_racket_p2[4]                                  ; Merged with y_racket_p1[4]                       ;
-; y_racket_p2[3]                                  ; Merged with y_racket_p1[3]                       ;
-; y_racket_p2[2]                                  ; Merged with y_racket_p1[2]                       ;
-; y_racket_p2[1]                                  ; Merged with y_racket_p1[1]                       ;
-; y_racket_p2[0]                                  ; Merged with y_racket_p1[0]                       ;
-; counter[29]                                     ; Merged with \process_1:counter[29]               ;
-; counter[28]                                     ; Merged with \process_1:counter[28]               ;
-; counter[27]                                     ; Merged with \process_1:counter[27]               ;
-; counter[26]                                     ; Merged with \process_1:counter[26]               ;
-; counter[25]                                     ; Merged with \process_1:counter[25]               ;
-; counter[24]                                     ; Merged with \process_1:counter[24]               ;
-; counter[23]                                     ; Merged with \process_1:counter[23]               ;
-; counter[22]                                     ; Merged with \process_1:counter[22]               ;
-; counter[21]                                     ; Merged with \process_1:counter[21]               ;
-; counter[20]                                     ; Merged with \process_1:counter[20]               ;
-; counter[19]                                     ; Merged with \process_1:counter[19]               ;
-; counter[18]                                     ; Merged with \process_1:counter[18]               ;
-; counter[17]                                     ; Merged with \process_1:counter[17]               ;
-; counter[16]                                     ; Merged with \process_1:counter[16]               ;
-; counter[15]                                     ; Merged with \process_1:counter[15]               ;
-; counter[14]                                     ; Merged with \process_1:counter[14]               ;
-; counter[13]                                     ; Merged with \process_1:counter[13]               ;
-; counter[12]                                     ; Merged with \process_1:counter[12]               ;
-; counter[11]                                     ; Merged with \process_1:counter[11]               ;
-; counter[10]                                     ; Merged with \process_1:counter[10]               ;
-; counter[9]                                      ; Merged with \process_1:counter[9]                ;
-; counter[8]                                      ; Merged with \process_1:counter[8]                ;
-; counter[7]                                      ; Merged with \process_1:counter[7]                ;
-; counter[6]                                      ; Merged with \process_1:counter[6]                ;
-; counter[5]                                      ; Merged with \process_1:counter[5]                ;
-; counter[4]                                      ; Merged with \process_1:counter[4]                ;
-; counter[3]                                      ; Merged with \process_1:counter[3]                ;
-; counter[2]                                      ; Merged with \process_1:counter[2]                ;
-; counter[1]                                      ; Merged with \process_1:counter[1]                ;
-; counter[0]                                      ; Merged with \process_1:counter[0]                ;
-; counter_aumenta_tempo[27]                       ; Merged with \process_1:counter_aumenta_tempo[27] ;
-; counter_aumenta_tempo[26]                       ; Merged with \process_1:counter_aumenta_tempo[26] ;
-; counter_aumenta_tempo[25]                       ; Merged with \process_1:counter_aumenta_tempo[25] ;
-; counter_aumenta_tempo[24]                       ; Merged with \process_1:counter_aumenta_tempo[24] ;
-; counter_aumenta_tempo[23]                       ; Merged with \process_1:counter_aumenta_tempo[23] ;
-; counter_aumenta_tempo[22]                       ; Merged with \process_1:counter_aumenta_tempo[22] ;
-; counter_aumenta_tempo[21]                       ; Merged with \process_1:counter_aumenta_tempo[21] ;
-; counter_aumenta_tempo[20]                       ; Merged with \process_1:counter_aumenta_tempo[20] ;
-; counter_aumenta_tempo[19]                       ; Merged with \process_1:counter_aumenta_tempo[19] ;
-; counter_aumenta_tempo[18]                       ; Merged with \process_1:counter_aumenta_tempo[18] ;
-; counter_aumenta_tempo[17]                       ; Merged with \process_1:counter_aumenta_tempo[17] ;
-; counter_aumenta_tempo[16]                       ; Merged with \process_1:counter_aumenta_tempo[16] ;
-; counter_aumenta_tempo[15]                       ; Merged with \process_1:counter_aumenta_tempo[15] ;
-; counter_aumenta_tempo[14]                       ; Merged with \process_1:counter_aumenta_tempo[14] ;
-; counter_aumenta_tempo[13]                       ; Merged with \process_1:counter_aumenta_tempo[13] ;
-; counter_aumenta_tempo[12]                       ; Merged with \process_1:counter_aumenta_tempo[12] ;
-; counter_aumenta_tempo[11]                       ; Merged with \process_1:counter_aumenta_tempo[11] ;
-; counter_aumenta_tempo[10]                       ; Merged with \process_1:counter_aumenta_tempo[10] ;
-; counter_aumenta_tempo[9]                        ; Merged with \process_1:counter_aumenta_tempo[9]  ;
-; counter_aumenta_tempo[8]                        ; Merged with \process_1:counter_aumenta_tempo[8]  ;
-; counter_aumenta_tempo[7]                        ; Merged with \process_1:counter_aumenta_tempo[7]  ;
-; counter_aumenta_tempo[6]                        ; Merged with \process_1:counter_aumenta_tempo[6]  ;
-; counter_aumenta_tempo[5]                        ; Merged with \process_1:counter_aumenta_tempo[5]  ;
-; counter_aumenta_tempo[4]                        ; Merged with \process_1:counter_aumenta_tempo[4]  ;
-; counter_aumenta_tempo[3]                        ; Merged with \process_1:counter_aumenta_tempo[3]  ;
-; counter_aumenta_tempo[2]                        ; Merged with \process_1:counter_aumenta_tempo[2]  ;
-; counter_aumenta_tempo[1]                        ; Merged with \process_1:counter_aumenta_tempo[1]  ;
-; counter_aumenta_tempo[0]                        ; Merged with \process_1:counter_aumenta_tempo[0]  ;
-; counter_missil[18]                              ; Merged with counter_missi2[18]                   ;
-; counter_missil[17]                              ; Merged with counter_missi2[17]                   ;
-; counter_missil[16]                              ; Merged with counter_missi2[16]                   ;
-; counter_missil[15]                              ; Merged with counter_missi2[15]                   ;
-; counter_missil[14]                              ; Merged with counter_missi2[14]                   ;
-; counter_missil[13]                              ; Merged with counter_missi2[13]                   ;
-; counter_missil[12]                              ; Merged with counter_missi2[12]                   ;
-; counter_missil[11]                              ; Merged with counter_missi2[11]                   ;
-; counter_missil[10]                              ; Merged with counter_missi2[10]                   ;
-; counter_missil[9]                               ; Merged with counter_missi2[9]                    ;
-; counter_missil[8]                               ; Merged with counter_missi2[8]                    ;
-; counter_missil[7]                               ; Merged with counter_missi2[7]                    ;
-; counter_missil[6]                               ; Merged with counter_missi2[6]                    ;
-; counter_missil[5]                               ; Merged with counter_missi2[5]                    ;
-; counter_missil[4]                               ; Merged with counter_missi2[4]                    ;
-; counter_missil[3]                               ; Merged with counter_missi2[3]                    ;
-; counter_missil[2]                               ; Merged with counter_missi2[2]                    ;
-; counter_missil[1]                               ; Merged with counter_missi2[1]                    ;
-; counter_missil[0]                               ; Merged with counter_missi2[0]                    ;
-; ScreenRender:VGA|sync_mod:vga_sync|counter_mod2 ; Merged with \process_1:counter_aumenta_tempo[0]  ;
-; VY[2]                                           ; Stuck at GND due to stuck port data_in           ;
-; Total Number of Removed Registers = 85          ;                                                  ;
-+-------------------------------------------------+--------------------------------------------------+
++------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                   ;
++----------------------------------------+-------------------------------------------------------------+
+; Register name                          ; Reason for Removal                                          ;
++----------------------------------------+-------------------------------------------------------------+
+; y_racket_p2[5]                         ; Merged with y_racket_p1[5]                                  ;
+; y_racket_p2[4]                         ; Merged with y_racket_p1[4]                                  ;
+; y_racket_p2[3]                         ; Merged with y_racket_p1[3]                                  ;
+; y_racket_p2[2]                         ; Merged with y_racket_p1[2]                                  ;
+; y_racket_p2[1]                         ; Merged with y_racket_p1[1]                                  ;
+; y_racket_p2[0]                         ; Merged with y_racket_p1[0]                                  ;
+; counter[29]                            ; Merged with \process_2:counter[29]                          ;
+; counter[28]                            ; Merged with \process_2:counter[28]                          ;
+; counter[27]                            ; Merged with \process_2:counter[27]                          ;
+; counter[26]                            ; Merged with \process_2:counter[26]                          ;
+; counter[25]                            ; Merged with \process_2:counter[25]                          ;
+; counter[24]                            ; Merged with \process_2:counter[24]                          ;
+; counter[23]                            ; Merged with \process_2:counter[23]                          ;
+; counter[22]                            ; Merged with \process_2:counter[22]                          ;
+; counter[21]                            ; Merged with \process_2:counter[21]                          ;
+; counter[20]                            ; Merged with \process_2:counter[20]                          ;
+; counter[19]                            ; Merged with \process_2:counter[19]                          ;
+; counter[18]                            ; Merged with \process_2:counter[18]                          ;
+; counter[17]                            ; Merged with \process_2:counter[17]                          ;
+; counter[16]                            ; Merged with \process_2:counter[16]                          ;
+; counter[15]                            ; Merged with \process_2:counter[15]                          ;
+; counter[14]                            ; Merged with \process_2:counter[14]                          ;
+; counter[13]                            ; Merged with \process_2:counter[13]                          ;
+; counter[12]                            ; Merged with \process_2:counter[12]                          ;
+; counter[11]                            ; Merged with \process_2:counter[11]                          ;
+; counter[10]                            ; Merged with \process_2:counter[10]                          ;
+; counter[9]                             ; Merged with \process_2:counter[9]                           ;
+; counter[8]                             ; Merged with \process_2:counter[8]                           ;
+; counter[7]                             ; Merged with \process_2:counter[7]                           ;
+; counter[6]                             ; Merged with \process_2:counter[6]                           ;
+; counter[5]                             ; Merged with \process_2:counter[5]                           ;
+; counter[4]                             ; Merged with \process_2:counter[4]                           ;
+; counter[3]                             ; Merged with \process_2:counter[3]                           ;
+; counter[2]                             ; Merged with \process_2:counter[2]                           ;
+; counter[1]                             ; Merged with \process_2:counter[1]                           ;
+; counter[0]                             ; Merged with \process_2:counter[0]                           ;
+; counter_aumenta_tempo[27]              ; Merged with \process_2:counter_aumenta_tempo[27]            ;
+; counter_aumenta_tempo[26]              ; Merged with \process_2:counter_aumenta_tempo[26]            ;
+; counter_aumenta_tempo[25]              ; Merged with \process_2:counter_aumenta_tempo[25]            ;
+; counter_aumenta_tempo[24]              ; Merged with \process_2:counter_aumenta_tempo[24]            ;
+; counter_aumenta_tempo[23]              ; Merged with \process_2:counter_aumenta_tempo[23]            ;
+; counter_aumenta_tempo[22]              ; Merged with \process_2:counter_aumenta_tempo[22]            ;
+; counter_aumenta_tempo[21]              ; Merged with \process_2:counter_aumenta_tempo[21]            ;
+; counter_aumenta_tempo[20]              ; Merged with \process_2:counter_aumenta_tempo[20]            ;
+; counter_aumenta_tempo[19]              ; Merged with \process_2:counter_aumenta_tempo[19]            ;
+; counter_aumenta_tempo[18]              ; Merged with \process_2:counter_aumenta_tempo[18]            ;
+; counter_aumenta_tempo[17]              ; Merged with \process_2:counter_aumenta_tempo[17]            ;
+; counter_aumenta_tempo[16]              ; Merged with \process_2:counter_aumenta_tempo[16]            ;
+; counter_aumenta_tempo[15]              ; Merged with \process_2:counter_aumenta_tempo[15]            ;
+; counter_aumenta_tempo[14]              ; Merged with \process_2:counter_aumenta_tempo[14]            ;
+; counter_aumenta_tempo[13]              ; Merged with \process_2:counter_aumenta_tempo[13]            ;
+; counter_aumenta_tempo[12]              ; Merged with \process_2:counter_aumenta_tempo[12]            ;
+; counter_aumenta_tempo[11]              ; Merged with \process_2:counter_aumenta_tempo[11]            ;
+; counter_aumenta_tempo[10]              ; Merged with \process_2:counter_aumenta_tempo[10]            ;
+; counter_aumenta_tempo[9]               ; Merged with \process_2:counter_aumenta_tempo[9]             ;
+; counter_aumenta_tempo[8]               ; Merged with \process_2:counter_aumenta_tempo[8]             ;
+; counter_aumenta_tempo[7]               ; Merged with \process_2:counter_aumenta_tempo[7]             ;
+; counter_aumenta_tempo[6]               ; Merged with \process_2:counter_aumenta_tempo[6]             ;
+; counter_aumenta_tempo[5]               ; Merged with \process_2:counter_aumenta_tempo[5]             ;
+; counter_aumenta_tempo[4]               ; Merged with \process_2:counter_aumenta_tempo[4]             ;
+; counter_aumenta_tempo[3]               ; Merged with \process_2:counter_aumenta_tempo[3]             ;
+; counter_aumenta_tempo[2]               ; Merged with \process_2:counter_aumenta_tempo[2]             ;
+; counter_aumenta_tempo[1]               ; Merged with \process_2:counter_aumenta_tempo[1]             ;
+; counter_aumenta_tempo[0]               ; Merged with \process_2:counter_aumenta_tempo[0]             ;
+; counter_missil[18]                     ; Merged with counter_missi2[18]                              ;
+; counter_missil[17]                     ; Merged with counter_missi2[17]                              ;
+; counter_missil[16]                     ; Merged with counter_missi2[16]                              ;
+; counter_missil[15]                     ; Merged with counter_missi2[15]                              ;
+; counter_missil[14]                     ; Merged with counter_missi2[14]                              ;
+; counter_missil[13]                     ; Merged with counter_missi2[13]                              ;
+; counter_missil[12]                     ; Merged with counter_missi2[12]                              ;
+; counter_missil[11]                     ; Merged with counter_missi2[11]                              ;
+; counter_missil[10]                     ; Merged with counter_missi2[10]                              ;
+; counter_missil[9]                      ; Merged with counter_missi2[9]                               ;
+; counter_missil[8]                      ; Merged with counter_missi2[8]                               ;
+; counter_missil[7]                      ; Merged with counter_missi2[7]                               ;
+; counter_missil[6]                      ; Merged with counter_missi2[6]                               ;
+; counter_missil[5]                      ; Merged with counter_missi2[5]                               ;
+; counter_missil[4]                      ; Merged with counter_missi2[4]                               ;
+; counter_missil[3]                      ; Merged with counter_missi2[3]                               ;
+; counter_missil[2]                      ; Merged with counter_missi2[2]                               ;
+; counter_missil[1]                      ; Merged with counter_missi2[1]                               ;
+; counter_missil[0]                      ; Merged with counter_missi2[0]                               ;
+; VY[2]                                  ; Stuck at GND due to stuck port data_in                      ;
+; COUNTER_2[0]                           ; Merged with ScreenRender:VGA|sync_mod:vga_sync|counter_mod2 ;
+; Total Number of Removed Registers = 85 ;                                                             ;
++----------------------------------------+-------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -385,12 +385,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 316   ;
+; Total registers                              ; 326   ;
 ; Number of registers using Synchronous Clear  ; 20    ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Synchronous Load   ; 1     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 79    ;
+; Number of registers using Clock Enable       ; 222   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -400,9 +400,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; X[5]                                   ; 14      ;
-; Y[3]                                   ; 13      ;
-; Y[4]                                   ; 11      ;
+; X[5]                                   ; 9       ;
+; Y[3]                                   ; 14      ;
+; Y[4]                                   ; 13      ;
 ; VY[0]                                  ; 6       ;
 ; Total number of inverted registers = 4 ;         ;
 +----------------------------------------+---------+
@@ -414,16 +414,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
 ; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |control|y_racket_p1[0]                                  ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |control|ScreenRender:VGA|sync_mod:vga_sync|x_counter[0] ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 0 LEs                ; 14 LEs                 ; Yes        ; |control|PONTOS1[0]                                      ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |control|ScreenRender:VGA|sync_mod:vga_sync|x_counter[4] ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 0 LEs                ; 14 LEs                 ; Yes        ; |control|PONTOS1[2]                                      ;
 ; 4:1                ; 7 bits    ; 14 LEs        ; 0 LEs                ; 14 LEs                 ; Yes        ; |control|PONTOS2[6]                                      ;
 ; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |control|y_missle_p1[0]                                  ;
 ; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |control|y_missle_p2[4]                                  ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |control|x_missle_p2[5]                                  ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |control|x_missle_p1[1]                                  ;
-; 9:1                ; 5 bits    ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |control|X[0]                                            ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |control|x_missle_p2[3]                                  ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |control|x_missle_p1[5]                                  ;
+; 8:1                ; 5 bits    ; 25 LEs        ; 10 LEs               ; 15 LEs                 ; Yes        ; |control|X[4]                                            ;
 ; 10:1               ; 4 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |control|Y[2]                                            ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |control|VY[1]                                           ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |control|VY[1]                                           ;
 ; 10:1               ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |control|Y[3]                                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
 
@@ -669,7 +669,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -679,7 +679,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Mon Dec 04 20:50:08 2017
+    Info: Processing started: Tue Dec 05 20:10:29 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PINGMATRONIX -c PINGMATRONIX
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 1 design units, including 0 entities, in source file vgadefinitions.vhd
@@ -704,6 +704,10 @@ Info (12021): Found 2 design units, including 1 entities, in source file control
 Info (12127): Elaborating entity "control" for the top level hierarchy
 Warning (10540): VHDL Signal Declaration warning at control.vhd(38): used explicit default value for signal "TEMPO_ATUALIZACAO" because signal was never assigned a value
 Warning (10540): VHDL Signal Declaration warning at control.vhd(39): used explicit default value for signal "VX" because signal was never assigned a value
+Warning (10492): VHDL Process Statement warning at control.vhd(83): signal "start" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at control.vhd(179): signal "start" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at control.vhd(292): signal "start" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at control.vhd(376): signal "start" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12128): Elaborating entity "debounce" for hierarchy "debounce:DB1"
 Info (12128): Elaborating entity "ScreenRender" for hierarchy "ScreenRender:VGA"
 Info (12128): Elaborating entity "sync_mod" for hierarchy "ScreenRender:VGA|sync_mod:vga_sync"
@@ -762,13 +766,13 @@ Info (17016): Found the following redundant logic cells in design
     Info (17048): Logic cell "lpm_divide:Mod3|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_53f:divider|add_sub_6_result_int[0]~0"
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1484 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 5 input pins
+Info (21057): Implemented 1489 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
     Info (21059): Implemented 42 output pins
-    Info (21061): Implemented 1437 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info (21061): Implemented 1441 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 6 warnings
     Info: Peak virtual memory: 575 megabytes
-    Info: Processing ended: Mon Dec 04 20:50:14 2017
+    Info: Processing ended: Tue Dec 05 20:10:35 2017
     Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:06
 
