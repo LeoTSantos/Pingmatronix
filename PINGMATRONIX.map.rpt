@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PINGMATRONIX
-Wed Nov 29 16:24:17 2017
+Mon Dec 04 20:50:14 2017
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -18,12 +18,20 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
  10. Inverted Register Statistics
  11. Multiplexer Restructuring Statistics (Restructuring Performed)
  12. Parameter Settings for User Entity Instance: Top-level Entity: |control
- 13. Parameter Settings for Inferred Entity Instance: ScreenRender:VGA|lpm_divide:Div0
- 14. Parameter Settings for Inferred Entity Instance: ScreenRender:VGA|lpm_divide:Div1
- 15. Port Connectivity Checks: "ScreenRender:VGA|sync_mod:vga_sync"
- 16. Port Connectivity Checks: "ScreenRender:VGA"
- 17. Elapsed Time Per Partition
- 18. Analysis & Synthesis Messages
+ 13. Parameter Settings for User Entity Instance: debounce:DB1
+ 14. Parameter Settings for User Entity Instance: debounce:DB2
+ 15. Parameter Settings for User Entity Instance: debounce:DB3
+ 16. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 17. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
+ 18. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
+ 19. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2
+ 20. Parameter Settings for Inferred Entity Instance: lpm_divide:Div3
+ 21. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod3
+ 22. Parameter Settings for Inferred Entity Instance: ScreenRender:VGA|lpm_divide:Div0
+ 23. Parameter Settings for Inferred Entity Instance: ScreenRender:VGA|lpm_divide:Div1
+ 24. Port Connectivity Checks: "ScreenRender:VGA|sync_mod:vga_sync"
+ 25. Elapsed Time Per Partition
+ 26. Analysis & Synthesis Messages
 
 
 
@@ -49,16 +57,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Nov 29 16:24:17 2017      ;
+; Analysis & Synthesis Status        ; Successful - Mon Dec 04 20:50:14 2017      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; PINGMATRONIX                               ;
 ; Top-level Entity Name              ; control                                    ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 473                                        ;
-;     Total combinational functions  ; 473                                        ;
-;     Dedicated logic registers      ; 134                                        ;
-; Total registers                    ; 134                                        ;
-; Total pins                         ; 17                                         ;
+; Total logic elements               ; 1,377                                      ;
+;     Total combinational functions  ; 1,374                                      ;
+;     Dedicated logic registers      ; 316                                        ;
+; Total registers                    ; 316                                        ;
+; Total pins                         ; 47                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -71,7 +79,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                     ; EP3C16U256C6       ;                    ;
+; Device                                                                     ; EP3C16F484C6       ;                    ;
 ; Top-level entity name                                                      ; control            ; PINGMATRONIX       ;
 ; Family name                                                                ; Cyclone III        ; Cyclone IV GX      ;
 ; VHDL Show LMF Mapping Messages                                             ; Off                ;                    ;
@@ -159,38 +167,46 @@ applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-8         ;   0.0%      ;
+;     Processor 2            ; < 0.1%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                          ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                      ; Library ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------+---------+
-; VgaDefinitions.vhd               ; yes             ; User VHDL File               ; F:/Dropbox/UTFPR - Engenharia Eletrônica/9º Semestre/VHDL/Pingmatronix/VgaDefinitions.vhd         ;         ;
-; sync_mod.vhd                     ; yes             ; User VHDL File               ; F:/Dropbox/UTFPR - Engenharia Eletrônica/9º Semestre/VHDL/Pingmatronix/sync_mod.vhd               ;         ;
-; ScreenRender.vhd                 ; yes             ; User VHDL File               ; F:/Dropbox/UTFPR - Engenharia Eletrônica/9º Semestre/VHDL/Pingmatronix/ScreenRender.vhd           ;         ;
-; meupacote.vhd                    ; yes             ; User VHDL File               ; F:/Dropbox/UTFPR - Engenharia Eletrônica/9º Semestre/VHDL/Pingmatronix/meupacote.vhd              ;         ;
-; control.vhd                      ; yes             ; User VHDL File               ; F:/Dropbox/UTFPR - Engenharia Eletrônica/9º Semestre/VHDL/Pingmatronix/control.vhd                ;         ;
-; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_divide.tdf                                     ;         ;
-; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/abs_divider.inc                                    ;         ;
-; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/sign_div_unsign.inc                                ;         ;
-; aglobal131.inc                   ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/aglobal131.inc                                     ;         ;
-; db/lpm_divide_jhm.tdf            ; yes             ; Auto-Generated Megafunction  ; F:/Dropbox/UTFPR - Engenharia Eletrônica/9º Semestre/VHDL/Pingmatronix/db/lpm_divide_jhm.tdf      ;         ;
-; db/sign_div_unsign_klh.tdf       ; yes             ; Auto-Generated Megafunction  ; F:/Dropbox/UTFPR - Engenharia Eletrônica/9º Semestre/VHDL/Pingmatronix/db/sign_div_unsign_klh.tdf ;         ;
-; db/alt_u_div_j5f.tdf             ; yes             ; Auto-Generated Megafunction  ; F:/Dropbox/UTFPR - Engenharia Eletrônica/9º Semestre/VHDL/Pingmatronix/db/alt_u_div_j5f.tdf       ;         ;
-; db/add_sub_unc.tdf               ; yes             ; Auto-Generated Megafunction  ; F:/Dropbox/UTFPR - Engenharia Eletrônica/9º Semestre/VHDL/Pingmatronix/db/add_sub_unc.tdf         ;         ;
-; db/add_sub_vnc.tdf               ; yes             ; Auto-Generated Megafunction  ; F:/Dropbox/UTFPR - Engenharia Eletrônica/9º Semestre/VHDL/Pingmatronix/db/add_sub_vnc.tdf         ;         ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                     ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                 ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------+---------+
+; VgaDefinitions.vhd               ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/VgaDefinitions.vhd         ;         ;
+; sync_mod.vhd                     ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/sync_mod.vhd               ;         ;
+; ScreenRender.vhd                 ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/ScreenRender.vhd           ;         ;
+; meupacote.vhd                    ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/meupacote.vhd              ;         ;
+; debounce.vhd                     ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/debounce.vhd               ;         ;
+; control.vhd                      ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/control.vhd                ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_divide.tdf                                                ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/abs_divider.inc                                               ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/sign_div_unsign.inc                                           ;         ;
+; aglobal131.inc                   ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/aglobal131.inc                                                ;         ;
+; db/lpm_divide_f8m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/db/lpm_divide_f8m.tdf      ;         ;
+; db/sign_div_unsign_dkh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/db/sign_div_unsign_dkh.tdf ;         ;
+; db/alt_u_div_53f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/db/alt_u_div_53f.tdf       ;         ;
+; db/add_sub_unc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/db/add_sub_unc.tdf         ;         ;
+; db/add_sub_vnc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/db/add_sub_vnc.tdf         ;         ;
+; db/lpm_divide_9gm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/db/lpm_divide_9gm.tdf      ;         ;
+; db/sign_div_unsign_akh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/db/sign_div_unsign_akh.tdf ;         ;
+; db/alt_u_div_v2f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/db/alt_u_div_v2f.tdf       ;         ;
+; db/lpm_divide_jhm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/db/lpm_divide_jhm.tdf      ;         ;
+; db/sign_div_unsign_klh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/db/sign_div_unsign_klh.tdf ;         ;
+; db/alt_u_div_j5f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/db/alt_u_div_j5f.tdf       ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -198,28 +214,28 @@ applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 473       ;
+; Estimated Total logic elements              ; 1,377     ;
 ;                                             ;           ;
-; Total combinational functions               ; 473       ;
+; Total combinational functions               ; 1374      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 108       ;
-;     -- 3 input functions                    ; 83        ;
-;     -- <=2 input functions                  ; 282       ;
+;     -- 4 input functions                    ; 347       ;
+;     -- 3 input functions                    ; 323       ;
+;     -- <=2 input functions                  ; 704       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 268       ;
-;     -- arithmetic mode                      ; 205       ;
+;     -- normal mode                          ; 850       ;
+;     -- arithmetic mode                      ; 524       ;
 ;                                             ;           ;
-; Total registers                             ; 134       ;
-;     -- Dedicated logic registers            ; 134       ;
+; Total registers                             ; 316       ;
+;     -- Dedicated logic registers            ; 316       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 17        ;
+; I/O pins                                    ; 47        ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 120       ;
-; Total fan-out                               ; 1571      ;
-; Average fan-out                             ; 2.45      ;
+; Maximum fan-out                             ; 316       ;
+; Total fan-out                               ; 4475      ;
+; Average fan-out                             ; 2.51      ;
 +---------------------------------------------+-----------+
 
 
@@ -228,8 +244,8 @@ applicable agreement for further details.
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                       ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------+--------------+
-; |control                                  ; 473 (225)         ; 134 (92)     ; 0           ; 0            ; 0       ; 0         ; 17   ; 0            ; |control                                                                                                                  ; work         ;
-;    |ScreenRender:VGA|                     ; 248 (15)          ; 42 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|ScreenRender:VGA                                                                                                 ; work         ;
+; |control                                  ; 1374 (650)        ; 316 (199)    ; 0           ; 0            ; 0       ; 0         ; 47   ; 0            ; |control                                                                                                                  ; work         ;
+;    |ScreenRender:VGA|                     ; 348 (115)         ; 42 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|ScreenRender:VGA                                                                                                 ; work         ;
 ;       |lpm_divide:Div0|                   ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|ScreenRender:VGA|lpm_divide:Div0                                                                                 ; work         ;
 ;          |lpm_divide_jhm:auto_generated|  ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|ScreenRender:VGA|lpm_divide:Div0|lpm_divide_jhm:auto_generated                                                   ; work         ;
 ;             |sign_div_unsign_klh:divider| ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|ScreenRender:VGA|lpm_divide:Div0|lpm_divide_jhm:auto_generated|sign_div_unsign_klh:divider                       ; work         ;
@@ -239,18 +255,129 @@ applicable agreement for further details.
 ;             |sign_div_unsign_klh:divider| ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|ScreenRender:VGA|lpm_divide:Div1|lpm_divide_jhm:auto_generated|sign_div_unsign_klh:divider                       ; work         ;
 ;                |alt_u_div_j5f:divider|    ; 82 (82)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|ScreenRender:VGA|lpm_divide:Div1|lpm_divide_jhm:auto_generated|sign_div_unsign_klh:divider|alt_u_div_j5f:divider ; work         ;
 ;       |sync_mod:vga_sync|                 ; 69 (69)           ; 42 (42)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|ScreenRender:VGA|sync_mod:vga_sync                                                                               ; work         ;
+;    |debounce:DB1|                         ; 52 (52)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|debounce:DB1                                                                                                     ; work         ;
+;    |debounce:DB2|                         ; 52 (52)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|debounce:DB2                                                                                                     ; work         ;
+;    |debounce:DB3|                         ; 52 (52)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|debounce:DB3                                                                                                     ; work         ;
+;    |lpm_divide:Div1|                      ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|lpm_divide:Div1                                                                                                  ; work         ;
+;       |lpm_divide_9gm:auto_generated|     ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|lpm_divide:Div1|lpm_divide_9gm:auto_generated                                                                    ; work         ;
+;          |sign_div_unsign_akh:divider|    ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|lpm_divide:Div1|lpm_divide_9gm:auto_generated|sign_div_unsign_akh:divider                                        ; work         ;
+;             |alt_u_div_v2f:divider|       ; 43 (43)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|lpm_divide:Div1|lpm_divide_9gm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_v2f:divider                  ; work         ;
+;    |lpm_divide:Div3|                      ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|lpm_divide:Div3                                                                                                  ; work         ;
+;       |lpm_divide_9gm:auto_generated|     ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|lpm_divide:Div3|lpm_divide_9gm:auto_generated                                                                    ; work         ;
+;          |sign_div_unsign_akh:divider|    ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|lpm_divide:Div3|lpm_divide_9gm:auto_generated|sign_div_unsign_akh:divider                                        ; work         ;
+;             |alt_u_div_v2f:divider|       ; 43 (43)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|lpm_divide:Div3|lpm_divide_9gm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_v2f:divider                  ; work         ;
+;    |lpm_divide:Mod0|                      ; 55 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|lpm_divide:Mod0                                                                                                  ; work         ;
+;       |lpm_divide_f8m:auto_generated|     ; 55 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|lpm_divide:Mod0|lpm_divide_f8m:auto_generated                                                                    ; work         ;
+;          |sign_div_unsign_dkh:divider|    ; 55 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|lpm_divide:Mod0|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider                                        ; work         ;
+;             |alt_u_div_53f:divider|       ; 55 (55)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|lpm_divide:Mod0|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_53f:divider                  ; work         ;
+;    |lpm_divide:Mod1|                      ; 12 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|lpm_divide:Mod1                                                                                                  ; work         ;
+;       |lpm_divide_f8m:auto_generated|     ; 12 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|lpm_divide:Mod1|lpm_divide_f8m:auto_generated                                                                    ; work         ;
+;          |sign_div_unsign_dkh:divider|    ; 12 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|lpm_divide:Mod1|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider                                        ; work         ;
+;             |alt_u_div_53f:divider|       ; 12 (12)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|lpm_divide:Mod1|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_53f:divider                  ; work         ;
+;    |lpm_divide:Mod2|                      ; 55 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|lpm_divide:Mod2                                                                                                  ; work         ;
+;       |lpm_divide_f8m:auto_generated|     ; 55 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|lpm_divide:Mod2|lpm_divide_f8m:auto_generated                                                                    ; work         ;
+;          |sign_div_unsign_dkh:divider|    ; 55 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|lpm_divide:Mod2|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider                                        ; work         ;
+;             |alt_u_div_53f:divider|       ; 55 (55)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|lpm_divide:Mod2|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_53f:divider                  ; work         ;
+;    |lpm_divide:Mod3|                      ; 12 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|lpm_divide:Mod3                                                                                                  ; work         ;
+;       |lpm_divide_f8m:auto_generated|     ; 12 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|lpm_divide:Mod3|lpm_divide_f8m:auto_generated                                                                    ; work         ;
+;          |sign_div_unsign_dkh:divider|    ; 12 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|lpm_divide:Mod3|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider                                        ; work         ;
+;             |alt_u_div_53f:divider|       ; 12 (12)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|lpm_divide:Mod3|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_53f:divider                  ; work         ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+----------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                     ;
-+-------------------------------------------------+--------------------------------------+
-; Register name                                   ; Reason for Removal                   ;
-+-------------------------------------------------+--------------------------------------+
-; ScreenRender:VGA|sync_mod:vga_sync|counter_mod2 ; Merged with counter_aumenta_tempo[0] ;
-; Total Number of Removed Registers = 1           ;                                      ;
-+-------------------------------------------------+--------------------------------------+
++----------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                 ;
++-------------------------------------------------+--------------------------------------------------+
+; Register name                                   ; Reason for Removal                               ;
++-------------------------------------------------+--------------------------------------------------+
+; y_racket_p2[5]                                  ; Merged with y_racket_p1[5]                       ;
+; y_racket_p2[4]                                  ; Merged with y_racket_p1[4]                       ;
+; y_racket_p2[3]                                  ; Merged with y_racket_p1[3]                       ;
+; y_racket_p2[2]                                  ; Merged with y_racket_p1[2]                       ;
+; y_racket_p2[1]                                  ; Merged with y_racket_p1[1]                       ;
+; y_racket_p2[0]                                  ; Merged with y_racket_p1[0]                       ;
+; counter[29]                                     ; Merged with \process_1:counter[29]               ;
+; counter[28]                                     ; Merged with \process_1:counter[28]               ;
+; counter[27]                                     ; Merged with \process_1:counter[27]               ;
+; counter[26]                                     ; Merged with \process_1:counter[26]               ;
+; counter[25]                                     ; Merged with \process_1:counter[25]               ;
+; counter[24]                                     ; Merged with \process_1:counter[24]               ;
+; counter[23]                                     ; Merged with \process_1:counter[23]               ;
+; counter[22]                                     ; Merged with \process_1:counter[22]               ;
+; counter[21]                                     ; Merged with \process_1:counter[21]               ;
+; counter[20]                                     ; Merged with \process_1:counter[20]               ;
+; counter[19]                                     ; Merged with \process_1:counter[19]               ;
+; counter[18]                                     ; Merged with \process_1:counter[18]               ;
+; counter[17]                                     ; Merged with \process_1:counter[17]               ;
+; counter[16]                                     ; Merged with \process_1:counter[16]               ;
+; counter[15]                                     ; Merged with \process_1:counter[15]               ;
+; counter[14]                                     ; Merged with \process_1:counter[14]               ;
+; counter[13]                                     ; Merged with \process_1:counter[13]               ;
+; counter[12]                                     ; Merged with \process_1:counter[12]               ;
+; counter[11]                                     ; Merged with \process_1:counter[11]               ;
+; counter[10]                                     ; Merged with \process_1:counter[10]               ;
+; counter[9]                                      ; Merged with \process_1:counter[9]                ;
+; counter[8]                                      ; Merged with \process_1:counter[8]                ;
+; counter[7]                                      ; Merged with \process_1:counter[7]                ;
+; counter[6]                                      ; Merged with \process_1:counter[6]                ;
+; counter[5]                                      ; Merged with \process_1:counter[5]                ;
+; counter[4]                                      ; Merged with \process_1:counter[4]                ;
+; counter[3]                                      ; Merged with \process_1:counter[3]                ;
+; counter[2]                                      ; Merged with \process_1:counter[2]                ;
+; counter[1]                                      ; Merged with \process_1:counter[1]                ;
+; counter[0]                                      ; Merged with \process_1:counter[0]                ;
+; counter_aumenta_tempo[27]                       ; Merged with \process_1:counter_aumenta_tempo[27] ;
+; counter_aumenta_tempo[26]                       ; Merged with \process_1:counter_aumenta_tempo[26] ;
+; counter_aumenta_tempo[25]                       ; Merged with \process_1:counter_aumenta_tempo[25] ;
+; counter_aumenta_tempo[24]                       ; Merged with \process_1:counter_aumenta_tempo[24] ;
+; counter_aumenta_tempo[23]                       ; Merged with \process_1:counter_aumenta_tempo[23] ;
+; counter_aumenta_tempo[22]                       ; Merged with \process_1:counter_aumenta_tempo[22] ;
+; counter_aumenta_tempo[21]                       ; Merged with \process_1:counter_aumenta_tempo[21] ;
+; counter_aumenta_tempo[20]                       ; Merged with \process_1:counter_aumenta_tempo[20] ;
+; counter_aumenta_tempo[19]                       ; Merged with \process_1:counter_aumenta_tempo[19] ;
+; counter_aumenta_tempo[18]                       ; Merged with \process_1:counter_aumenta_tempo[18] ;
+; counter_aumenta_tempo[17]                       ; Merged with \process_1:counter_aumenta_tempo[17] ;
+; counter_aumenta_tempo[16]                       ; Merged with \process_1:counter_aumenta_tempo[16] ;
+; counter_aumenta_tempo[15]                       ; Merged with \process_1:counter_aumenta_tempo[15] ;
+; counter_aumenta_tempo[14]                       ; Merged with \process_1:counter_aumenta_tempo[14] ;
+; counter_aumenta_tempo[13]                       ; Merged with \process_1:counter_aumenta_tempo[13] ;
+; counter_aumenta_tempo[12]                       ; Merged with \process_1:counter_aumenta_tempo[12] ;
+; counter_aumenta_tempo[11]                       ; Merged with \process_1:counter_aumenta_tempo[11] ;
+; counter_aumenta_tempo[10]                       ; Merged with \process_1:counter_aumenta_tempo[10] ;
+; counter_aumenta_tempo[9]                        ; Merged with \process_1:counter_aumenta_tempo[9]  ;
+; counter_aumenta_tempo[8]                        ; Merged with \process_1:counter_aumenta_tempo[8]  ;
+; counter_aumenta_tempo[7]                        ; Merged with \process_1:counter_aumenta_tempo[7]  ;
+; counter_aumenta_tempo[6]                        ; Merged with \process_1:counter_aumenta_tempo[6]  ;
+; counter_aumenta_tempo[5]                        ; Merged with \process_1:counter_aumenta_tempo[5]  ;
+; counter_aumenta_tempo[4]                        ; Merged with \process_1:counter_aumenta_tempo[4]  ;
+; counter_aumenta_tempo[3]                        ; Merged with \process_1:counter_aumenta_tempo[3]  ;
+; counter_aumenta_tempo[2]                        ; Merged with \process_1:counter_aumenta_tempo[2]  ;
+; counter_aumenta_tempo[1]                        ; Merged with \process_1:counter_aumenta_tempo[1]  ;
+; counter_aumenta_tempo[0]                        ; Merged with \process_1:counter_aumenta_tempo[0]  ;
+; counter_missil[18]                              ; Merged with counter_missi2[18]                   ;
+; counter_missil[17]                              ; Merged with counter_missi2[17]                   ;
+; counter_missil[16]                              ; Merged with counter_missi2[16]                   ;
+; counter_missil[15]                              ; Merged with counter_missi2[15]                   ;
+; counter_missil[14]                              ; Merged with counter_missi2[14]                   ;
+; counter_missil[13]                              ; Merged with counter_missi2[13]                   ;
+; counter_missil[12]                              ; Merged with counter_missi2[12]                   ;
+; counter_missil[11]                              ; Merged with counter_missi2[11]                   ;
+; counter_missil[10]                              ; Merged with counter_missi2[10]                   ;
+; counter_missil[9]                               ; Merged with counter_missi2[9]                    ;
+; counter_missil[8]                               ; Merged with counter_missi2[8]                    ;
+; counter_missil[7]                               ; Merged with counter_missi2[7]                    ;
+; counter_missil[6]                               ; Merged with counter_missi2[6]                    ;
+; counter_missil[5]                               ; Merged with counter_missi2[5]                    ;
+; counter_missil[4]                               ; Merged with counter_missi2[4]                    ;
+; counter_missil[3]                               ; Merged with counter_missi2[3]                    ;
+; counter_missil[2]                               ; Merged with counter_missi2[2]                    ;
+; counter_missil[1]                               ; Merged with counter_missi2[1]                    ;
+; counter_missil[0]                               ; Merged with counter_missi2[0]                    ;
+; ScreenRender:VGA|sync_mod:vga_sync|counter_mod2 ; Merged with \process_1:counter_aumenta_tempo[0]  ;
+; VY[2]                                           ; Stuck at GND due to stuck port data_in           ;
+; Total Number of Removed Registers = 85          ;                                                  ;
++-------------------------------------------------+--------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -258,40 +385,27 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 134   ;
+; Total registers                              ; 316   ;
 ; Number of registers using Synchronous Clear  ; 20    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 61    ;
+; Number of registers using Clock Enable       ; 79    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------+
-; Inverted Register Statistics                      ;
-+-----------------------------------------+---------+
-; Inverted Register                       ; Fan out ;
-+-----------------------------------------+---------+
-; X[5]                                    ; 5       ;
-; Y[3]                                    ; 5       ;
-; Y[4]                                    ; 10      ;
-; DIR_X                                   ; 8       ;
-; DIR_Y                                   ; 8       ;
-; TEMPO_ATUALIZACAO[6]                    ; 2       ;
-; TEMPO_ATUALIZACAO[12]                   ; 2       ;
-; TEMPO_ATUALIZACAO[11]                   ; 2       ;
-; TEMPO_ATUALIZACAO[14]                   ; 2       ;
-; TEMPO_ATUALIZACAO[13]                   ; 2       ;
-; TEMPO_ATUALIZACAO[16]                   ; 2       ;
-; TEMPO_ATUALIZACAO[18]                   ; 2       ;
-; TEMPO_ATUALIZACAO[20]                   ; 2       ;
-; TEMPO_ATUALIZACAO[19]                   ; 2       ;
-; TEMPO_ATUALIZACAO[24]                   ; 2       ;
-; TEMPO_ATUALIZACAO[22]                   ; 2       ;
-; TEMPO_ATUALIZACAO[21]                   ; 2       ;
-; Total number of inverted registers = 17 ;         ;
-+-----------------------------------------+---------+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; X[5]                                   ; 14      ;
+; Y[3]                                   ; 13      ;
+; Y[4]                                   ; 11      ;
+; VY[0]                                  ; 6       ;
+; Total number of inverted registers = 4 ;         ;
++----------------------------------------+---------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -299,11 +413,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
-; 3:1                ; 28 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; Yes        ; |control|counter[26]                                     ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |control|ScreenRender:VGA|sync_mod:vga_sync|x_counter[4] ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |control|X[4]                                            ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |control|Y[0]                                            ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |control|Y[4]                                            ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |control|y_racket_p1[0]                                  ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |control|ScreenRender:VGA|sync_mod:vga_sync|x_counter[0] ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 0 LEs                ; 14 LEs                 ; Yes        ; |control|PONTOS1[0]                                      ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 0 LEs                ; 14 LEs                 ; Yes        ; |control|PONTOS2[6]                                      ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |control|y_missle_p1[0]                                  ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |control|y_missle_p2[4]                                  ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |control|x_missle_p2[5]                                  ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |control|x_missle_p1[1]                                  ;
+; 9:1                ; 5 bits    ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |control|X[0]                                            ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |control|Y[2]                                            ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |control|VY[1]                                           ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |control|Y[3]                                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
 
 
@@ -312,8 +433,178 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+----------+---------------------------------------------+
 ; Parameter Name ; Value    ; Type                                        ;
 +----------------+----------+---------------------------------------------+
+; MAX_PONTOS     ; 99       ; Signed Integer                              ;
+; NUM_MAX        ; 99       ; Signed Integer                              ;
 ; FCLK           ; 50000000 ; Signed Integer                              ;
 +----------------+----------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debounce:DB1 ;
++----------------+----------+-------------------------------+
+; Parameter Name ; Value    ; Type                          ;
++----------------+----------+-------------------------------+
+; fclk           ; 50000000 ; Signed Integer                ;
++----------------+----------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debounce:DB2 ;
++----------------+----------+-------------------------------+
+; Parameter Name ; Value    ; Type                          ;
++----------------+----------+-------------------------------+
+; fclk           ; 50000000 ; Signed Integer                ;
++----------------+----------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debounce:DB3 ;
++----------------+----------+-------------------------------+
+; Parameter Name ; Value    ; Type                          ;
++----------------+----------+-------------------------------+
+; fclk           ; 50000000 ; Signed Integer                ;
++----------------+----------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                ;
+; LPM_WIDTHD             ; 7              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_f8m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_9gm ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                ;
+; LPM_WIDTHD             ; 7              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_f8m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                ;
+; LPM_WIDTHD             ; 7              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_f8m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div3 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_9gm ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod3 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                ;
+; LPM_WIDTHD             ; 7              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_f8m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -373,26 +664,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------+-------+----------+-------------------------------------+
 
 
-+-----------------------------------------------+
-; Port Connectivity Checks: "ScreenRender:VGA"  ;
-+-------------+-------+----------+--------------+
-; Port        ; Type  ; Severity ; Details      ;
-+-------------+-------+----------+--------------+
-; y_racket_p1 ; Input ; Info     ; Stuck at GND ;
-; y_racket_p2 ; Input ; Info     ; Stuck at GND ;
-; x_missle_p1 ; Input ; Info     ; Stuck at GND ;
-; x_missle_p2 ; Input ; Info     ; Stuck at GND ;
-; y_missle_p1 ; Input ; Info     ; Stuck at GND ;
-; y_missle_p2 ; Input ; Info     ; Stuck at GND ;
-+-------------+-------+----------+--------------+
-
-
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -402,9 +679,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Wed Nov 29 16:24:14 2017
+    Info: Processing started: Mon Dec 04 20:50:08 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PINGMATRONIX -c PINGMATRONIX
-Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 1 design units, including 0 entities, in source file vgadefinitions.vhd
     Info (12022): Found design unit 1: VgaDefinitions
 Info (12021): Found 2 design units, including 1 entities, in source file vga_test.vhd
@@ -425,15 +702,48 @@ Info (12021): Found 2 design units, including 1 entities, in source file control
     Info (12022): Found design unit 1: control-arch
     Info (12023): Found entity 1: control
 Info (12127): Elaborating entity "control" for the top level hierarchy
-Warning (10540): VHDL Signal Declaration warning at control.vhd(26): used explicit default value for signal "VX" because signal was never assigned a value
-Warning (10540): VHDL Signal Declaration warning at control.vhd(27): used explicit default value for signal "VY" because signal was never assigned a value
-Warning (10541): VHDL Signal Declaration warning at control.vhd(33): used implicit default value for signal "y_racket_p1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at control.vhd(33): used implicit default value for signal "y_racket_p2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10540): VHDL Signal Declaration warning at control.vhd(38): used explicit default value for signal "TEMPO_ATUALIZACAO" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at control.vhd(39): used explicit default value for signal "VX" because signal was never assigned a value
+Info (12128): Elaborating entity "debounce" for hierarchy "debounce:DB1"
 Info (12128): Elaborating entity "ScreenRender" for hierarchy "ScreenRender:VGA"
 Info (12128): Elaborating entity "sync_mod" for hierarchy "ScreenRender:VGA|sync_mod:vga_sync"
-Info (278001): Inferred 2 megafunctions from design logic
+Info (278001): Inferred 8 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div3"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod3"
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ScreenRender:VGA|Div0"
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ScreenRender:VGA|Div1"
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0"
+Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "7"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_f8m.tdf
+    Info (12023): Found entity 1: lpm_divide_f8m
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_dkh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_dkh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_53f.tdf
+    Info (12023): Found entity 1: alt_u_div_53f
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_unc.tdf
+    Info (12023): Found entity 1: add_sub_unc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_vnc.tdf
+    Info (12023): Found entity 1: add_sub_vnc
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div1"
+Info (12133): Instantiated megafunction "lpm_divide:Div1" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "7"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_9gm.tdf
+    Info (12023): Found entity 1: lpm_divide_9gm
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_akh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_akh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_v2f.tdf
+    Info (12023): Found entity 1: alt_u_div_v2f
 Info (12130): Elaborated megafunction instantiation "ScreenRender:VGA|lpm_divide:Div0"
 Info (12133): Instantiated megafunction "ScreenRender:VGA|lpm_divide:Div0" with the following parameter:
     Info (12134): Parameter "LPM_WIDTHN" = "10"
@@ -446,24 +756,20 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_klh
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_j5f.tdf
     Info (12023): Found entity 1: alt_u_div_j5f
-Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_unc.tdf
-    Info (12023): Found entity 1: add_sub_unc
-Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_vnc.tdf
-    Info (12023): Found entity 1: add_sub_vnc
 Info (286030): Timing-Driven Synthesis is running
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "lpm_divide:Mod1|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_53f:divider|add_sub_6_result_int[0]~0"
+    Info (17048): Logic cell "lpm_divide:Mod3|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_53f:divider|add_sub_6_result_int[0]~0"
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "in_sobe_raquete1"
-    Warning (15610): No output dependent on input pin "in_desce_raquete1"
-Info (21057): Implemented 519 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 14 output pins
-    Info (21061): Implemented 502 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 587 megabytes
-    Info: Processing ended: Wed Nov 29 16:24:17 2017
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:03
+Info (21057): Implemented 1484 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 42 output pins
+    Info (21061): Implemented 1437 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 575 megabytes
+    Info: Processing ended: Mon Dec 04 20:50:14 2017
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:06
 
 
