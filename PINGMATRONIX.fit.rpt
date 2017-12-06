@@ -1,5 +1,5 @@
 Fitter report for PINGMATRONIX
-Tue Dec 05 20:10:54 2017
+Wed Dec 06 15:28:17 2017
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -66,7 +66,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Fitter Summary                                                                  ;
 +------------------------------------+--------------------------------------------+
-; Fitter Status                      ; Successful - Tue Dec 05 20:10:54 2017      ;
+; Fitter Status                      ; Successful - Wed Dec 06 15:28:17 2017      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; PINGMATRONIX                               ;
 ; Top-level Entity Name              ; control                                    ;
@@ -74,7 +74,7 @@ applicable agreement for further details.
 ; Device                             ; EP3C16F484C6                               ;
 ; Timing Models                      ; Final                                      ;
 ; Total logic elements               ; 1,380 / 15,408 ( 9 % )                     ;
-;     Total combinational functions  ; 1,377 / 15,408 ( 9 % )                     ;
+;     Total combinational functions  ; 1,376 / 15,408 ( 9 % )                     ;
 ;     Dedicated logic registers      ; 326 / 15,408 ( 2 % )                       ;
 ; Total registers                    ; 326                                        ;
 ; Total pins                         ; 48 / 347 ( 14 % )                          ;
@@ -153,12 +153,12 @@ applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.19        ;
+; Average used               ; 1.15        ;
 ; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  18.8%      ;
+;     Processor 2            ;  15.0%      ;
 ;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
@@ -219,8 +219,8 @@ applicable agreement for further details.
 ; Type                ; Total [A + B]       ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+---------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                     ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 1811 ) ; 0.00 % ( 0 / 1811 )        ; 0.00 % ( 0 / 1811 )      ;
-;     -- Achieved     ; 0.00 % ( 0 / 1811 ) ; 0.00 % ( 0 / 1811 )        ; 0.00 % ( 0 / 1811 )      ;
+;     -- Requested    ; 0.00 % ( 0 / 1810 ) ; 0.00 % ( 0 / 1810 )        ; 0.00 % ( 0 / 1810 )      ;
+;     -- Achieved     ; 0.00 % ( 0 / 1810 ) ; 0.00 % ( 0 / 1810 )        ; 0.00 % ( 0 / 1810 )      ;
 ;                     ;                     ;                            ;                          ;
 ; Routing (by net)    ;                     ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )    ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -243,7 +243,7 @@ applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 1801 )   ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 1800 )   ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -251,7 +251,7 @@ applicable agreement for further details.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/PINGMATRONIX.pin.
+The pin-out file can be found in C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/Pingmatronix/PINGMATRONIX.pin.
 
 
 +----------------------------------------------------------------------+
@@ -261,24 +261,24 @@ The pin-out file can be found in C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/L
 +---------------------------------------------+------------------------+
 ; Total logic elements                        ; 1,380 / 15,408 ( 9 % ) ;
 ;     -- Combinational with no register       ; 1054                   ;
-;     -- Register only                        ; 3                      ;
-;     -- Combinational with a register        ; 323                    ;
+;     -- Register only                        ; 4                      ;
+;     -- Combinational with a register        ; 322                    ;
 ;                                             ;                        ;
 ; Logic element usage by number of LUT inputs ;                        ;
-;     -- 4 input functions                    ; 358                    ;
-;     -- 3 input functions                    ; 339                    ;
-;     -- <=2 input functions                  ; 680                    ;
-;     -- Register only                        ; 3                      ;
+;     -- 4 input functions                    ; 355                    ;
+;     -- 3 input functions                    ; 337                    ;
+;     -- <=2 input functions                  ; 684                    ;
+;     -- Register only                        ; 4                      ;
 ;                                             ;                        ;
 ; Logic elements by mode                      ;                        ;
-;     -- normal mode                          ; 858                    ;
+;     -- normal mode                          ; 857                    ;
 ;     -- arithmetic mode                      ; 519                    ;
 ;                                             ;                        ;
 ; Total registers*                            ; 326 / 17,068 ( 2 % )   ;
 ;     -- Dedicated logic registers            ; 326 / 15,408 ( 2 % )   ;
 ;     -- I/O registers                        ; 0 / 1,660 ( 0 % )      ;
 ;                                             ;                        ;
-; Total LABs:  partially or completely used   ; 105 / 963 ( 11 % )     ;
+; Total LABs:  partially or completely used   ; 103 / 963 ( 11 % )     ;
 ; Virtual pins                                ; 0                      ;
 ; I/O pins                                    ; 48 / 347 ( 14 % )      ;
 ;     -- Clock pins                           ; 1 / 8 ( 13 % )         ;
@@ -296,10 +296,10 @@ The pin-out file can be found in C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/L
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )          ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )          ;
 ; Average interconnect usage (total/H/V)      ; 1% / 1% / 1%           ;
-; Peak interconnect usage (total/H/V)         ; 8% / 8% / 8%           ;
+; Peak interconnect usage (total/H/V)         ; 8% / 7% / 9%           ;
 ; Maximum fan-out                             ; 326                    ;
 ; Highest non-global fan-out                  ; 153                    ;
-; Total fan-out                               ; 4695                   ;
+; Total fan-out                               ; 4684                   ;
 ; Average fan-out                             ; 2.59                   ;
 +---------------------------------------------+------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
@@ -315,24 +315,24 @@ The pin-out file can be found in C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/L
 ;                                             ;                      ;                                ;
 ; Total logic elements                        ; 1380 / 15408 ( 9 % ) ; 0 / 15408 ( 0 % )              ;
 ;     -- Combinational with no register       ; 1054                 ; 0                              ;
-;     -- Register only                        ; 3                    ; 0                              ;
-;     -- Combinational with a register        ; 323                  ; 0                              ;
+;     -- Register only                        ; 4                    ; 0                              ;
+;     -- Combinational with a register        ; 322                  ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic element usage by number of LUT inputs ;                      ;                                ;
-;     -- 4 input functions                    ; 358                  ; 0                              ;
-;     -- 3 input functions                    ; 339                  ; 0                              ;
-;     -- <=2 input functions                  ; 680                  ; 0                              ;
-;     -- Register only                        ; 3                    ; 0                              ;
+;     -- 4 input functions                    ; 355                  ; 0                              ;
+;     -- 3 input functions                    ; 337                  ; 0                              ;
+;     -- <=2 input functions                  ; 684                  ; 0                              ;
+;     -- Register only                        ; 4                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic elements by mode                      ;                      ;                                ;
-;     -- normal mode                          ; 858                  ; 0                              ;
+;     -- normal mode                          ; 857                  ; 0                              ;
 ;     -- arithmetic mode                      ; 519                  ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Total registers                             ; 326                  ; 0                              ;
 ;     -- Dedicated logic registers            ; 326 / 15408 ( 2 % )  ; 0 / 15408 ( 0 % )              ;
 ;     -- I/O registers                        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
-; Total LABs:  partially or completely used   ; 105 / 963 ( 11 % )   ; 0 / 963 ( 0 % )                ;
+; Total LABs:  partially or completely used   ; 103 / 963 ( 11 % )   ; 0 / 963 ( 0 % )                ;
 ;                                             ;                      ;                                ;
 ; Virtual pins                                ; 0                    ; 0                              ;
 ; I/O pins                                    ; 48                   ; 0                              ;
@@ -348,8 +348,8 @@ The pin-out file can be found in C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/L
 ;     -- Registered Output Connections        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Internal Connections                        ;                      ;                                ;
-;     -- Total Connections                    ; 4690                 ; 5                              ;
-;     -- Registered Connections               ; 1093                 ; 0                              ;
+;     -- Total Connections                    ; 4679                 ; 5                              ;
+;     -- Registered Connections               ; 1101                 ; 0                              ;
 ;                                             ;                      ;                                ;
 ; External Connections                        ;                      ;                                ;
 ;     -- Top                                  ; 0                    ; 0                              ;
@@ -397,7 +397,7 @@ The pin-out file can be found in C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/L
 +---------------------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
 ; Hsync               ; L21   ; 6        ; 41           ; 18           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; Vsync               ; L22   ; 6        ; 41           ; 18           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; blue[0]             ; J16   ; 6        ; 41           ; 20           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; blue[0]             ; K16   ; 6        ; 41           ; 20           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
 ; blue[1]             ; K21   ; 6        ; 41           ; 19           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; blue[2]             ; J22   ; 6        ; 41           ; 19           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; blue[3]             ; K18   ; 6        ; 41           ; 21           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
@@ -733,7 +733,7 @@ The pin-out file can be found in C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/L
 ; J13      ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; J14      ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; J15      ; 238        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; J16      ; 243        ; 6        ; blue[0]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; J16      ; 243        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; J17      ; 258        ; 6        ; green[1]                                                  ; output ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; J18      ; 249        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; J19      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -755,7 +755,7 @@ The pin-out file can be found in C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/L
 ; K13      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; K14      ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; K15      ; 236        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; K16      ; 244        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; K16      ; 244        ; 6        ; blue[0]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; K17      ; 247        ; 6        ; green[2]                                                  ; output ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; K18      ; 248        ; 6        ; blue[3]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; K19      ; 237        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
@@ -991,8 +991,8 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +-------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                                                       ; Library Name ;
 +-------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------------------------------------------------------+--------------+
-; |control                                  ; 1380 (652)  ; 326 (208)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 48   ; 0            ; 1054 (444)   ; 3 (0)             ; 323 (207)        ; |control                                                                                                                  ; work         ;
-;    |ScreenRender:VGA|                     ; 350 (116)   ; 43 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 306 (115)    ; 0 (0)             ; 44 (1)           ; |control|ScreenRender:VGA                                                                                                 ; work         ;
+; |control                                  ; 1380 (652)  ; 326 (208)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 48   ; 0            ; 1054 (444)   ; 4 (1)             ; 322 (207)        ; |control                                                                                                                  ; work         ;
+;    |ScreenRender:VGA|                     ; 349 (115)   ; 43 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 306 (115)    ; 0 (0)             ; 43 (0)           ; |control|ScreenRender:VGA                                                                                                 ; work         ;
 ;       |lpm_divide:Div0|                   ; 82 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 82 (0)       ; 0 (0)             ; 0 (0)            ; |control|ScreenRender:VGA|lpm_divide:Div0                                                                                 ; work         ;
 ;          |lpm_divide_jhm:auto_generated|  ; 82 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 82 (0)       ; 0 (0)             ; 0 (0)            ; |control|ScreenRender:VGA|lpm_divide:Div0|lpm_divide_jhm:auto_generated                                                   ; work         ;
 ;             |sign_div_unsign_klh:divider| ; 82 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 82 (0)       ; 0 (0)             ; 0 (0)            ; |control|ScreenRender:VGA|lpm_divide:Div0|lpm_divide_jhm:auto_generated|sign_div_unsign_klh:divider                       ; work         ;
@@ -1083,7 +1083,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; clk                 ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
 ; start               ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; missil2             ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; in_desce_raquete1   ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; in_desce_raquete1   ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; in_sobe_raquete1    ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; in_missil1          ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 +---------------------+----------+---------------+---------------+-----------------------+-----+------+
@@ -1157,9 +1157,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - \process_2:counter[28]               ; 0                 ; 6       ;
 ;      - \process_2:counter[29]               ; 0                 ; 6       ;
 ;      - PONTOS1[6]~11                        ; 0                 ; 6       ;
-;      - PONTOS2[6]~11                        ; 0                 ; 6       ;
+;      - PONTOS2[6]~10                        ; 0                 ; 6       ;
 ;      - y_racket_p1[0]~0                     ; 0                 ; 6       ;
-;      - X[4]~3                               ; 0                 ; 6       ;
 ;      - VY[0]                                ; 0                 ; 6       ;
 ;      - DIR_Y                                ; 0                 ; 6       ;
 ;      - IS_MISSIL2                           ; 0                 ; 6       ;
@@ -1187,8 +1186,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - IS_MISSIL1                           ; 0                 ; 6       ;
 ;      - x_missle_p1[5]~2                     ; 0                 ; 6       ;
 ;      - y_missle_p1[5]~1                     ; 0                 ; 6       ;
-;      - VY[1]~2                              ; 0                 ; 6       ;
-;      - VY[1]~5                              ; 0                 ; 6       ;
+;      - VY[1]~11                             ; 0                 ; 6       ;
+;      - VY[1]~12                             ; 0                 ; 6       ;
 ;      - counter_permite_missil2[27]          ; 0                 ; 6       ;
 ;      - counter_permite_missil2[26]          ; 0                 ; 6       ;
 ;      - counter_permite_missil2[25]          ; 0                 ; 6       ;
@@ -1249,32 +1248,33 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - counter_permite_missil1[0]           ; 0                 ; 6       ;
 ;      - counter_permite_missil1[29]          ; 0                 ; 6       ;
 ;      - counter_permite_missil1[28]          ; 0                 ; 6       ;
+;      - X[4]~12                              ; 0                 ; 6       ;
 ; missil2                                     ;                   ;         ;
-;      - process_3~5                          ; 0                 ; 6       ;
+;      - process_3~6                          ; 0                 ; 6       ;
 ; in_desce_raquete1                           ;                   ;         ;
-;      - debounce:DB2|aux_output~0            ; 1                 ; 6       ;
-;      - debounce:DB2|aux_output~8            ; 1                 ; 6       ;
-;      - debounce:DB2|counter~0               ; 1                 ; 6       ;
-;      - debounce:DB2|counter~1               ; 1                 ; 6       ;
-;      - debounce:DB2|counter~2               ; 1                 ; 6       ;
-;      - debounce:DB2|counter~3               ; 1                 ; 6       ;
-;      - debounce:DB2|counter~4               ; 1                 ; 6       ;
-;      - debounce:DB2|counter~5               ; 1                 ; 6       ;
-;      - debounce:DB2|counter~6               ; 1                 ; 6       ;
-;      - debounce:DB2|counter~7               ; 1                 ; 6       ;
-;      - debounce:DB2|counter~8               ; 1                 ; 6       ;
-;      - debounce:DB2|counter~9               ; 1                 ; 6       ;
-;      - debounce:DB2|counter~10              ; 1                 ; 6       ;
-;      - debounce:DB2|counter~11              ; 1                 ; 6       ;
-;      - debounce:DB2|counter~12              ; 1                 ; 6       ;
-;      - debounce:DB2|counter~13              ; 1                 ; 6       ;
-;      - debounce:DB2|counter~14              ; 1                 ; 6       ;
-;      - debounce:DB2|counter~15              ; 1                 ; 6       ;
-;      - debounce:DB2|counter~16              ; 1                 ; 6       ;
-;      - debounce:DB2|counter~17              ; 1                 ; 6       ;
-;      - debounce:DB2|counter~18              ; 1                 ; 6       ;
-;      - debounce:DB2|counter~19              ; 1                 ; 6       ;
-;      - debounce:DB2|old_input~0             ; 1                 ; 6       ;
+;      - debounce:DB2|aux_output~0            ; 0                 ; 6       ;
+;      - debounce:DB2|aux_output~8            ; 0                 ; 6       ;
+;      - debounce:DB2|counter~0               ; 0                 ; 6       ;
+;      - debounce:DB2|counter~1               ; 0                 ; 6       ;
+;      - debounce:DB2|counter~2               ; 0                 ; 6       ;
+;      - debounce:DB2|counter~3               ; 0                 ; 6       ;
+;      - debounce:DB2|counter~4               ; 0                 ; 6       ;
+;      - debounce:DB2|counter~5               ; 0                 ; 6       ;
+;      - debounce:DB2|counter~6               ; 0                 ; 6       ;
+;      - debounce:DB2|counter~7               ; 0                 ; 6       ;
+;      - debounce:DB2|counter~8               ; 0                 ; 6       ;
+;      - debounce:DB2|counter~9               ; 0                 ; 6       ;
+;      - debounce:DB2|counter~10              ; 0                 ; 6       ;
+;      - debounce:DB2|counter~11              ; 0                 ; 6       ;
+;      - debounce:DB2|counter~12              ; 0                 ; 6       ;
+;      - debounce:DB2|counter~13              ; 0                 ; 6       ;
+;      - debounce:DB2|counter~14              ; 0                 ; 6       ;
+;      - debounce:DB2|counter~15              ; 0                 ; 6       ;
+;      - debounce:DB2|counter~16              ; 0                 ; 6       ;
+;      - debounce:DB2|counter~17              ; 0                 ; 6       ;
+;      - debounce:DB2|counter~18              ; 0                 ; 6       ;
+;      - debounce:DB2|counter~19              ; 0                 ; 6       ;
+;      - debounce:DB2|old_input~0             ; 0                 ; 6       ;
 ; in_sobe_raquete1                            ;                   ;         ;
 ;      - debounce:DB1|aux_output~0            ; 0                 ; 6       ;
 ;      - debounce:DB1|aux_output~8            ; 0                 ; 6       ;
@@ -1331,20 +1331,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 ; Name                                                ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-----------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; Equal5~8                                            ; LCCOMB_X26_Y23_N0  ; 22      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
-; PONTOS1[6]~11                                       ; LCCOMB_X29_Y23_N28 ; 7       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; PONTOS2[6]~11                                       ; LCCOMB_X26_Y24_N26 ; 7       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; ScreenRender:VGA|sync_mod:vga_sync|counter_mod2     ; FF_X28_Y19_N31     ; 17      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; ScreenRender:VGA|sync_mod:vga_sync|process_4~0      ; LCCOMB_X28_Y19_N24 ; 20      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; ScreenRender:VGA|sync_mod:vga_sync|x_counter[4]~30  ; LCCOMB_X20_Y22_N26 ; 10      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; ScreenRender:VGA|sync_mod:vga_sync|x_counter[4]~31  ; LCCOMB_X20_Y22_N28 ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; ScreenRender:VGA|sync_mod:vga_sync|y_counter_next~0 ; LCCOMB_X29_Y19_N0  ; 10      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; X[4]~3                                              ; LCCOMB_X27_Y20_N30 ; 11      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; Equal17~8                                           ; LCCOMB_X27_Y22_N0  ; 21      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
+; PONTOS1[6]~11                                       ; LCCOMB_X27_Y22_N18 ; 7       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PONTOS2[6]~10                                       ; LCCOMB_X28_Y22_N28 ; 7       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; ScreenRender:VGA|sync_mod:vga_sync|counter_mod2     ; FF_X24_Y21_N15     ; 17      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; ScreenRender:VGA|sync_mod:vga_sync|process_4~0      ; LCCOMB_X21_Y17_N26 ; 20      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; ScreenRender:VGA|sync_mod:vga_sync|x_counter[4]~30  ; LCCOMB_X21_Y20_N22 ; 10      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; ScreenRender:VGA|sync_mod:vga_sync|x_counter[4]~31  ; LCCOMB_X21_Y20_N28 ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; ScreenRender:VGA|sync_mod:vga_sync|y_counter_next~0 ; LCCOMB_X20_Y17_N10 ; 10      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; X[4]~5                                              ; LCCOMB_X27_Y21_N14 ; 11      ; Clock enable ; no     ; --                   ; --               ; --                        ;
 ; clk                                                 ; PIN_G21            ; 326     ; Clock        ; yes    ; Global Clock         ; GCLK9            ; --                        ;
 ; start                                               ; PIN_D2             ; 153     ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; y_missle_p1[5]~1                                    ; LCCOMB_X21_Y21_N8  ; 6       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; y_missle_p2[5]~1                                    ; LCCOMB_X23_Y21_N6  ; 6       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; y_racket_p1[0]~0                                    ; LCCOMB_X19_Y22_N12 ; 6       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; y_missle_p1[5]~1                                    ; LCCOMB_X26_Y18_N24 ; 6       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; y_missle_p2[5]~1                                    ; LCCOMB_X24_Y19_N2  ; 6       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; y_racket_p1[0]~0                                    ; LCCOMB_X27_Y17_N24 ; 6       ; Clock enable ; no     ; --                   ; --               ; --                        ;
 +-----------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1353,7 +1353,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; Name ; Location ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; clk  ; PIN_G21  ; 326     ; 68                                   ; Global Clock         ; GCLK9            ; --                        ;
+; clk  ; PIN_G21  ; 326     ; 53                                   ; Global Clock         ; GCLK9            ; --                        ;
 +------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
@@ -1364,19 +1364,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; start~input                                                                                                                                ; 153     ;
 ; Equal4~8                                                                                                                                   ; 34      ;
-; y_racket_p1[1]                                                                                                                             ; 27      ;
+; y_racket_p1[1]                                                                                                                             ; 28      ;
 ; in_missil1~input                                                                                                                           ; 23      ;
 ; in_sobe_raquete1~input                                                                                                                     ; 23      ;
 ; in_desce_raquete1~input                                                                                                                    ; 23      ;
-; Equal5~8                                                                                                                                   ; 22      ;
+; y_racket_p1[0]                                                                                                                             ; 23      ;
 ; debounce:DB3|old_input                                                                                                                     ; 21      ;
 ; debounce:DB1|old_input                                                                                                                     ; 21      ;
 ; debounce:DB2|old_input                                                                                                                     ; 21      ;
-; y_racket_p1[0]                                                                                                                             ; 21      ;
+; Equal17~8                                                                                                                                  ; 21      ;
 ; ScreenRender:VGA|sync_mod:vga_sync|process_4~0                                                                                             ; 20      ;
 ; ScreenRender:VGA|lpm_divide:Div0|lpm_divide_jhm:auto_generated|sign_div_unsign_klh:divider|alt_u_div_j5f:divider|add_sub_5_result_int[5]~8 ; 18      ;
-; process_3~23                                                                                                                               ; 17      ;
-; process_3~11                                                                                                                               ; 17      ;
+; process_3~24                                                                                                                               ; 17      ;
+; process_3~12                                                                                                                               ; 17      ;
 ; ScreenRender:VGA|sync_mod:vga_sync|counter_mod2                                                                                            ; 17      ;
 ; y_racket_p1[2]                                                                                                                             ; 17      ;
 ; y_racket_p1[3]                                                                                                                             ; 17      ;
@@ -1390,19 +1390,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; y_racket_p1[5]                                                                                                                             ; 16      ;
 ; ScreenRender:VGA|lpm_divide:Div1|lpm_divide_jhm:auto_generated|sign_div_unsign_klh:divider|alt_u_div_j5f:divider|add_sub_7_result_int[5]~8 ; 16      ;
 ; ScreenRender:VGA|lpm_divide:Div1|lpm_divide_jhm:auto_generated|sign_div_unsign_klh:divider|alt_u_div_j5f:divider|add_sub_3_result_int[4]~6 ; 15      ;
-; Y[5]                                                                                                                                       ; 14      ;
-; Y[2]                                                                                                                                       ; 14      ;
+; DIR_Y                                                                                                                                      ; 14      ;
 ; Y[3]                                                                                                                                       ; 14      ;
 ; ScreenRender:VGA|lpm_divide:Div1|lpm_divide_jhm:auto_generated|sign_div_unsign_klh:divider|alt_u_div_j5f:divider|add_sub_8_result_int[5]~8 ; 14      ;
 ; ScreenRender:VGA|lpm_divide:Div0|lpm_divide_jhm:auto_generated|sign_div_unsign_klh:divider|alt_u_div_j5f:divider|add_sub_8_result_int[5]~8 ; 14      ;
 ; lpm_divide:Mod2|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_53f:divider|add_sub_4_result_int[5]~8                  ; 14      ;
 ; lpm_divide:Mod0|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_53f:divider|add_sub_4_result_int[5]~8                  ; 14      ;
+; PONTOS1[2]~10                                                                                                                              ; 13      ;
+; Y[5]                                                                                                                                       ; 13      ;
 ; Y[4]                                                                                                                                       ; 13      ;
+; Y[2]                                                                                                                                       ; 13      ;
 ; y_racket_p1[4]                                                                                                                             ; 13      ;
 ; Equal25~9                                                                                                                                  ; 12      ;
 ; Equal29~9                                                                                                                                  ; 12      ;
 ; x_missle_p2~3                                                                                                                              ; 12      ;
 ; Equal30~5                                                                                                                                  ; 12      ;
+; Y[0]                                                                                                                                       ; 12      ;
 ; Y[1]                                                                                                                                       ; 12      ;
 ; lpm_divide:Div3|lpm_divide_9gm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_v2f:divider|add_sub_4_result_int[5]~8                  ; 12      ;
 ; lpm_divide:Div3|lpm_divide_9gm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_v2f:divider|add_sub_3_result_int[4]~6                  ; 12      ;
@@ -1411,33 +1414,29 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; lpm_divide:Div1|lpm_divide_9gm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_v2f:divider|add_sub_3_result_int[4]~6                  ; 12      ;
 ; lpm_divide:Mod0|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_53f:divider|add_sub_5_result_int[6]~10                 ; 12      ;
 ; x_missle_p2[5]~0                                                                                                                           ; 11      ;
-; DIR_Y                                                                                                                                      ; 11      ;
+; X[4]~5                                                                                                                                     ; 11      ;
 ; X[4]~3                                                                                                                                     ; 11      ;
-; Equal1~10                                                                                                                                  ; 11      ;
-; X~0                                                                                                                                        ; 11      ;
-; PONTOS2[6]~10                                                                                                                              ; 11      ;
-; PONTOS1[2]~10                                                                                                                              ; 11      ;
-; DIR_X                                                                                                                                      ; 11      ;
+; PONTOS2[6]~9                                                                                                                               ; 11      ;
 ; ScreenRender:VGA|Add2~0                                                                                                                    ; 11      ;
 ; lpm_divide:Mod2|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_53f:divider|add_sub_3_result_int[4]~6                  ; 11      ;
 ; lpm_divide:Mod0|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_53f:divider|add_sub_3_result_int[4]~6                  ; 11      ;
 ; ScreenRender:VGA|sync_mod:vga_sync|y_counter_next~0                                                                                        ; 10      ;
 ; ScreenRender:VGA|sync_mod:vga_sync|x_counter[4]~31                                                                                         ; 10      ;
 ; ScreenRender:VGA|sync_mod:vga_sync|x_counter[4]~30                                                                                         ; 10      ;
-; Y[0]                                                                                                                                       ; 10      ;
+; x_missle_p2[0]                                                                                                                             ; 10      ;
+; DIR_X                                                                                                                                      ; 10      ;
 ; lpm_divide:Div3|lpm_divide_9gm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_v2f:divider|add_sub_5_result_int[5]~8                  ; 10      ;
 ; PONTOS2[3]                                                                                                                                 ; 10      ;
 ; lpm_divide:Div1|lpm_divide_9gm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_v2f:divider|add_sub_5_result_int[5]~8                  ; 10      ;
 ; PONTOS1[3]                                                                                                                                 ; 10      ;
 ; x_missle_p1[0]                                                                                                                             ; 9       ;
-; x_missle_p2[0]                                                                                                                             ; 9       ;
+; x_missle_p2[1]                                                                                                                             ; 9       ;
 ; X[5]                                                                                                                                       ; 9       ;
 ; PONTOS2[0]                                                                                                                                 ; 9       ;
 ; PONTOS1[0]                                                                                                                                 ; 9       ;
+; process_2~8                                                                                                                                ; 8       ;
 ; x_missle_p1[0]~8                                                                                                                           ; 8       ;
 ; x_missle_p1[1]                                                                                                                             ; 8       ;
-; x_missle_p2[1]                                                                                                                             ; 8       ;
-; X[2]                                                                                                                                       ; 8       ;
 ; PONTOS2[2]                                                                                                                                 ; 8       ;
 ; PONTOS2[4]                                                                                                                                 ; 8       ;
 ; PONTOS2[5]                                                                                                                                 ; 8       ;
@@ -1445,8 +1444,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; PONTOS1[4]                                                                                                                                 ; 8       ;
 ; PONTOS1[5]                                                                                                                                 ; 8       ;
 ; x_missle_p1[5]~2                                                                                                                           ; 7       ;
-; LessThan2~2                                                                                                                                ; 7       ;
-; PONTOS2[6]~11                                                                                                                              ; 7       ;
+; LessThan6~2                                                                                                                                ; 7       ;
+; PONTOS2[6]~10                                                                                                                              ; 7       ;
 ; PONTOS1[6]~11                                                                                                                              ; 7       ;
 ; ScreenRender:VGA|Add3~3                                                                                                                    ; 7       ;
 ; ScreenRender:VGA|Add3~2                                                                                                                    ; 7       ;
@@ -1469,19 +1468,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; PONTOS2[1]                                                                                                                                 ; 7       ;
 ; PONTOS1[6]                                                                                                                                 ; 7       ;
 ; PONTOS1[1]                                                                                                                                 ; 7       ;
-; process_2~12                                                                                                                               ; 6       ;
 ; y_missle_p1[5]~1                                                                                                                           ; 6       ;
 ; x_missle_p1[5]~1                                                                                                                           ; 6       ;
 ; y_missle_p2[5]~1                                                                                                                           ; 6       ;
 ; x_missle_p2[3]~2                                                                                                                           ; 6       ;
-; VY[0]                                                                                                                                      ; 6       ;
+; LessThan7~1                                                                                                                                ; 6       ;
 ; y_racket_p1[0]~0                                                                                                                           ; 6       ;
 ; debounce:DB2|output                                                                                                                        ; 6       ;
 ; x_missle_p1[2]                                                                                                                             ; 6       ;
 ; x_missle_p1[3]                                                                                                                             ; 6       ;
 ; x_missle_p1[4]                                                                                                                             ; 6       ;
 ; x_missle_p1[5]                                                                                                                             ; 6       ;
-; ScreenRender:VGA|Add3~1                                                                                                                    ; 6       ;
+; X[0]                                                                                                                                       ; 6       ;
+; X[2]                                                                                                                                       ; 6       ;
+; X[1]                                                                                                                                       ; 6       ;
 ; ScreenRender:VGA|sync_mod:vga_sync|Equal1~0                                                                                                ; 6       ;
 ; ScreenRender:VGA|lpm_divide:Div0|lpm_divide_jhm:auto_generated|sign_div_unsign_klh:divider|alt_u_div_j5f:divider|add_sub_9_result_int[5]~8 ; 6       ;
 ; ScreenRender:VGA|sync_mod:vga_sync|x_counter[3]                                                                                            ; 6       ;
@@ -1492,15 +1492,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; COUNTER_1[0]                                                                                                                               ; 5       ;
 ; COUNTER_1[1]                                                                                                                               ; 5       ;
 ; COUNTER_1[2]                                                                                                                               ; 5       ;
-; process_2~13                                                                                                                               ; 5       ;
-; Y[2]~1                                                                                                                                     ; 5       ;
+; process_2~9                                                                                                                                ; 5       ;
+; process_2~7                                                                                                                                ; 5       ;
+; VY[0]                                                                                                                                      ; 5       ;
 ; VY[1]                                                                                                                                      ; 5       ;
-; process_2~3                                                                                                                                ; 5       ;
-; process_2~1                                                                                                                                ; 5       ;
+; Equal28~0                                                                                                                                  ; 5       ;
 ; x_missle_p2[2]                                                                                                                             ; 5       ;
 ; x_missle_p2[3]                                                                                                                             ; 5       ;
 ; x_missle_p2[4]                                                                                                                             ; 5       ;
 ; x_missle_p2[5]                                                                                                                             ; 5       ;
+; ScreenRender:VGA|Add3~1                                                                                                                    ; 5       ;
 ; ScreenRender:VGA|Add3~0                                                                                                                    ; 5       ;
 ; ScreenRender:VGA|sync_mod:vga_sync|video_on~4                                                                                              ; 5       ;
 ; ScreenRender:VGA|sync_mod:vga_sync|counter_v[9]                                                                                            ; 5       ;
@@ -1516,27 +1517,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; COUNTER_2[1]                                                                                                                               ; 4       ;
 ; COUNTER_2[2]                                                                                                                               ; 4       ;
 ; COUNTER_2[3]                                                                                                                               ; 4       ;
-; Equal13~1                                                                                                                                  ; 4       ;
-; process_2~11                                                                                                                               ; 4       ;
+; Equal9~4                                                                                                                                   ; 4       ;
 ; Equal26~5                                                                                                                                  ; 4       ;
 ; IS_MISSIL1                                                                                                                                 ; 4       ;
 ; Equal30~4                                                                                                                                  ; 4       ;
 ; IS_MISSIL2                                                                                                                                 ; 4       ;
-; DIR_X~1                                                                                                                                    ; 4       ;
 ; ScreenRender:VGA|sync_mod:vga_sync|Equal1~1                                                                                                ; 4       ;
 ; ScreenRender:VGA|sync_mod:vga_sync|Equal0~2                                                                                                ; 4       ;
-; process_2~2                                                                                                                                ; 4       ;
 ; Add12~4                                                                                                                                    ; 4       ;
 ; Add12~3                                                                                                                                    ; 4       ;
 ; Add12~2                                                                                                                                    ; 4       ;
+; ScreenRender:VGA|Add3~4                                                                                                                    ; 4       ;
+; Equal1~4                                                                                                                                   ; 4       ;
 ; ScreenRender:VGA|blue[0]~0                                                                                                                 ; 4       ;
 ; ScreenRender:VGA|green[0]~0                                                                                                                ; 4       ;
 ; ScreenRender:VGA|red[0]~11                                                                                                                 ; 4       ;
-; ScreenRender:VGA|Equal6~0                                                                                                                  ; 4       ;
 ; X[4]                                                                                                                                       ; 4       ;
-; X[0]                                                                                                                                       ; 4       ;
 ; X[3]                                                                                                                                       ; 4       ;
-; X[1]                                                                                                                                       ; 4       ;
 ; ScreenRender:VGA|sync_mod:vga_sync|counter_v[3]                                                                                            ; 4       ;
 ; ScreenRender:VGA|sync_mod:vga_sync|counter_v[0]                                                                                            ; 4       ;
 ; ScreenRender:VGA|sync_mod:vga_sync|counter_v[1]                                                                                            ; 4       ;
@@ -1548,17 +1545,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Add20~36                                                                                                                                   ; 4       ;
 ; Add20~34                                                                                                                                   ; 4       ;
 ; Add20~32                                                                                                                                   ; 4       ;
-; Add8~58                                                                                                                                    ; 4       ;
-; Add8~56                                                                                                                                    ; 4       ;
-; Add8~54                                                                                                                                    ; 4       ;
-; Add8~50                                                                                                                                    ; 4       ;
-; Add8~48                                                                                                                                    ; 4       ;
-; Add8~40                                                                                                                                    ; 4       ;
-; Add8~38                                                                                                                                    ; 4       ;
-; Add8~34                                                                                                                                    ; 4       ;
-; Add8~20                                                                                                                                    ; 4       ;
-; Add8~18                                                                                                                                    ; 4       ;
-; Add8~12                                                                                                                                    ; 4       ;
 ; ScreenRender:VGA|sync_mod:vga_sync|y_counter[2]                                                                                            ; 4       ;
 ; ScreenRender:VGA|sync_mod:vga_sync|y_counter[7]                                                                                            ; 4       ;
 ; ScreenRender:VGA|sync_mod:vga_sync|y_counter[8]                                                                                            ; 4       ;
@@ -1566,23 +1552,27 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ScreenRender:VGA|sync_mod:vga_sync|x_counter[9]                                                                                            ; 4       ;
 ; lpm_divide:Mod3|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_53f:divider|add_sub_6_result_int[7]~14                 ; 4       ;
 ; lpm_divide:Mod1|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_53f:divider|add_sub_6_result_int[7]~14                 ; 4       ;
+; VY~21                                                                                                                                      ; 3       ;
 ; debounce:DB3|aux_output                                                                                                                    ; 3       ;
-; process_3~22                                                                                                                               ; 3       ;
-; process_3~10                                                                                                                               ; 3       ;
-; VY~7                                                                                                                                       ; 3       ;
-; Equal17~3                                                                                                                                  ; 3       ;
-; process_2~20                                                                                                                               ; 3       ;
+; process_3~23                                                                                                                               ; 3       ;
+; process_3~11                                                                                                                               ; 3       ;
+; process_2~26                                                                                                                               ; 3       ;
+; Equal14~3                                                                                                                                  ; 3       ;
+; VY~6                                                                                                                                       ; 3       ;
 ; debounce:DB1|aux_output                                                                                                                    ; 3       ;
 ; debounce:DB2|aux_output                                                                                                                    ; 3       ;
 ; RANDOM_VX                                                                                                                                  ; 3       ;
 ; counter_missi2[0]                                                                                                                          ; 3       ;
+; Equal0~8                                                                                                                                   ; 3       ;
+; Equal1~9                                                                                                                                   ; 3       ;
+; process_2~5                                                                                                                                ; 3       ;
 ; Add23~0                                                                                                                                    ; 3       ;
 ; Add22~0                                                                                                                                    ; 3       ;
+; process_3~0                                                                                                                                ; 3       ;
+; process_2~3                                                                                                                                ; 3       ;
 ; LessThan10~0                                                                                                                               ; 3       ;
 ; Add12~1                                                                                                                                    ; 3       ;
 ; Add12~0                                                                                                                                    ; 3       ;
-; ScreenRender:VGA|Add3~4                                                                                                                    ; 3       ;
-; Equal1~4                                                                                                                                   ; 3       ;
 ; \process_2:counter_aumenta_tempo[0]                                                                                                        ; 3       ;
 ; process_2~0                                                                                                                                ; 3       ;
 ; y_missle_p1[4]                                                                                                                             ; 3       ;
@@ -1606,11 +1596,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Add14~54                                                                                                                                   ; 3       ;
 ; Add19~58                                                                                                                                   ; 3       ;
 ; Add19~54                                                                                                                                   ; 3       ;
-; Add24~0                                                                                                                                    ; 3       ;
+; Add8~58                                                                                                                                    ; 3       ;
+; Add8~56                                                                                                                                    ; 3       ;
+; Add8~54                                                                                                                                    ; 3       ;
 ; Add8~52                                                                                                                                    ; 3       ;
+; Add8~50                                                                                                                                    ; 3       ;
+; Add8~48                                                                                                                                    ; 3       ;
+; Add8~40                                                                                                                                    ; 3       ;
+; Add8~38                                                                                                                                    ; 3       ;
+; Add8~34                                                                                                                                    ; 3       ;
 ; Add8~32                                                                                                                                    ; 3       ;
 ; Add8~24                                                                                                                                    ; 3       ;
 ; Add8~22                                                                                                                                    ; 3       ;
+; Add8~20                                                                                                                                    ; 3       ;
+; Add8~18                                                                                                                                    ; 3       ;
+; Add8~12                                                                                                                                    ; 3       ;
 ; ScreenRender:VGA|sync_mod:vga_sync|y_counter[1]                                                                                            ; 3       ;
 ; ScreenRender:VGA|sync_mod:vga_sync|y_counter[9]                                                                                            ; 3       ;
 ; lpm_divide:Mod2|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_53f:divider|add_sub_6_result_int[7]~12                 ; 3       ;
@@ -1699,14 +1699,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; counter_permite_missil2[27]                                                                                                                ; 2       ;
 ; DIR_Y~4                                                                                                                                    ; 2       ;
 ; RANDOM_VY                                                                                                                                  ; 2       ;
-; VY~9                                                                                                                                       ; 2       ;
-; VY[1]~3                                                                                                                                    ; 2       ;
-; process_2~25                                                                                                                               ; 2       ;
-; process_2~24                                                                                                                               ; 2       ;
-; Equal16~4                                                                                                                                  ; 2       ;
-; Equal17~0                                                                                                                                  ; 2       ;
-; Equal13~0                                                                                                                                  ; 2       ;
-; DIR_X~3                                                                                                                                    ; 2       ;
+; Equal10~4                                                                                                                                  ; 2       ;
+; process_2~22                                                                                                                               ; 2       ;
+; Equal14~0                                                                                                                                  ; 2       ;
+; Equal10~3                                                                                                                                  ; 2       ;
+; Equal10~2                                                                                                                                  ; 2       ;
+; Equal10~1                                                                                                                                  ; 2       ;
+; Equal10~0                                                                                                                                  ; 2       ;
+; DIR_X~4                                                                                                                                    ; 2       ;
 ; DIR_X~2                                                                                                                                    ; 2       ;
 ; counter_missi2[18]                                                                                                                         ; 2       ;
 ; counter_missi2[17]                                                                                                                         ; 2       ;
@@ -1726,20 +1726,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; counter_missi2[14]                                                                                                                         ; 2       ;
 ; counter_missi2[15]                                                                                                                         ; 2       ;
 ; counter_missi2[16]                                                                                                                         ; 2       ;
-; X[4]~10                                                                                                                                    ; 2       ;
-; Y~6                                                                                                                                        ; 2       ;
-; LessThan3~1                                                                                                                                ; 2       ;
-; LessThan3~0                                                                                                                                ; 2       ;
-; Equal0~8                                                                                                                                   ; 2       ;
-; Equal0~5                                                                                                                                   ; 2       ;
-; Equal0~4                                                                                                                                   ; 2       ;
-; Equal1~5                                                                                                                                   ; 2       ;
+; Y~11                                                                                                                                       ; 2       ;
+; process_2~6                                                                                                                                ; 2       ;
+; Equal28~1                                                                                                                                  ; 2       ;
+; DIR_X~1                                                                                                                                    ; 2       ;
+; X~2                                                                                                                                        ; 2       ;
 ; Add23~1                                                                                                                                    ; 2       ;
 ; Add22~1                                                                                                                                    ; 2       ;
 ; ScreenRender:VGA|sync_mod:vga_sync|counter_h[0]                                                                                            ; 2       ;
 ; ScreenRender:VGA|sync_mod:vga_sync|counter_h[1]                                                                                            ; 2       ;
 ; ScreenRender:VGA|sync_mod:vga_sync|counter_h[2]                                                                                            ; 2       ;
 ; ScreenRender:VGA|sync_mod:vga_sync|counter_h[3]                                                                                            ; 2       ;
+; process_2~2                                                                                                                                ; 2       ;
 ; \process_2:counter_aumenta_tempo[27]                                                                                                       ; 2       ;
 ; \process_2:counter_aumenta_tempo[26]                                                                                                       ; 2       ;
 ; \process_2:counter_aumenta_tempo[1]                                                                                                        ; 2       ;
@@ -1767,9 +1765,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; \process_2:counter_aumenta_tempo[23]                                                                                                       ; 2       ;
 ; \process_2:counter_aumenta_tempo[24]                                                                                                       ; 2       ;
 ; \process_2:counter_aumenta_tempo[25]                                                                                                       ; 2       ;
+; process_2~1                                                                                                                                ; 2       ;
 ; ScreenRender:VGA|LessThan7~1                                                                                                               ; 2       ;
 ; ScreenRender:VGA|process_0~12                                                                                                              ; 2       ;
-; ScreenRender:VGA|Equal6~1                                                                                                                  ; 2       ;
+; ScreenRender:VGA|Equal6~0                                                                                                                  ; 2       ;
 ; ScreenRender:VGA|red[0]~4                                                                                                                  ; 2       ;
 ; ScreenRender:VGA|process_0~7                                                                                                               ; 2       ;
 ; ScreenRender:VGA|red[0]~3                                                                                                                  ; 2       ;
@@ -1901,6 +1900,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Add19~4                                                                                                                                    ; 2       ;
 ; Add19~2                                                                                                                                    ; 2       ;
 ; Add19~0                                                                                                                                    ; 2       ;
+; Add24~0                                                                                                                                    ; 2       ;
+; DIR_X~0                                                                                                                                    ; 2       ;
 ; Add20~30                                                                                                                                   ; 2       ;
 ; Add20~28                                                                                                                                   ; 2       ;
 ; Add20~26                                                                                                                                   ; 2       ;
@@ -2019,6 +2020,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ScreenRender:VGA|LessThan5~7                                                                                                               ; 1       ;
 ; ScreenRender:VGA|LessThan7~8                                                                                                               ; 1       ;
 ; ScreenRender:VGA|LessThan7~7                                                                                                               ; 1       ;
+; DIR_Y~7                                                                                                                                    ; 1       ;
+; DIR_Y~6                                                                                                                                    ; 1       ;
 ; ScreenRender:VGA|lpm_divide:Div1|lpm_divide_jhm:auto_generated|sign_div_unsign_klh:divider|alt_u_div_j5f:divider|StageOut[42]~103          ; 1       ;
 ; ScreenRender:VGA|lpm_divide:Div1|lpm_divide_jhm:auto_generated|sign_div_unsign_klh:divider|alt_u_div_j5f:divider|StageOut[23]~98           ; 1       ;
 ; ScreenRender:VGA|lpm_divide:Div0|lpm_divide_jhm:auto_generated|sign_div_unsign_klh:divider|alt_u_div_j5f:divider|StageOut[42]~103          ; 1       ;
@@ -2031,7 +2034,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; counter_permite_missil1~21                                                                                                                 ; 1       ;
 ; counter_permite_missil2~22                                                                                                                 ; 1       ;
 ; counter_permite_missil2~21                                                                                                                 ; 1       ;
-; DIR_Y~7                                                                                                                                    ; 1       ;
+; DIR_Y~5                                                                                                                                    ; 1       ;
+; VY~22                                                                                                                                      ; 1       ;
+; Y~20                                                                                                                                       ; 1       ;
+; Y~19                                                                                                                                       ; 1       ;
+; Y~18                                                                                                                                       ; 1       ;
+; Y~17                                                                                                                                       ; 1       ;
+; X[4]~12                                                                                                                                    ; 1       ;
 ; ScreenRender:VGA|LessThan5~6                                                                                                               ; 1       ;
 ; ScreenRender:VGA|LessThan3~12                                                                                                              ; 1       ;
 ; ScreenRender:VGA|lpm_divide:Div1|lpm_divide_jhm:auto_generated|sign_div_unsign_klh:divider|alt_u_div_j5f:divider|StageOut[43]~97           ; 1       ;
@@ -2246,17 +2255,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Equal2~0                                                                                                                                   ; 1       ;
 ; IS_MISSIL1~1                                                                                                                               ; 1       ;
 ; IS_MISSIL1~0                                                                                                                               ; 1       ;
+; process_3~22                                                                                                                               ; 1       ;
 ; process_3~21                                                                                                                               ; 1       ;
 ; process_3~20                                                                                                                               ; 1       ;
 ; process_3~19                                                                                                                               ; 1       ;
 ; process_3~18                                                                                                                               ; 1       ;
-; process_3~17                                                                                                                               ; 1       ;
 ; debounce:DB3|output                                                                                                                        ; 1       ;
+; process_3~17                                                                                                                               ; 1       ;
 ; process_3~16                                                                                                                               ; 1       ;
 ; process_3~15                                                                                                                               ; 1       ;
 ; process_3~14                                                                                                                               ; 1       ;
 ; process_3~13                                                                                                                               ; 1       ;
-; process_3~12                                                                                                                               ; 1       ;
 ; Equal25~8                                                                                                                                  ; 1       ;
 ; Equal25~7                                                                                                                                  ; 1       ;
 ; Equal25~6                                                                                                                                  ; 1       ;
@@ -2279,6 +2288,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; counter_missi2~0                                                                                                                           ; 1       ;
 ; IS_MISSIL2~1                                                                                                                               ; 1       ;
 ; IS_MISSIL2~0                                                                                                                               ; 1       ;
+; process_3~10                                                                                                                               ; 1       ;
 ; process_3~9                                                                                                                                ; 1       ;
 ; process_3~8                                                                                                                                ; 1       ;
 ; process_3~7                                                                                                                                ; 1       ;
@@ -2287,7 +2297,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; process_3~4                                                                                                                                ; 1       ;
 ; process_3~3                                                                                                                                ; 1       ;
 ; process_3~2                                                                                                                                ; 1       ;
-; process_3~1                                                                                                                                ; 1       ;
 ; Equal29~8                                                                                                                                  ; 1       ;
 ; Equal29~7                                                                                                                                  ; 1       ;
 ; Equal29~6                                                                                                                                  ; 1       ;
@@ -2297,40 +2306,37 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Equal29~2                                                                                                                                  ; 1       ;
 ; Equal29~1                                                                                                                                  ; 1       ;
 ; Equal29~0                                                                                                                                  ; 1       ;
-; process_3~0                                                                                                                                ; 1       ;
-; DIR_Y~6                                                                                                                                    ; 1       ;
-; DIR_Y~5                                                                                                                                    ; 1       ;
+; process_3~1                                                                                                                                ; 1       ;
+; VY~20                                                                                                                                      ; 1       ;
+; VY~19                                                                                                                                      ; 1       ;
+; VY~18                                                                                                                                      ; 1       ;
+; VY~17                                                                                                                                      ; 1       ;
+; VY~16                                                                                                                                      ; 1       ;
+; VY~15                                                                                                                                      ; 1       ;
 ; VY~14                                                                                                                                      ; 1       ;
 ; VY~13                                                                                                                                      ; 1       ;
-; VY~12                                                                                                                                      ; 1       ;
-; VY~11                                                                                                                                      ; 1       ;
-; VY~10                                                                                                                                      ; 1       ;
-; VY~8                                                                                                                                       ; 1       ;
-; VY[1]~6                                                                                                                                    ; 1       ;
-; VY[1]~5                                                                                                                                    ; 1       ;
-; VY[1]~4                                                                                                                                    ; 1       ;
-; VY[1]~2                                                                                                                                    ; 1       ;
-; Equal17~2                                                                                                                                  ; 1       ;
-; Equal17~1                                                                                                                                  ; 1       ;
-; VY[1]~1                                                                                                                                    ; 1       ;
-; Equal21~2                                                                                                                                  ; 1       ;
-; Equal21~1                                                                                                                                  ; 1       ;
-; Equal21~0                                                                                                                                  ; 1       ;
-; VY[1]~0                                                                                                                                    ; 1       ;
+; VY[1]~12                                                                                                                                   ; 1       ;
+; VY[1]~11                                                                                                                                   ; 1       ;
+; VY[1]~10                                                                                                                                   ; 1       ;
+; VY[1]~9                                                                                                                                    ; 1       ;
+; VY[1]~8                                                                                                                                    ; 1       ;
+; process_2~25                                                                                                                               ; 1       ;
+; process_2~24                                                                                                                               ; 1       ;
 ; process_2~23                                                                                                                               ; 1       ;
-; Equal15~0                                                                                                                                  ; 1       ;
-; process_2~22                                                                                                                               ; 1       ;
+; Equal9~3                                                                                                                                   ; 1       ;
+; Equal9~2                                                                                                                                   ; 1       ;
+; Equal9~1                                                                                                                                   ; 1       ;
+; Equal9~0                                                                                                                                   ; 1       ;
 ; process_2~21                                                                                                                               ; 1       ;
-; Equal16~3                                                                                                                                  ; 1       ;
-; Equal16~2                                                                                                                                  ; 1       ;
-; Equal16~1                                                                                                                                  ; 1       ;
-; Equal16~0                                                                                                                                  ; 1       ;
+; process_2~20                                                                                                                               ; 1       ;
+; Equal7~0                                                                                                                                   ; 1       ;
 ; process_2~19                                                                                                                               ; 1       ;
 ; process_2~18                                                                                                                               ; 1       ;
 ; process_2~17                                                                                                                               ; 1       ;
 ; process_2~16                                                                                                                               ; 1       ;
-; process_2~15                                                                                                                               ; 1       ;
-; process_2~14                                                                                                                               ; 1       ;
+; Equal14~2                                                                                                                                  ; 1       ;
+; Equal14~1                                                                                                                                  ; 1       ;
+; VY[1]~7                                                                                                                                    ; 1       ;
 ; debounce:DB1|process_1~0                                                                                                                   ; 1       ;
 ; debounce:DB1|\process_1:old_input                                                                                                          ; 1       ;
 ; debounce:DB2|process_1~0                                                                                                                   ; 1       ;
@@ -2356,12 +2362,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; counter~11                                                                                                                                 ; 1       ;
 ; counter~10                                                                                                                                 ; 1       ;
 ; counter~9                                                                                                                                  ; 1       ;
-; counter~8                                                                                                                                  ; 1       ;
-; counter~7                                                                                                                                  ; 1       ;
-; counter~6                                                                                                                                  ; 1       ;
-; counter~5                                                                                                                                  ; 1       ;
-; counter~4                                                                                                                                  ; 1       ;
-; counter~3                                                                                                                                  ; 1       ;
 +--------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -2370,49 +2370,50 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+------------------------+
 ; Routing Resource Type ; Usage                  ;
 +-----------------------+------------------------+
-; Block interconnects   ; 1,398 / 47,787 ( 3 % ) ;
-; C16 interconnects     ; 1 / 1,804 ( < 1 % )    ;
-; C4 interconnects      ; 449 / 31,272 ( 1 % )   ;
-; Direct links          ; 502 / 47,787 ( 1 % )   ;
+; Block interconnects   ; 1,461 / 47,787 ( 3 % ) ;
+; C16 interconnects     ; 2 / 1,804 ( < 1 % )    ;
+; C4 interconnects      ; 463 / 31,272 ( 1 % )   ;
+; Direct links          ; 521 / 47,787 ( 1 % )   ;
 ; Global clocks         ; 1 / 20 ( 5 % )         ;
-; Local interconnects   ; 745 / 15,408 ( 5 % )   ;
-; R24 interconnects     ; 12 / 1,775 ( < 1 % )   ;
-; R4 interconnects      ; 547 / 41,310 ( 1 % )   ;
+; Local interconnects   ; 698 / 15,408 ( 5 % )   ;
+; R24 interconnects     ; 11 / 1,775 ( < 1 % )   ;
+; R4 interconnects      ; 516 / 41,310 ( 1 % )   ;
 +-----------------------+------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                          ;
 +---------------------------------------------+-------------------------------+
-; Number of Logic Elements  (Average = 13.14) ; Number of LABs  (Total = 105) ;
+; Number of Logic Elements  (Average = 13.40) ; Number of LABs  (Total = 103) ;
 +---------------------------------------------+-------------------------------+
-; 1                                           ; 3                             ;
-; 2                                           ; 2                             ;
-; 3                                           ; 1                             ;
-; 4                                           ; 1                             ;
-; 5                                           ; 2                             ;
-; 6                                           ; 0                             ;
-; 7                                           ; 5                             ;
-; 8                                           ; 3                             ;
+; 1                                           ; 0                             ;
+; 2                                           ; 1                             ;
+; 3                                           ; 0                             ;
+; 4                                           ; 3                             ;
+; 5                                           ; 1                             ;
+; 6                                           ; 2                             ;
+; 7                                           ; 6                             ;
+; 8                                           ; 2                             ;
 ; 9                                           ; 6                             ;
-; 10                                          ; 3                             ;
-; 11                                          ; 1                             ;
-; 12                                          ; 3                             ;
-; 13                                          ; 8                             ;
-; 14                                          ; 1                             ;
-; 15                                          ; 8                             ;
-; 16                                          ; 58                            ;
+; 10                                          ; 2                             ;
+; 11                                          ; 2                             ;
+; 12                                          ; 6                             ;
+; 13                                          ; 4                             ;
+; 14                                          ; 2                             ;
+; 15                                          ; 13                            ;
+; 16                                          ; 53                            ;
 +---------------------------------------------+-------------------------------+
 
 
 +--------------------------------------------------------------------+
 ; LAB-wide Signals                                                   ;
 +------------------------------------+-------------------------------+
-; LAB-wide Signals  (Average = 0.84) ; Number of LABs  (Total = 105) ;
+; LAB-wide Signals  (Average = 0.77) ; Number of LABs  (Total = 103) ;
 +------------------------------------+-------------------------------+
-; 1 Clock                            ; 55                            ;
-; 1 Clock enable                     ; 31                            ;
+; 1 Clock                            ; 51                            ;
+; 1 Clock enable                     ; 25                            ;
 ; 1 Sync. clear                      ; 1                             ;
+; 1 Sync. load                       ; 1                             ;
 ; 2 Clock enables                    ; 1                             ;
 +------------------------------------+-------------------------------+
 
@@ -2420,117 +2421,114 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                          ;
 +----------------------------------------------+-------------------------------+
-; Number of Signals Sourced  (Average = 15.39) ; Number of LABs  (Total = 105) ;
+; Number of Signals Sourced  (Average = 15.67) ; Number of LABs  (Total = 103) ;
 +----------------------------------------------+-------------------------------+
 ; 0                                            ; 0                             ;
-; 1                                            ; 3                             ;
-; 2                                            ; 2                             ;
-; 3                                            ; 1                             ;
-; 4                                            ; 1                             ;
-; 5                                            ; 4                             ;
-; 6                                            ; 1                             ;
-; 7                                            ; 6                             ;
-; 8                                            ; 3                             ;
-; 9                                            ; 3                             ;
-; 10                                           ; 2                             ;
-; 11                                           ; 2                             ;
-; 12                                           ; 3                             ;
-; 13                                           ; 4                             ;
-; 14                                           ; 5                             ;
+; 1                                            ; 0                             ;
+; 2                                            ; 1                             ;
+; 3                                            ; 0                             ;
+; 4                                            ; 2                             ;
+; 5                                            ; 2                             ;
+; 6                                            ; 3                             ;
+; 7                                            ; 7                             ;
+; 8                                            ; 1                             ;
+; 9                                            ; 4                             ;
+; 10                                           ; 3                             ;
+; 11                                           ; 6                             ;
+; 12                                           ; 5                             ;
+; 13                                           ; 5                             ;
+; 14                                           ; 4                             ;
 ; 15                                           ; 9                             ;
-; 16                                           ; 11                            ;
-; 17                                           ; 8                             ;
-; 18                                           ; 2                             ;
-; 19                                           ; 3                             ;
+; 16                                           ; 10                            ;
+; 17                                           ; 4                             ;
+; 18                                           ; 3                             ;
+; 19                                           ; 4                             ;
 ; 20                                           ; 6                             ;
-; 21                                           ; 6                             ;
-; 22                                           ; 3                             ;
-; 23                                           ; 4                             ;
+; 21                                           ; 1                             ;
+; 22                                           ; 4                             ;
+; 23                                           ; 6                             ;
 ; 24                                           ; 4                             ;
-; 25                                           ; 3                             ;
+; 25                                           ; 0                             ;
 ; 26                                           ; 2                             ;
-; 27                                           ; 1                             ;
-; 28                                           ; 1                             ;
+; 27                                           ; 4                             ;
+; 28                                           ; 0                             ;
 ; 29                                           ; 0                             ;
-; 30                                           ; 1                             ;
-; 31                                           ; 1                             ;
+; 30                                           ; 3                             ;
 +----------------------------------------------+-------------------------------+
 
 
 +---------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                         ;
 +-------------------------------------------------+-------------------------------+
-; Number of Signals Sourced Out  (Average = 7.81) ; Number of LABs  (Total = 105) ;
+; Number of Signals Sourced Out  (Average = 8.33) ; Number of LABs  (Total = 103) ;
 +-------------------------------------------------+-------------------------------+
 ; 0                                               ; 0                             ;
-; 1                                               ; 6                             ;
-; 2                                               ; 6                             ;
-; 3                                               ; 8                             ;
-; 4                                               ; 5                             ;
+; 1                                               ; 5                             ;
+; 2                                               ; 4                             ;
+; 3                                               ; 4                             ;
+; 4                                               ; 7                             ;
 ; 5                                               ; 7                             ;
-; 6                                               ; 3                             ;
-; 7                                               ; 20                            ;
-; 8                                               ; 15                            ;
-; 9                                               ; 5                             ;
+; 6                                               ; 8                             ;
+; 7                                               ; 17                            ;
+; 8                                               ; 10                            ;
+; 9                                               ; 9                             ;
 ; 10                                              ; 7                             ;
-; 11                                              ; 8                             ;
-; 12                                              ; 5                             ;
-; 13                                              ; 2                             ;
-; 14                                              ; 0                             ;
-; 15                                              ; 2                             ;
-; 16                                              ; 0                             ;
+; 11                                              ; 3                             ;
+; 12                                              ; 7                             ;
+; 13                                              ; 3                             ;
+; 14                                              ; 1                             ;
+; 15                                              ; 4                             ;
+; 16                                              ; 1                             ;
 ; 17                                              ; 1                             ;
 ; 18                                              ; 0                             ;
-; 19                                              ; 1                             ;
-; 20                                              ; 0                             ;
+; 19                                              ; 0                             ;
+; 20                                              ; 1                             ;
 ; 21                                              ; 2                             ;
 ; 22                                              ; 1                             ;
 ; 23                                              ; 0                             ;
 ; 24                                              ; 0                             ;
-; 25                                              ; 0                             ;
-; 26                                              ; 1                             ;
+; 25                                              ; 1                             ;
 +-------------------------------------------------+-------------------------------+
 
 
 +------------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                          ;
 +----------------------------------------------+-------------------------------+
-; Number of Distinct Inputs  (Average = 12.21) ; Number of LABs  (Total = 105) ;
+; Number of Distinct Inputs  (Average = 12.92) ; Number of LABs  (Total = 103) ;
 +----------------------------------------------+-------------------------------+
 ; 0                                            ; 0                             ;
 ; 1                                            ; 0                             ;
-; 2                                            ; 4                             ;
-; 3                                            ; 5                             ;
-; 4                                            ; 4                             ;
-; 5                                            ; 8                             ;
-; 6                                            ; 3                             ;
+; 2                                            ; 2                             ;
+; 3                                            ; 3                             ;
+; 4                                            ; 3                             ;
+; 5                                            ; 6                             ;
+; 6                                            ; 5                             ;
 ; 7                                            ; 4                             ;
-; 8                                            ; 9                             ;
-; 9                                            ; 3                             ;
-; 10                                           ; 9                             ;
+; 8                                            ; 6                             ;
+; 9                                            ; 8                             ;
+; 10                                           ; 5                             ;
 ; 11                                           ; 8                             ;
-; 12                                           ; 6                             ;
-; 13                                           ; 5                             ;
+; 12                                           ; 5                             ;
+; 13                                           ; 6                             ;
 ; 14                                           ; 5                             ;
 ; 15                                           ; 6                             ;
 ; 16                                           ; 3                             ;
-; 17                                           ; 1                             ;
-; 18                                           ; 2                             ;
-; 19                                           ; 2                             ;
-; 20                                           ; 2                             ;
+; 17                                           ; 2                             ;
+; 18                                           ; 5                             ;
+; 19                                           ; 3                             ;
+; 20                                           ; 4                             ;
 ; 21                                           ; 3                             ;
-; 22                                           ; 2                             ;
-; 23                                           ; 1                             ;
-; 24                                           ; 3                             ;
-; 25                                           ; 1                             ;
+; 22                                           ; 1                             ;
+; 23                                           ; 0                             ;
+; 24                                           ; 4                             ;
+; 25                                           ; 0                             ;
 ; 26                                           ; 1                             ;
 ; 27                                           ; 1                             ;
 ; 28                                           ; 1                             ;
-; 29                                           ; 0                             ;
+; 29                                           ; 1                             ;
 ; 30                                           ; 1                             ;
 ; 31                                           ; 0                             ;
-; 32                                           ; 0                             ;
-; 33                                           ; 2                             ;
+; 32                                           ; 1                             ;
 +----------------------------------------------+-------------------------------+
 
 
@@ -2728,7 +2726,7 @@ Info (176215): I/O bank details before I/O pin placement
         Info (176213): I/O bank number 6 does not use VREF pins and has 2.5V VCCIO pins. 15 total pin(s) used --  28 pins available
         Info (176213): I/O bank number 7 does not use VREF pins and has 2.5V VCCIO pins. 28 total pin(s) used --  19 pins available
         Info (176213): I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  43 pins available
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:03
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:05
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:01
 Info (170191): Fitter placement operations beginning
@@ -2736,27 +2734,27 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:03
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 1% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 6% of the available device resources in the region that extends from location X21_Y20 to location X30_Y29
+    Info (170196): Router estimated peak interconnect usage is 7% of the available device resources in the region that extends from location X21_Y20 to location X30_Y29
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:03
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 1.00 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 1.16 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
-Info (144001): Generated suppressed messages file C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/PINGMATRONIX.fit.smsg
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:03
+Info (144001): Generated suppressed messages file C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/Pingmatronix/PINGMATRONIX.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 4 warnings
     Info: Peak virtual memory: 1073 megabytes
-    Info: Processing ended: Tue Dec 05 20:10:55 2017
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:19
+    Info: Processing ended: Wed Dec 06 15:28:18 2017
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:21
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/PINGMATRONIX.fit.smsg.
+The suppressed messages can be found in C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/Pingmatronix/PINGMATRONIX.fit.smsg.
 
 

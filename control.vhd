@@ -211,6 +211,38 @@ BEGIN
 			END IF;
 		END IF;
 		
+	-- REBATE RAQUETE ESQUERDA
+		IF X = 3 AND DIR_X = '0' THEN
+			IF Y  <= y_racket_p1 + 2 AND Y >= y_racket_p1 - 2  THEN
+				DIR_X <= '1';
+				IF Y = y_racket_p1 + 2 OR Y = y_racket_p1 - 2 THEN
+					VY <= 3;
+				END IF;
+				IF Y = y_racket_p1 + 1 OR Y = y_racket_p1 - 1 THEN
+					VY <= 2;
+				END IF;
+				IF Y = y_racket_p1 THEN
+					VY <= 1;
+				END IF;
+			END IF;
+		END IF;
+		
+		-- REBATE NA REQUETE DIREITA
+		IF X = VGA_MAX_HORIZONTAL - 4 AND DIR_X = '1' THEN
+			IF Y <= y_racket_p2 + 2 AND Y >= y_racket_p2 - 2  THEN
+				DIR_X <= '0';
+				IF Y = y_racket_p2 + 2 OR Y = y_racket_p2 - 2 THEN
+					VY <= 3;
+				END IF;
+				IF Y = y_racket_p2 + 1 OR Y = y_racket_p2 - 1 THEN
+					VY <= 2;
+				END IF;
+				IF Y = y_racket_p2 THEN
+					VY <= 1;
+				END IF;
+			END IF;
+		END IF;
+		
 		IF counter = TEMPO_ATUALIZACAO - 1 THEN
 			counter := 0;
 			
@@ -243,38 +275,6 @@ BEGIN
 			
 			IF DIR_Y = '0' AND Y < 0 + VY THEN
 				DIR_Y <= '1';
-			END IF;
-			
-			-- REBATE RAQUETE ESQUERDA
-			IF X = 4 AND DIR_X = '0' THEN
-				IF Y  <= y_racket_p1 + 2 AND Y >= y_racket_p1 - 2  THEN
-					DIR_X <= '1';
-					IF Y = y_racket_p1 + 2 OR Y = y_racket_p1 - 2 THEN
-						VY <= 3;
-					END IF;
-					IF Y = y_racket_p1 + 1 OR Y = y_racket_p1 - 1 THEN
-						VY <= 2;
-					END IF;
-					IF Y = y_racket_p1 THEN
-						VY <= 1;
-					END IF;
-				END IF;
-			END IF;
-			
-			-- REBATE NA REQUETE DIREITA
-			IF X = VGA_MAX_HORIZONTAL - 4 AND DIR_X = '1' THEN
-				IF Y <= y_racket_p2 + 2 AND Y >= y_racket_p2 - 2  THEN
-					DIR_X <= '0';
-					IF Y = y_racket_p2 + 2 OR Y = y_racket_p2 - 2 THEN
-						VY <= 3;
-					END IF;
-					IF Y = y_racket_p2 + 1 OR Y = y_racket_p2 - 1 THEN
-						VY <= 2;
-					END IF;
-					IF Y = y_racket_p2 THEN
-						VY <= 1;
-					END IF;
-				END IF;
 			END IF;
 		END IF;
 	END IF;

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PINGMATRONIX
-Tue Dec 05 20:10:35 2017
+Wed Dec 06 15:27:53 2017
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -57,13 +57,13 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Dec 05 20:10:35 2017      ;
+; Analysis & Synthesis Status        ; Successful - Wed Dec 06 15:27:53 2017      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; PINGMATRONIX                               ;
 ; Top-level Entity Name              ; control                                    ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 1,380                                      ;
-;     Total combinational functions  ; 1,377                                      ;
+; Total logic elements               ; 1,379                                      ;
+;     Total combinational functions  ; 1,376                                      ;
 ;     Dedicated logic registers      ; 326                                        ;
 ; Total registers                    ; 326                                        ;
 ; Total pins                         ; 48                                         ;
@@ -180,33 +180,33 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                     ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                 ; Library ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------+---------+
-; VgaDefinitions.vhd               ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/VgaDefinitions.vhd         ;         ;
-; sync_mod.vhd                     ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/sync_mod.vhd               ;         ;
-; ScreenRender.vhd                 ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/ScreenRender.vhd           ;         ;
-; meupacote.vhd                    ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/meupacote.vhd              ;         ;
-; debounce.vhd                     ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/debounce.vhd               ;         ;
-; control.vhd                      ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/control.vhd                ;         ;
-; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_divide.tdf                                                ;         ;
-; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/abs_divider.inc                                               ;         ;
-; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/sign_div_unsign.inc                                           ;         ;
-; aglobal131.inc                   ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/aglobal131.inc                                                ;         ;
-; db/lpm_divide_f8m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/db/lpm_divide_f8m.tdf      ;         ;
-; db/sign_div_unsign_dkh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/db/sign_div_unsign_dkh.tdf ;         ;
-; db/alt_u_div_53f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/db/alt_u_div_53f.tdf       ;         ;
-; db/add_sub_unc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/db/add_sub_unc.tdf         ;         ;
-; db/add_sub_vnc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/db/add_sub_vnc.tdf         ;         ;
-; db/lpm_divide_9gm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/db/lpm_divide_9gm.tdf      ;         ;
-; db/sign_div_unsign_akh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/db/sign_div_unsign_akh.tdf ;         ;
-; db/alt_u_div_v2f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/db/alt_u_div_v2f.tdf       ;         ;
-; db/lpm_divide_jhm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/db/lpm_divide_jhm.tdf      ;         ;
-; db/sign_div_unsign_klh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/db/sign_div_unsign_klh.tdf ;         ;
-; db/alt_u_div_j5f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/db/alt_u_div_j5f.tdf       ;         ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                  ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                              ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------------------------+---------+
+; VgaDefinitions.vhd               ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/Pingmatronix/VgaDefinitions.vhd         ;         ;
+; sync_mod.vhd                     ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/Pingmatronix/sync_mod.vhd               ;         ;
+; ScreenRender.vhd                 ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/Pingmatronix/ScreenRender.vhd           ;         ;
+; meupacote.vhd                    ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/Pingmatronix/meupacote.vhd              ;         ;
+; debounce.vhd                     ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/Pingmatronix/debounce.vhd               ;         ;
+; control.vhd                      ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/Pingmatronix/control.vhd                ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_divide.tdf                                                             ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/abs_divider.inc                                                            ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/sign_div_unsign.inc                                                        ;         ;
+; aglobal131.inc                   ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/aglobal131.inc                                                             ;         ;
+; db/lpm_divide_f8m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/Pingmatronix/db/lpm_divide_f8m.tdf      ;         ;
+; db/sign_div_unsign_dkh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/Pingmatronix/db/sign_div_unsign_dkh.tdf ;         ;
+; db/alt_u_div_53f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/Pingmatronix/db/alt_u_div_53f.tdf       ;         ;
+; db/add_sub_unc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/Pingmatronix/db/add_sub_unc.tdf         ;         ;
+; db/add_sub_vnc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/Pingmatronix/db/add_sub_vnc.tdf         ;         ;
+; db/lpm_divide_9gm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/Pingmatronix/db/lpm_divide_9gm.tdf      ;         ;
+; db/sign_div_unsign_akh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/Pingmatronix/db/sign_div_unsign_akh.tdf ;         ;
+; db/alt_u_div_v2f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/Pingmatronix/db/alt_u_div_v2f.tdf       ;         ;
+; db/lpm_divide_jhm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/Pingmatronix/db/lpm_divide_jhm.tdf      ;         ;
+; db/sign_div_unsign_klh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/Pingmatronix/db/sign_div_unsign_klh.tdf ;         ;
+; db/alt_u_div_j5f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/Pingmatronix/db/alt_u_div_j5f.tdf       ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -214,16 +214,16 @@ applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 1,380     ;
+; Estimated Total logic elements              ; 1,379     ;
 ;                                             ;           ;
-; Total combinational functions               ; 1377      ;
+; Total combinational functions               ; 1376      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 358       ;
-;     -- 3 input functions                    ; 339       ;
-;     -- <=2 input functions                  ; 680       ;
+;     -- 4 input functions                    ; 355       ;
+;     -- 3 input functions                    ; 337       ;
+;     -- <=2 input functions                  ; 684       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 858       ;
+;     -- normal mode                          ; 857       ;
 ;     -- arithmetic mode                      ; 519       ;
 ;                                             ;           ;
 ; Total registers                             ; 326       ;
@@ -234,7 +234,7 @@ applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ; Maximum fan-out node                        ; clk~input ;
 ; Maximum fan-out                             ; 326       ;
-; Total fan-out                               ; 4686      ;
+; Total fan-out                               ; 4676      ;
 ; Average fan-out                             ; 2.60      ;
 +---------------------------------------------+-----------+
 
@@ -244,8 +244,8 @@ applicable agreement for further details.
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                       ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------+--------------+
-; |control                                  ; 1377 (651)        ; 326 (208)    ; 0           ; 0            ; 0       ; 0         ; 48   ; 0            ; |control                                                                                                                  ; work         ;
-;    |ScreenRender:VGA|                     ; 350 (116)         ; 43 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|ScreenRender:VGA                                                                                                 ; work         ;
+; |control                                  ; 1376 (651)        ; 326 (208)    ; 0           ; 0            ; 0       ; 0         ; 48   ; 0            ; |control                                                                                                                  ; work         ;
+;    |ScreenRender:VGA|                     ; 349 (115)         ; 43 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|ScreenRender:VGA                                                                                                 ; work         ;
 ;       |lpm_divide:Div0|                   ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|ScreenRender:VGA|lpm_divide:Div0                                                                                 ; work         ;
 ;          |lpm_divide_jhm:auto_generated|  ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|ScreenRender:VGA|lpm_divide:Div0|lpm_divide_jhm:auto_generated                                                   ; work         ;
 ;             |sign_div_unsign_klh:divider| ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |control|ScreenRender:VGA|lpm_divide:Div0|lpm_divide_jhm:auto_generated|sign_div_unsign_klh:divider                       ; work         ;
@@ -403,7 +403,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; X[5]                                   ; 9       ;
 ; Y[3]                                   ; 14      ;
 ; Y[4]                                   ; 13      ;
-; VY[0]                                  ; 6       ;
+; VY[0]                                  ; 5       ;
 ; Total number of inverted registers = 4 ;         ;
 +----------------------------------------+---------+
 
@@ -669,7 +669,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:04     ;
+; Top            ; 00:00:07     ;
 +----------------+--------------+
 
 
@@ -679,7 +679,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Tue Dec 05 20:10:29 2017
+    Info: Processing started: Wed Dec 06 15:27:42 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PINGMATRONIX -c PINGMATRONIX
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 1 design units, including 0 entities, in source file vgadefinitions.vhd
@@ -771,9 +771,9 @@ Info (21057): Implemented 1489 device resources after synthesis - the final reso
     Info (21059): Implemented 42 output pins
     Info (21061): Implemented 1441 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 575 megabytes
-    Info: Processing ended: Tue Dec 05 20:10:35 2017
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:06
+    Info: Peak virtual memory: 584 megabytes
+    Info: Processing ended: Wed Dec 06 15:27:53 2017
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:08
 
 
