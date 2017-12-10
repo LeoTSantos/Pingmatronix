@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP3C16F484) Path("C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto_final/") File("PINGMATRONIX.sof") MfrSpec(OpMask(1));
+		Device PartName(EP3C16F484) Path("C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/") File("PINGMATRONIX.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

@@ -1,89 +1,96 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
-USE work.meupacote.all;
 USE work.VgaDefinitions.all;
+USE work.PongDefinitions.all;
 USE ieee.math_real.all;
 
 ENTITY control IS
 	GENERIC(
-		MAX_PONTOS: NATURAL := 99;
 		NUM_MAX: NATURAL := 99;
-		FCLK: NATURAL := 50_000_000
+		Fclock: NATURAL := 50_000_000
 	);
 	PORT (
-		clk: IN STD_LOGIC;
+		clock: IN STD_LOGIC;
 		start: IN STD_LOGIC;
-		output_debug1, output_debug2: OUT SSDARRAY (NATURAL(CEIL(LOG10(REAL(NUM_MAX))))-1 DOWNTO 0);
 		
-		in_sobe_raquete1, in_desce_raquete1, in_missil1:  IN STD_LOGIC;
-		red, green, blue 				: out std_logic_vector (3 downto 0);
-      Hsync, Vsync     				: out std_logic;
-		missil2 						: in std_logic
+		
+		placar1, placar2 : OUT NATURAL RANGE 0 TO MAX_PONTOS;
+		
+		
+		missil1, missil2:  IN STD_LOGIC;
+
+		
+		y_racket_p1, y_racket_p2	: in NATURAL range MIN_RACKET_Y to MAX_RACKET_Y;
+				
+																
+		x_missle_p1, x_missle_p2, x_ball: out NATURAL RANGE 0 TO VGA_MAX_HORIZONTAL;
+		y_missle_p1, y_missle_p2, y_ball: out NATURAL RANGE 0 TO VGA_MAX_VERTICAL
+		
+		
 	);
 END ENTITY;
 
 ARCHITECTURE arch OF control IS
-	TYPE TIPODISP IS ARRAY (NATURAL(CEIL(LOG10(REAL(NUM_MAX))))-1 DOWNTO 0) OF INTEGER RANGE 0 TO 9;
-	TYPE DIV IS ARRAY(NATURAL(CEIL(LOG10(REAL(NUM_MAX))))-1 DOWNTO 0) OF NATURAL RANGE 0 TO 10**(NATURAL(CEIL(LOG10(		REAL(NUM_MAX))))-1);
-	signal divisor: DIV;
-	signal aux_disp, aux_disp2: TIPODISP;
 
-	CONSTANT TEMPO_300MS: NATURAL := FCLK * 3 / 10;	
-	CONSTANT TEMPO_100MS: NATURAL := FCLK / 10;	
-	CONSTANT TEMPO_AUMENTA_VELOCIDADE: NATURAL := FCLK * 5;
-	CONSTANT TEMPO_10MS: NATURAL := FCLK / 100;
-	CONSTANT TEMPO_15S: NATURAL := FCLK * 15;
-	CONSTANT tmax: NATURAL := FCLK * 15;
+
+	CONSTANT TEMPO_300MS: NATURAL := Fclock * 3 / 10;	
+	CONSTANT TEMPO_100MS: NATURAL := Fclock / 10;	
+	CONSTANT TEMPO_AUMENTA_VELOCIDADE: NATURAL := Fclock * 5;
+	CONSTANT TEMPO_10MS: NATURAL := Fclock / 100;
+	CONSTANT TEMPO_15S: NATURAL := Fclock * 15;
+	CONSTANT tmax: NATURAL := Fclock * 15;
 	
-	SIGNAL TEMPO_ATUALIZACAO: NATURAL RANGE 0 TO FCLK := TEMPO_300MS;
+	SIGNAL TEMPO_ATUALIZACAO: NATURAL RANGE 0 TO Fclock := TEMPO_300MS;
 	SIGNAL VX: NATURAL RANGE 0 TO 1 := 1;
 	SIGNAL VY: NATURAL RANGE 0 TO 4 := 1;
 	SIGNAL DIR_X, DIR_Y: STD_LOGIC := '0'; -- DIR_X = '1' => DIREITA; DIR_Y = '1' => BAIXO
 	SIGNAL X: NATURAL RANGE 0 TO 63 := 32;
 	SIGNAL Y: NATURAL RANGE 0 TO 47 := 24;
-	SIGNAL RAQUETE1, RAQUETE2: NATURAL RANGE 3 TO 44;
 	SIGNAL RANDOM_VX, RANDOM_VY: STD_LOGIC := '0';
 	
-	SIGNAL y_racket_p1, y_racket_p2: NATURAL RANGE 0 TO VGA_MAX_VERTICAL;
-	SIGNAL sobe_raquete1, desce_raquete1, missil1: STD_LOGIC;
-	SIGNAL x_missle_p1	: NATURAL RANGE 0 TO VGA_MAX_VERTICAL;
-	SIGNAL y_missle_p1	: NATURAL RANGE 0 TO VGA_MAX_HORIZONTAL;
-	SIGNAL x_missle_p2	: NATURAL RANGE 0 TO VGA_MAX_HORIZONTAL;
-	SIGNAL y_missle_p2	: NATURAL RANGE 0 TO VGA_MAX_VERTICAL;
-	SIGNAL SYS_CLK: STD_LOGIC;
+
+	SIGNAL x_missle_p1_sig	: NATURAL RANGE 0 TO VGA_MAX_VERTICAL;
+	SIGNAL y_missle_p1_sig	: NATURAL RANGE 0 TO VGA_MAX_HORIZONTAL;
+	SIGNAL x_missle_p2_sig	: NATURAL RANGE 0 TO VGA_MAX_HORIZONTAL;
+	SIGNAL y_missle_p2_sig	: NATURAL RANGE 0 TO VGA_MAX_VERTICAL;
+	
+	SIGNAL SYS_clock: STD_LOGIC;
 	SIGNAL reset_xy: STD_LOGIC := '0';
 	
 	SIGNAL PONTOS1, PONTOS2: NATURAL RANGE 0 TO MAX_PONTOS := 0;
 BEGIN
-	DB1: entity work.debounce port map (clk => clk, input => not in_sobe_raquete1, output => sobe_raquete1);
-	DB2: entity work.debounce port map (clk => clk, input => not in_desce_raquete1, output => desce_raquete1);
-	DB3: entity work.debounce port map (clk => clk, input => not in_missil1, output => missil1);
 
-VGA: ENTITY WORK.ScreenRender PORT MAP (  clock => clk,  
-														red => red,
-														green => green,
-														blue	=> blue,	
-														Hsync => Hsync,
-														Vsync => Vsync,
-														y_racket_p1 => y_racket_p1,
-														y_racket_p2 => y_racket_p2,
-														x_missle_p1 => x_missle_p1,
-														x_missle_p2 => x_missle_p2,
-														y_missle_p1 => y_missle_p1,
-														y_missle_p2 => y_missle_p2,
-														x_ball		=> x,
-														y_ball 		=> y	);
-																												
+	placar1 <= PONTOS1;
+	placar2 <= PONTOS2;
+
+	x_ball <= X;
+	y_ball <= Y;
+	
+	
+	x_missle_p1 <= x_missle_p1_sig;
+	y_missle_p1 <= y_missle_p1_sig;
+	x_missle_p2 <= x_missle_p2_sig;
+	y_missle_p2 <= y_missle_p2_sig;
+														
+																	
 -- ATUALIZA POSICAO BOLA
-PROCESS(CLK)
+PROCESS(clock)
+
+--counter(natural) serve pra contar o tempo de atialização do passo da bolinhas. O valor máximo da contagem é TEMPO_ATUALIZACAO_AUX
 VARIABLE counter: NATURAL RANGE 0 TO tmax;
+
+--Quando ele chega no valor máximo, diminui TEMPO_ATUALIZACAO_AUX em 10ms (em clock)
 VARIABLE counter_aumenta_tempo: NATURAL RANGE 0 TO TEMPO_AUMENTA_VELOCIDADE;
-VARIABLE TEMPO_ATUALIZACAO_AUX: NATURAL RANGE 0 TO FCLK := TEMPO_300MS;
+
+--tempo do passo da bolinha
+VARIABLE TEMPO_ATUALIZACAO_AUX: NATURAL RANGE 0 TO Fclock := TEMPO_300MS;
 BEGIN
-	IF rising_edge(clk) AND start = '1' THEN
+    --start = 1 quando o jogo está rodando, start = 0 quando pausa ou não iniciou
+	IF rising_edge(clock) AND start = '1' THEN
 		counter := counter + 1;
 		counter_aumenta_tempo := counter_aumenta_tempo + 1;
 
+        --aumenta a velocidade da bolinha periodicamente, sendo o mínimo 10mm
 		IF counter_aumenta_tempo = TEMPO_AUMENTA_VELOCIDADE - 1 THEN
 			IF TEMPO_ATUALIZACAO_AUX > TEMPO_10MS THEN
 				TEMPO_ATUALIZACAO_AUX := TEMPO_ATUALIZACAO_AUX - TEMPO_10MS;
@@ -91,27 +98,29 @@ BEGIN
 			counter := 0;
 		END IF;
 		
-		-- SE UM JOGADOR MORREU, RESETA A VELOCIDADE PARA A LENTA
+        --morte do jogador = (X < VX OR X > VGA_MAX_HORIZONTAL - VX)
+		-- SE UM JOGADOR MORREU, RESETA A VELOCIDADE PARA A ORIGINAL
 		IF X < VX OR X > VGA_MAX_HORIZONTAL - VX THEN
 			TEMPO_ATUALIZACAO_AUX := TEMPO_300MS;
 		END IF;
 		
-		--MISSIL ACERTOU RAQUETE 2 -> VOLTA BOLA PRO CENTRO
-		IF x_missle_p1 = VGA_MAX_HORIZONTAL - 2 THEN
-			IF y_missle_p1 < y_racket_p2 + 2 AND y_missle_p1 > y_racket_p2 - 2 THEN
-				X <= 32;
+		--MISSIL 1 ACERTOU RAQUETE 2 -> VOLTA BOLA PRO CENTRO
+		IF x_missle_p1_sig = VGA_MAX_HORIZONTAL - 2 THEN
+			IF y_missle_p1_sig < y_racket_p2 + 2 AND y_missle_p1_sig > y_racket_p2 - 2 THEN
+				X <= 32; --centro tela
 				Y <= 24;
 			END IF;
 		END IF;
 		
-		--MISSIL ACERTOU RAQUETE 1 -> VOLTA BOLA PRO CENTRO
+		--MISSIL 2 ACERTOU RAQUETE 1 -> VOLTA BOLA PRO CENTRO
 		IF x_missle_p2 = 2 THEN
 			IF y_missle_p2 < y_racket_p1 + 2 AND y_missle_p2 > y_racket_p1 - 2 THEN
-				X <= 32;
+				X <= 32; --centro tela
 				Y <= 24;
 			END IF;
 		END IF;
 		
+        --anda a bola
 		IF counter = TEMPO_ATUALIZACAO - 1 THEN
 			counter := 0;
 			
@@ -151,11 +160,12 @@ BEGIN
 	END IF;
 END PROCESS;
 
--- GERA DIR_X E DIR_Y ALEATORIOS
-PROCESS(clk)
+-- GERA DIR_X E DIR_Y ALEATORIOS COSNTANTEMENTE
+-- SERVE SOMENTE PARA INICIALIAÇÃO DA DIREÇÃO DA BOLA (começo do jogo/ depois que morre)
+PROCESS(clock)
 VARIABLE COUNTER_1, COUNTER_2: NATURAL RANGE 0 TO 14;
 BEGIN
-	IF rising_edge(clk) THEN
+	IF rising_edge(clock) THEN
 		COUNTER_1 := COUNTER_1 + 1;
 		IF COUNTER_1 = 7 THEN
 			COUNTER_1 := 0;
@@ -171,15 +181,16 @@ BEGIN
 END PROCESS;
 
 -- ATUALIZA VELOCIDADE
-PROCESS(clk)
+PROCESS(clock)
 VARIABLE counter: NATURAL RANGE 0 TO tmax;
 VARIABLE counter_aumenta_tempo: NATURAL RANGE 0 TO TEMPO_AUMENTA_VELOCIDADE;
-VARIABLE TEMPO_ATUALIZACAO_AUX: NATURAL RANGE 0 TO FCLK := TEMPO_300MS;
+VARIABLE TEMPO_ATUALIZACAO_AUX: NATURAL RANGE 0 TO Fclock := TEMPO_300MS;
 BEGIN
-	IF rising_edge(clk) AND start = '1' THEN
+	IF rising_edge(clock) AND start = '1' THEN
 		counter := counter + 1;
 		counter_aumenta_tempo := counter_aumenta_tempo + 1;
 		
+        --se morrer
 		IF X < VX OR X > VGA_MAX_HORIZONTAL - VX THEN
 			TEMPO_ATUALIZACAO_AUX := TEMPO_300MS;
 		END IF;
@@ -192,8 +203,8 @@ BEGIN
 		END IF;
 		
 		--MISSIL ACERTOU RAQUETE 2 -> PONTTO DO JOGADOR 1
-		IF x_missle_p1 = VGA_MAX_HORIZONTAL - 2 THEN
-			IF y_missle_p1 < y_racket_p2 + 2 AND y_missle_p1 > y_racket_p2 - 2 THEN
+		IF x_missle_p1_sig = VGA_MAX_HORIZONTAL - 2 THEN
+			IF y_missle_p1_sig < y_racket_p2 + 2 AND y_missle_p1_sig > y_racket_p2 - 2 THEN
 				PONTOS1 <= PONTOS1 + 1;
 				DIR_X <= RANDOM_VX;
 				DIR_Y <= RANDOM_VY;
@@ -281,7 +292,7 @@ BEGIN
 END PROCESS;
 
 -- LANÇA MISSSIL1
-PROCESS (clk)
+PROCESS (clock)
 VARIABLE IS_MISSIL1 : STD_LOGIC := '0';
 VARIABLE counter_missil: NATURAL RANGE 0 TO TEMPO_10MS;
 VARIABLE counter_permite_missil1: NATURAL RANGE 0 TO tmax;
@@ -289,12 +300,12 @@ VARIABLE IS_MISSIL2 : STD_LOGIC := '0';
 VARIABLE counter_missi2: NATURAL RANGE 0 TO TEMPO_10MS;
 VARIABLE counter_permite_missil2: NATURAL RANGE 0 TO tmax;
 BEGIN
-	IF rising_edge(clk) AND start = '1' THEN
+	IF rising_edge(clock) AND start = '1' THEN
 		-- MISSIL 1 ACERTOU -> SOME DA TELA
 		IF x_missle_p1 = VGA_MAX_HORIZONTAL - 2 THEN
-			IF y_missle_p1 < y_racket_p2 + 2 AND y_missle_p1 > y_racket_p2 - 2 THEN
-				x_missle_p1 <= 0;
-				y_missle_p1 <= 0;
+			IF y_missle_p1_sig < y_racket_p2 + 2 AND y_missle_p1_sig > y_racket_p2 - 2 THEN
+				x_missle_p1_sig <= 0;
+				y_missle_p1_sig <= 0;
 				IS_MISSIL1 := '0';
 			END IF;
 		END IF;
@@ -310,23 +321,23 @@ BEGIN
 			
 			-- ATUALIZA POSICAO DO MISSIL 1
 			IF IS_MISSIL1 = '1' THEN
-				IF x_missle_p1 = 0 THEN
-					x_missle_p1 <= 1;
-					y_missle_p1 <= y_racket_p1;
-				ELSIF x_missle_p1 < VGA_MAX_HORIZONTAL - 2 THEN
-					x_missle_p1 <= x_missle_p1 + 1;
+				IF x_missle_p1_sig = 0 THEN
+					x_missle_p1_sig <= 1;
+					y_missle_p1_sig <= y_racket_p1;
+				ELSIF x_missle_p1_sig < VGA_MAX_HORIZONTAL - 2 THEN
+					x_missle_p1_sig <= x_missle_p1 + 1;
 				ELSE
-					x_missle_p1 <= 0;
+					x_missle_p1_sig <= 0;
 					IS_MISSIL1 := '0';
 				END IF;
 			END IF;
 		END IF;
 		
 		-- MISSIL 2 ACERTOU -> SOME DA TELA
-		IF x_missle_p2 = 2 THEN
-			IF y_missle_p2 < y_racket_p1 + 2 AND y_missle_p2 > y_racket_p1 - 2 THEN
-				x_missle_p2 <= 0;
-				y_missle_p2 <= 0;
+		IF x_missle_p2_sig = 2 THEN
+			IF y_missle_p2_sig < y_racket_p1 + 2 AND y_missle_p2_sig > y_racket_p1 - 2 THEN
+				x_missle_p2_sig <= 0;
+				y_missle_p2_sig <= 0;
 				IS_MISSIL2 := '0';
 			END IF;
 		END IF;
@@ -342,13 +353,13 @@ BEGIN
 			
 			-- ATUALIZA POSICAO DO MISSIL 2
 			IF IS_MISSIL2 = '1' THEN
-				IF x_missle_p2	= 0 THEN
-					x_missle_p2 <= VGA_MAX_HORIZONTAL - 1;
-					y_missle_p2 <= y_racket_p2;
-				ELSIF x_missle_p2 > 2 THEN
-					x_missle_p2 <= x_missle_p2 - 1;
+				IF x_missle_p2_sig	= 0 THEN
+					x_missle_p2_sig <= VGA_MAX_HORIZONTAL - 1;
+					y_missle_p2_sig <= y_racket_p2;
+				ELSIF x_missle_p2_sig > 2 THEN
+					x_missle_p2_sig <= x_missle_p2_sig - 1;
 				ELSE
-					x_missle_p2 <= 0;
+					x_missle_p2_sig <= 0;
 					IS_MISSIL2 := '0';
 				END IF;
 			END IF;
@@ -370,74 +381,68 @@ BEGIN
 	
 END PROCESS;
 
---ATUALIZA POSICAO DA RAQUETE
-PROCESS (clk)
-BEGIN
-	IF rising_edge(clk) AND start = '1' THEN
-		IF sobe_raquete1 = '1' THEN
-			y_racket_p1 <= y_racket_p1 + 1;
-		END IF;
-		
-		IF desce_raquete1 = '1' THEN
-			y_racket_p1 <= y_racket_p1 - 1;
-		END IF;	
-		
-		IF sobe_raquete1 = '1' THEN
-			y_racket_p2 <= y_racket_p2 + 1;
-		END IF;
-		
-		IF desce_raquete1 = '1' THEN
-			y_racket_p2 <= y_racket_p2 - 1;
-		END IF;	
-	END IF;
-END PROCESS;
+----ATUALIZA POSICAO DA RAQUETE
+--PROCESS (clock)
+--BEGIN
+--	IF rising_edge(clock) AND start = '1' THEN
+--		IF sobe_raquete1 = '1' THEN
+--			y_racket_p1 <= y_racket_p1 + 1;
+--		END IF;
+--		
+--		IF desce_raquete1 = '1' THEN
+--			y_racket_p1 <= y_racket_p1 - 1;
+--		END IF;	
+--		
+--
+--	END IF;
+--END PROCESS;
 
 --PRINTA PONTOS POR DEBUG  2
-divisor(0) <= 1;
-	G4: FOR i IN 1 TO NATURAL(CEIL(LOG10(REAL(NUM_MAX))))-1 GENERATE
-		divisor(i) <= divisor(i-1)*10;
-	END GENERATE G4;
+--divisor(0) <= 1;
+--	G4: FOR i IN 1 TO NATURAL(CEIL(LOG10(REAL(NUM_MAX))))-1 GENERATE
+--		divisor(i) <= divisor(i-1)*10;
+--	END GENERATE G4;
 
-G6: FOR i IN 0 TO NATURAL(CEIL(LOG10(REAL(NUM_MAX))))-1 GENERATE
-		aux_disp(i) <= (PONTOS1	/ divisor(i)) MOD 10;
-		output_debug1(i) <= num_0 WHEN aux_disp(i) = 0 ELSE
-		  num_1 WHEN aux_disp(i) = 1 ELSE
-		  num_2 WHEN aux_disp(i) = 2 ELSE
-		  num_3 WHEN aux_disp(i) = 3 ELSE
-		  num_4 WHEN aux_disp(i) = 4 ELSE
-		  num_5 WHEN aux_disp(i) = 5 ELSE
-		  num_6 WHEN aux_disp(i) = 6 ELSE
-		  num_7 WHEN aux_disp(i) = 7 ELSE
-		  num_8 WHEN aux_disp(i) = 8 ELSE
-		  num_9 WHEN aux_disp(i) = 9 ELSE
-		  num_a WHEN aux_disp(i) = 10 ELSE
-		  num_b WHEN aux_disp(i) = 11 ELSE
-		  num_c WHEN aux_disp(i) = 12 ELSE
-		  num_d WHEN aux_disp(i) = 13 ELSE
-		  num_e WHEN aux_disp(i) = 14 ELSE
-		  num_f;
-	END GENERATE G6;
-
---PRINTA PONTOS POR DEBUG  2
-G3: FOR i IN 0 TO NATURAL(CEIL(LOG10(REAL(NUM_MAX))))-1 GENERATE
-		aux_disp2(i) <= (PONTOS2	/ divisor(i)) MOD 10;
-		output_debug2(i) <= num_0 WHEN aux_disp2(i) = 0 ELSE
-		  num_1 WHEN aux_disp2(i) = 1 ELSE
-		  num_2 WHEN aux_disp2(i) = 2 ELSE
-		  num_3 WHEN aux_disp2(i) = 3 ELSE
-		  num_4 WHEN aux_disp2(i) = 4 ELSE
-		  num_5 WHEN aux_disp2(i) = 5 ELSE
-		  num_6 WHEN aux_disp2(i) = 6 ELSE
-		  num_7 WHEN aux_disp2(i) = 7 ELSE
-		  num_8 WHEN aux_disp2(i) = 8 ELSE
-		  num_9 WHEN aux_disp2(i) = 9 ELSE
-		  num_a WHEN aux_disp2(i) = 10 ELSE
-		  num_b WHEN aux_disp2(i) = 11 ELSE
-		  num_c WHEN aux_disp2(i) = 12 ELSE
-		  num_d WHEN aux_disp2(i) = 13 ELSE
-		  num_e WHEN aux_disp2(i) = 14 ELSE
-		  num_f;
-	END GENERATE G3;
+--G6: FOR i IN 0 TO NATURAL(CEIL(LOG10(REAL(NUM_MAX))))-1 GENERATE
+--		aux_disp(i) <= (PONTOS1	/ divisor(i)) MOD 10;
+--		output_debug1(i) <= num_0 WHEN aux_disp(i) = 0 ELSE
+--		  num_1 WHEN aux_disp(i) = 1 ELSE
+--		  num_2 WHEN aux_disp(i) = 2 ELSE
+--		  num_3 WHEN aux_disp(i) = 3 ELSE
+--		  num_4 WHEN aux_disp(i) = 4 ELSE
+--		  num_5 WHEN aux_disp(i) = 5 ELSE
+--		  num_6 WHEN aux_disp(i) = 6 ELSE
+--		  num_7 WHEN aux_disp(i) = 7 ELSE
+--		  num_8 WHEN aux_disp(i) = 8 ELSE
+--		  num_9 WHEN aux_disp(i) = 9 ELSE
+--		  num_a WHEN aux_disp(i) = 10 ELSE
+--		  num_b WHEN aux_disp(i) = 11 ELSE
+--		  num_c WHEN aux_disp(i) = 12 ELSE
+--		  num_d WHEN aux_disp(i) = 13 ELSE
+--		  num_e WHEN aux_disp(i) = 14 ELSE
+--		  num_f;
+--	END GENERATE G6;
+--
+----PRINTA PONTOS POR DEBUG  2
+--G3: FOR i IN 0 TO NATURAL(CEIL(LOG10(REAL(NUM_MAX))))-1 GENERATE
+--		aux_disp2(i) <= (PONTOS2	/ divisor(i)) MOD 10;
+--		output_debug2(i) <= num_0 WHEN aux_disp2(i) = 0 ELSE
+--		  num_1 WHEN aux_disp2(i) = 1 ELSE
+--		  num_2 WHEN aux_disp2(i) = 2 ELSE
+--		  num_3 WHEN aux_disp2(i) = 3 ELSE
+--		  num_4 WHEN aux_disp2(i) = 4 ELSE
+--		  num_5 WHEN aux_disp2(i) = 5 ELSE
+--		  num_6 WHEN aux_disp2(i) = 6 ELSE
+--		  num_7 WHEN aux_disp2(i) = 7 ELSE
+--		  num_8 WHEN aux_disp2(i) = 8 ELSE
+--		  num_9 WHEN aux_disp2(i) = 9 ELSE
+--		  num_a WHEN aux_disp2(i) = 10 ELSE
+--		  num_b WHEN aux_disp2(i) = 11 ELSE
+--		  num_c WHEN aux_disp2(i) = 12 ELSE
+--		  num_d WHEN aux_disp2(i) = 13 ELSE
+--		  num_e WHEN aux_disp2(i) = 14 ELSE
+--		  num_f;
+--	END GENERATE G3;
 	
 	
 

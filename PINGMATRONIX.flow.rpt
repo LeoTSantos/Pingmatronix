@@ -1,5 +1,5 @@
 Flow report for PINGMATRONIX
-Wed Dec 06 15:28:30 2017
+Sun Dec 10 17:25:47 2017
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -40,18 +40,18 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Wed Dec 06 15:28:23 2017      ;
+; Flow Status                        ; Successful - Sun Dec 10 17:25:42 2017      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; PINGMATRONIX                               ;
-; Top-level Entity Name              ; control                                    ;
+; Top-level Entity Name              ; pong                                       ;
 ; Family                             ; Cyclone III                                ;
 ; Device                             ; EP3C16F484C6                               ;
 ; Timing Models                      ; Final                                      ;
-; Total logic elements               ; 1,380 / 15,408 ( 9 % )                     ;
-;     Total combinational functions  ; 1,376 / 15,408 ( 9 % )                     ;
-;     Dedicated logic registers      ; 326 / 15,408 ( 2 % )                       ;
-; Total registers                    ; 326                                        ;
-; Total pins                         ; 48 / 347 ( 14 % )                          ;
+; Total logic elements               ; 1,677 / 15,408 ( 11 % )                    ;
+;     Total combinational functions  ; 1,676 / 15,408 ( 11 % )                    ;
+;     Dedicated logic registers      ; 393 / 15,408 ( 3 % )                       ;
+; Total registers                    ; 393                                        ;
+; Total pins                         ; 52 / 347 ( 15 % )                          ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0 / 516,096 ( 0 % )                        ;
 ; Embedded Multiplier 9-bit elements ; 0 / 112 ( 0 % )                            ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/06/2017 15:27:42 ;
+; Start date & time ; 12/10/2017 17:25:14 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; PINGMATRONIX        ;
 +-------------------+---------------------+
@@ -75,15 +75,15 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 35775013795441.151258126201660        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 739687059384.151293391412448          ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --         ;
-; PARTITION_COLOR                     ; 16764057                              ; --            ; control     ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; control     ; Top        ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; control     ; Top        ;
+; PARTITION_COLOR                     ; 16764057                              ; --            ; pong        ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; pong        ; Top        ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; pong        ; Top        ;
 ; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                   ; --            ; --          ; --         ;
 ; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --          ; --         ;
-; TOP_LEVEL_ENTITY                    ; control                               ; PINGMATRONIX  ; --          ; --         ;
+; TOP_LEVEL_ENTITY                    ; pong                                  ; PINGMATRONIX  ; --          ; --         ;
 ; VHDL_INPUT_VERSION                  ; VHDL_2008                             ; VHDL_1993     ; --          ; --         ;
 ; VHDL_SHOW_LMF_MAPPING_MESSAGES      ; Off                                   ; --            ; --          ; --         ;
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
@@ -94,11 +94,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:10     ; 1.0                     ; 584 MB              ; 00:00:07                           ;
-; Fitter                    ; 00:00:22     ; 1.1                     ; 1073 MB             ; 00:00:20                           ;
-; Assembler                 ; 00:00:03     ; 1.0                     ; 490 MB              ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:05     ; 1.0                     ; 563 MB              ; 00:00:03                           ;
-; Total                     ; 00:00:40     ; --                      ; --                  ; 00:00:32                           ;
+; Analysis & Synthesis      ; 00:00:07     ; 1.0                     ; 583 MB              ; 00:00:07                           ;
+; Fitter                    ; 00:00:16     ; 1.0                     ; 810 MB              ; 00:00:15                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 500 MB              ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 528 MB              ; 00:00:03                           ;
+; Total                     ; 00:00:27     ; --                      ; --                  ; 00:00:27                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -107,10 +107,10 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; DESKTOP-6DSDVUK  ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; DESKTOP-6DSDVUK  ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; DESKTOP-6DSDVUK  ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; DESKTOP-6DSDVUK  ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; PCBernardelli    ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; PCBernardelli    ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; PCBernardelli    ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; PCBernardelli    ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 
