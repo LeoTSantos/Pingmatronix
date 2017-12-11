@@ -1,4 +1,4 @@
-LIBRARY ieee;
+﻿LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 USE work.VgaDefinitions.all;
 USE work.PongDefinitions.all;
@@ -26,7 +26,7 @@ ENTITY control IS
 		x_missle_p1, x_missle_p2, x_ball: out NATURAL RANGE 0 TO VGA_MAX_HORIZONTAL;
 		y_missle_p1, y_missle_p2, y_ball: out NATURAL RANGE 0 TO VGA_MAX_VERTICAL;
 		
-		evento_ponto, evento_rebateu, evento_missil_acertou, evento_fim_de_jogo: out STD_LOGIC		
+		evento_ponto_1, evento_ponto_2, evento_rebateu_1, evento_rebateu_2, evento_missil_acertou_1, evento_missil_acertou_2, evento_fim_de_jogo: out STD_LOGIC		
 	);
 END ENTITY;
 
@@ -54,7 +54,7 @@ ARCHITECTURE arch OF control IS
 	SIGNAL x_missle_p2_sig	: NATURAL RANGE 0 TO VGA_MAX_HORIZONTAL;
 	SIGNAL y_missle_p2_sig	: NATURAL RANGE 0 TO VGA_MAX_VERTICAL;
 	
-	SIGNAL evento_ponto_sig, evento_rebateu_sig, evento_missil_acertou_sig, evento_fim_de_jogo_sig: STD_LOGIC;
+	SIGNAL evento_ponto_1_sig,evento_ponto_2_sig, evento_rebateu_1_sig,evento_rebateu_2_sig, evento_missil_acertou_1_sig, evento_missil_acertou_2_sig, evento_fim_de_jogo_sig: STD_LOGIC;
 		
 	SIGNAL fim_de_jogo: STD_LOGIC;
 	SIGNAL jogo_rodando: STD_LOGIC;
@@ -75,9 +75,12 @@ BEGIN
 	x_missle_p2 <= x_missle_p2_sig;
 	y_missle_p2 <= y_missle_p2_sig;
 	
-	evento_ponto <= evento_ponto_sig;
-	evento_rebateu <= evento_rebateu_sig;
-	evento_missil_acertou <= evento_missil_acertou_sig;
+	evento_ponto_1 <= evento_ponto_1_sig;
+	evento_ponto_2 <= evento_ponto_2_sig;
+	evento_rebateu_1 <= evento_rebateu_1_sig;
+	evento_rebateu_2 <= evento_rebateu_2_sig;
+	evento_missil_acertou_1 <= evento_missil_acertou_1_sig;
+	evento_missil_acertou_2 <= evento_missil_acertou_2_sig;
 	evento_fim_de_jogo <= evento_fim_de_jogo_sig;
 									
 	jogo_rodando <= '0' WHEN start = '0' OR fim_de_jogo = '1' ELSE '1';
@@ -169,6 +172,7 @@ BEGIN
 			
 			-- CHEGOU NA PAREDE ESQUERDA: PONTO DO JGOADOR 2
 			IF X < VX THEN
+				
 				X <= 32;
 				Y <= 24;
 			END IF;
@@ -211,14 +215,15 @@ BEGIN
 		counter := counter + 1;
 		counter_aumenta_tempo := counter_aumenta_tempo + 1;
 
-		evento_ponto_sig <= '0';
-		evento_rebateu_sig <= '0';
+		evento_ponto_1_sig <= '0';
+		evento_ponto_2_sig <= '0';
+		evento_rebateu_1_sig <= '0';
+		evento_rebateu_2_sig <= '0';
 		evento_fim_de_jogo_sig <= '0';
 				
         --se morrer
 		IF X < VX OR X > VGA_MAX_HORIZONTAL - VX THEN
 			TEMPO_ATUALIZACAO_AUX := TEMPO_300MS;
-			evento_ponto_sig <= '1';
 		END IF;
 		
 		IF counter_aumenta_tempo = TEMPO_AUMENTA_VELOCIDADE - 1 THEN
@@ -235,7 +240,7 @@ BEGIN
 				DIR_X <= RANDOM_VX;
 				DIR_Y <= RANDOM_VY;
 				VY <= 1;
-				evento_ponto_sig <= '1';
+				evento_ponto_1_sig <= '1';
 			END IF;
 		END IF;
 		
@@ -246,7 +251,7 @@ BEGIN
 				DIR_X <= RANDOM_VX;
 				DIR_Y <= RANDOM_VY;
 				VY <= 1;
-				evento_ponto_sig <= '1';
+				evento_ponto_2_sig <= '1';
 			END IF;
 		END IF;
 		
@@ -254,7 +259,7 @@ BEGIN
 		IF X = 3 AND DIR_X = '0' THEN
 			IF Y  <= y_racket_p1 + 2 AND Y >= y_racket_p1 - 2  THEN
 				DIR_X <= '1';
-				evento_rebateu_sig <= '1';
+				evento_rebateu_1_sig <= '1';
 				IF Y = y_racket_p1 + 2 OR Y = y_racket_p1 - 2 THEN
 					VY <= 3;
 				END IF;
@@ -271,7 +276,7 @@ BEGIN
 		IF X = VGA_MAX_HORIZONTAL - 4 AND DIR_X = '1' THEN
 			IF Y <= y_racket_p2 + 2 AND Y >= y_racket_p2 - 2  THEN
 				DIR_X <= '0';
-				evento_rebateu_sig <= '1';
+				evento_rebateu_2_sig <= '1';
 				IF Y = y_racket_p2 + 2 OR Y = y_racket_p2 - 2 THEN
 					VY <= 3;
 				END IF;
@@ -299,6 +304,7 @@ BEGIN
 				DIR_X <= RANDOM_VX;
 				DIR_Y <= RANDOM_VY;
 				VY <= 1;
+				evento_ponto_2_sig <= '1';
 			END IF;
 			
 			--BOLA CHEGOU NA PAREDE DIREITA -> PONTO DO JOGADOR 1
@@ -307,6 +313,7 @@ BEGIN
 				DIR_X <= RANDOM_VX;
 				DIR_Y <= RANDOM_VY;
 				VY <= 1;
+				evento_ponto_1_sig <= '1';
 			END IF;
 			
 			-- REBATE EM CIMA E EM BAIXO		
@@ -331,14 +338,15 @@ VARIABLE counter_missi2: NATURAL RANGE 0 TO TEMPO_10MS;
 VARIABLE counter_permite_missil2: NATURAL RANGE 0 TO tmax;
 BEGIN
 	IF rising_edge(clock) AND jogo_rodando = '1' THEN
-		evento_missil_acertou_sig <= '0';
+		evento_missil_acertou_1_sig <= '0';
+		evento_missil_acertou_2_sig <= '0';
 		-- MISSIL 1 ACERTOU -> SOME DA TELA
 		IF x_missle_p1 = VGA_MAX_HORIZONTAL - 2 THEN
 			IF y_missle_p1_sig < y_racket_p2 + 2 AND y_missle_p1_sig > y_racket_p2 - 2 THEN
 				x_missle_p1_sig <= 0;
 				y_missle_p1_sig <= 0;
 				IS_MISSIL1 := '0';
-				evento_missil_acertou_sig <= '1';
+				evento_missil_acertou_1_sig <= '1';
 			END IF;
 		END IF;
 		
@@ -371,7 +379,7 @@ BEGIN
 				x_missle_p2_sig <= 0;
 				y_missle_p2_sig <= 0;
 				IS_MISSIL2 := '0';
-				evento_missil_acertou_sig <= '1';
+				evento_missil_acertou_2_sig <= '1';
 			END IF;
 		END IF;
 		
