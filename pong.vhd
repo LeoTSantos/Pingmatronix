@@ -30,8 +30,10 @@ entity pong is
 		vibra_2: out std_logic; 
 		atira_2: in std_logic; 
 		encoder_ckl_2: in std_logic; 
-		encoder_d_2: in std_logic
+		encoder_d_2: in std_logic;
 		
+		--som
+		pwm_som: out std_logic
 		
 	);
 end entity;
@@ -43,6 +45,8 @@ architecture arch of pong is
 	signal y_missle_p1, y_missle_p2, y_ball:  NATURAL RANGE 0 TO VGA_MAX_VERTICAL;
 	signal atira_1_deb, atira_2_deb : std_logic;
 	signal placar1, placar2 :  NATURAL RANGE 0 TO MAX_PONTOS;
+	
+	signal evento_ponto, evento_rebateu, evento_missil_acertou, evento_fim_de_jogo:  STD_LOGIC;	
 
 begin
 
@@ -69,7 +73,13 @@ begin
 															x_missle_p2 => x_missle_p2,
 															y_missle_p2 => y_missle_p2,
 															x_ball => x_ball,
-															y_ball => y_ball);
+															y_ball => y_ball,
+															
+															evento_ponto => evento_ponto,
+															evento_rebateu  => evento_rebateu, 
+															evento_missil_acertou  => evento_missil_acertou, 
+															evento_fim_de_jogo  => evento_fim_de_jogo
+															);
 	
 -- 
 
@@ -92,6 +102,17 @@ begin
 ---
 	p1: entity work.placar PORT MAP (pontos => placar1, ssds_out => placar2_ssd); 
 	p2: entity work.placar PORT MAP (pontos => placar2, ssds_out => placar1_ssd); 
-													  
+						
+	som: entity work.Controle_de_som_vibracao_ssd_v2 PORT MAP (CLOCK => clock,
+																				  REBATER => evento_rebateu,
+																				  REBATER2 => evento_rebateu,
+																				  MORREU => evento_ponto,
+																				  ACABOU => evento_fim_de_jogo,
+																				  MISSIL => evento_missil_acertou,
+																				  
+																				  PWM_OUT_SOM => pwm_som,
+																				  PWM_OUT_VIBRA1 => vibra_1,
+																				  PWM_OUT_VIBRA2 => vibra_2);
+							
 
 end architecture;

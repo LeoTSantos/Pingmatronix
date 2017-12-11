@@ -65,10 +65,10 @@ set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_location_assignment PIN_AB14 -to atira_1
-set_location_assignment PIN_AA18 -to atira_2
+set_location_assignment PIN_AA4 -to atira_1
+set_location_assignment PIN_AA9 -to atira_2
 set_location_assignment PIN_G21 -to clock
-set_location_assignment PIN_AB13 -to encoder_ckl_1
+set_location_assignment PIN_Y13 -to encoder_ckl_1
 set_location_assignment PIN_E11 -to placar1_ssd[0][0]
 set_location_assignment PIN_F11 -to placar1_ssd[0][1]
 set_location_assignment PIN_H12 -to placar1_ssd[0][2]
@@ -83,22 +83,10 @@ set_location_assignment PIN_A14 -to placar1_ssd[1][3]
 set_location_assignment PIN_B14 -to placar1_ssd[1][4]
 set_location_assignment PIN_E14 -to placar1_ssd[1][5]
 set_location_assignment PIN_A15 -to placar1_ssd[1][6]
-set_location_assignment PIN_AA17 -to encoder_ckl_2
-set_location_assignment PIN_AA13 -to encoder_d_1
-set_location_assignment PIN_AB17 -to encoder_d_2
+set_location_assignment PIN_T14 -to encoder_ckl_2
+set_location_assignment PIN_W13 -to encoder_d_1
+set_location_assignment PIN_R14 -to encoder_d_2
 set_location_assignment PIN_D2 -to start_sw
-set_global_assignment -name VHDL_FILE placar.vhd
-set_global_assignment -name VHDL_FILE SSDefinitions.vhd
-set_global_assignment -name VHDL_FILE ssd.vhd
-set_global_assignment -name VHDL_FILE deb_button.vhd
-set_global_assignment -name VHDL_FILE PongDefinitions.vhd
-set_global_assignment -name VHDL_FILE debouncer.vhd
-set_global_assignment -name VHDL_FILE batedor.vhd
-set_global_assignment -name VHDL_FILE VgaDefinitions.vhd
-set_global_assignment -name VHDL_FILE sync_mod.vhd
-set_global_assignment -name VHDL_FILE ScreenRender.vhd
-set_global_assignment -name VHDL_FILE control.vhd
-set_global_assignment -name VHDL_FILE pong.vhd
 set_location_assignment PIN_D15 -to placar2_ssd[0][0]
 set_location_assignment PIN_A16 -to placar2_ssd[0][1]
 set_location_assignment PIN_B16 -to placar2_ssd[0][2]
@@ -113,6 +101,27 @@ set_location_assignment PIN_C19 -to placar2_ssd[1][4]
 set_location_assignment PIN_D19 -to placar2_ssd[1][5]
 set_location_assignment PIN_G15 -to placar2_ssd[1][6]
 set_location_assignment PIN_B18 -to placar2_ssd[1][0]
-set_location_assignment PIN_AA14 -to vibra_1
-set_location_assignment PIN_AB18 -to vibra_2
+set_location_assignment PIN_AA3 -to vibra_1
+set_location_assignment PIN_T16 -to vibra_2
+set_instance_assignment -name IO_STANDARD "3.0-V PCI" -to vibra_1
+set_instance_assignment -name IO_STANDARD "3.0-V PCI" -to vibra_2
+set_global_assignment -name VHDL_FILE PreescalerTrue.vhd
+set_global_assignment -name VHDL_FILE Preescaler.vhd
+set_global_assignment -name VHDL_FILE int2disp.vhd
+set_global_assignment -name VHDL_FILE MyPackage.vhd
+set_global_assignment -name VHDL_FILE Controle_de_som_vibracao_ssd_v2.vhd
+set_global_assignment -name VHDL_FILE placar.vhd
+set_global_assignment -name VHDL_FILE SSDefinitions.vhd
+set_global_assignment -name VHDL_FILE ssd.vhd
+set_global_assignment -name VHDL_FILE deb_button.vhd
+set_global_assignment -name VHDL_FILE PongDefinitions.vhd
+set_global_assignment -name VHDL_FILE debouncer.vhd
+set_global_assignment -name VHDL_FILE batedor.vhd
+set_global_assignment -name VHDL_FILE VgaDefinitions.vhd
+set_global_assignment -name VHDL_FILE sync_mod.vhd
+set_global_assignment -name VHDL_FILE ScreenRender.vhd
+set_global_assignment -name VHDL_FILE control.vhd
+set_global_assignment -name VHDL_FILE pong.vhd
+set_location_assignment PIN_AB13 -to pwm_som
+set_instance_assignment -name IO_STANDARD "3.0-V PCI" -to pwm_som
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

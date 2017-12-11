@@ -1,5 +1,5 @@
 Flow report for PINGMATRONIX
-Sun Dec 10 17:25:47 2017
+Mon Dec 11 16:23:49 2017
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -40,18 +40,18 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Sun Dec 10 17:25:42 2017      ;
+; Flow Status                        ; Successful - Mon Dec 11 16:23:44 2017      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; PINGMATRONIX                               ;
 ; Top-level Entity Name              ; pong                                       ;
 ; Family                             ; Cyclone III                                ;
 ; Device                             ; EP3C16F484C6                               ;
 ; Timing Models                      ; Final                                      ;
-; Total logic elements               ; 1,677 / 15,408 ( 11 % )                    ;
-;     Total combinational functions  ; 1,676 / 15,408 ( 11 % )                    ;
-;     Dedicated logic registers      ; 393 / 15,408 ( 3 % )                       ;
-; Total registers                    ; 393                                        ;
-; Total pins                         ; 52 / 347 ( 15 % )                          ;
+; Total logic elements               ; 1,977 / 15,408 ( 13 % )                    ;
+;     Total combinational functions  ; 1,975 / 15,408 ( 13 % )                    ;
+;     Dedicated logic registers      ; 513 / 15,408 ( 3 % )                       ;
+; Total registers                    ; 513                                        ;
+; Total pins                         ; 53 / 347 ( 15 % )                          ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0 / 516,096 ( 0 % )                        ;
 ; Embedded Multiplier 9-bit elements ; 0 / 112 ( 0 % )                            ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/10/2017 17:25:14 ;
+; Start date & time ; 12/11/2017 16:23:17 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; PINGMATRONIX        ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 739687059384.151293391412448          ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 739687059384.151301659706536          ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; 16764057                              ; --            ; pong        ; Top        ;
@@ -94,11 +94,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:07     ; 1.0                     ; 583 MB              ; 00:00:07                           ;
-; Fitter                    ; 00:00:16     ; 1.0                     ; 810 MB              ; 00:00:15                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 500 MB              ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 528 MB              ; 00:00:03                           ;
-; Total                     ; 00:00:27     ; --                      ; --                  ; 00:00:27                           ;
+; Analysis & Synthesis      ; 00:00:07     ; 1.0                     ; 599 MB              ; 00:00:07                           ;
+; Fitter                    ; 00:00:15     ; 1.0                     ; 822 MB              ; 00:00:15                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 500 MB              ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 539 MB              ; 00:00:03                           ;
+; Total                     ; 00:00:28     ; --                      ; --                  ; 00:00:26                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

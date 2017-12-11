@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PINGMATRONIX
-Sun Dec 10 17:25:21 2017
+Mon Dec 11 16:23:24 2017
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -16,27 +16,33 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   8. State Machine - |pong|batedor:batedor2|pr_state
   9. State Machine - |pong|batedor:batedor1|pr_state
  10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Inverted Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Parameter Settings for User Entity Instance: batedor:batedor1|debouncer:batedorLbl
- 15. Parameter Settings for User Entity Instance: batedor:batedor1|debouncer:batedorLb2
- 16. Parameter Settings for User Entity Instance: batedor:batedor2|debouncer:batedorLbl
- 17. Parameter Settings for User Entity Instance: batedor:batedor2|debouncer:batedorLb2
- 18. Parameter Settings for User Entity Instance: deb_button:atiradeb1
- 19. Parameter Settings for User Entity Instance: deb_button:atiradeb2
- 20. Parameter Settings for User Entity Instance: control:controle
- 21. Parameter Settings for Inferred Entity Instance: placar:p2|lpm_divide:Mod0
- 22. Parameter Settings for Inferred Entity Instance: placar:p2|lpm_divide:Mod1
- 23. Parameter Settings for Inferred Entity Instance: placar:p2|lpm_divide:Div0
- 24. Parameter Settings for Inferred Entity Instance: placar:p1|lpm_divide:Mod0
- 25. Parameter Settings for Inferred Entity Instance: placar:p1|lpm_divide:Mod1
- 26. Parameter Settings for Inferred Entity Instance: placar:p1|lpm_divide:Div0
- 27. Parameter Settings for Inferred Entity Instance: ScreenRender:vga|lpm_divide:Div0
- 28. Parameter Settings for Inferred Entity Instance: ScreenRender:vga|lpm_divide:Div1
- 29. Port Connectivity Checks: "ScreenRender:vga|sync_mod:vga_sync"
- 30. Elapsed Time Per Partition
- 31. Analysis & Synthesis Messages
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: batedor:batedor1|debouncer:batedorLbl
+ 16. Parameter Settings for User Entity Instance: batedor:batedor1|debouncer:batedorLb2
+ 17. Parameter Settings for User Entity Instance: batedor:batedor2|debouncer:batedorLbl
+ 18. Parameter Settings for User Entity Instance: batedor:batedor2|debouncer:batedorLb2
+ 19. Parameter Settings for User Entity Instance: deb_button:atiradeb1
+ 20. Parameter Settings for User Entity Instance: deb_button:atiradeb2
+ 21. Parameter Settings for User Entity Instance: control:controle
+ 22. Parameter Settings for User Entity Instance: Controle_de_som_vibracao_ssd_v2:som
+ 23. Parameter Settings for Inferred Entity Instance: placar:p2|lpm_divide:Mod0
+ 24. Parameter Settings for Inferred Entity Instance: placar:p2|lpm_divide:Mod1
+ 25. Parameter Settings for Inferred Entity Instance: placar:p2|lpm_divide:Div0
+ 26. Parameter Settings for Inferred Entity Instance: placar:p1|lpm_divide:Mod0
+ 27. Parameter Settings for Inferred Entity Instance: placar:p1|lpm_divide:Mod1
+ 28. Parameter Settings for Inferred Entity Instance: placar:p1|lpm_divide:Div0
+ 29. Parameter Settings for Inferred Entity Instance: ScreenRender:vga|lpm_divide:Div0
+ 30. Parameter Settings for Inferred Entity Instance: ScreenRender:vga|lpm_divide:Div1
+ 31. Parameter Settings for Inferred Entity Instance: Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult0
+ 32. Parameter Settings for Inferred Entity Instance: Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult1
+ 33. lpm_mult Parameter Settings by Entity Instance
+ 34. Port Connectivity Checks: "Controle_de_som_vibracao_ssd_v2:som|PWM:M1"
+ 35. Port Connectivity Checks: "ScreenRender:vga|sync_mod:vga_sync"
+ 36. Elapsed Time Per Partition
+ 37. Analysis & Synthesis Messages
 
 
 
@@ -62,16 +68,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Dec 10 17:25:21 2017      ;
+; Analysis & Synthesis Status        ; Successful - Mon Dec 11 16:23:24 2017      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; PINGMATRONIX                               ;
 ; Top-level Entity Name              ; pong                                       ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 1,676                                      ;
-;     Total combinational functions  ; 1,676                                      ;
-;     Dedicated logic registers      ; 393                                        ;
-; Total registers                    ; 393                                        ;
-; Total pins                         ; 52                                         ;
+; Total logic elements               ; 1,977                                      ;
+;     Total combinational functions  ; 1,974                                      ;
+;     Dedicated logic registers      ; 513                                        ;
+; Total registers                    ; 513                                        ;
+; Total pins                         ; 53                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -178,39 +184,64 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                              ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                          ; Library ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
-; placar.vhd                       ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/placar.vhd                 ;         ;
-; SSDefinitions.vhd                ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/SSDefinitions.vhd          ;         ;
-; ssd.vhd                          ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/ssd.vhd                    ;         ;
-; deb_button.vhd                   ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/deb_button.vhd             ;         ;
-; PongDefinitions.vhd              ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/PongDefinitions.vhd        ;         ;
-; debouncer.vhd                    ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/debouncer.vhd              ;         ;
-; batedor.vhd                      ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/batedor.vhd                ;         ;
-; VgaDefinitions.vhd               ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/VgaDefinitions.vhd         ;         ;
-; sync_mod.vhd                     ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/sync_mod.vhd               ;         ;
-; ScreenRender.vhd                 ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/ScreenRender.vhd           ;         ;
-; control.vhd                      ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/control.vhd                ;         ;
-; pong.vhd                         ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/pong.vhd                   ;         ;
-; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_divide.tdf                                                         ;         ;
-; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/abs_divider.inc                                                        ;         ;
-; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/sign_div_unsign.inc                                                    ;         ;
-; aglobal131.inc                   ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/aglobal131.inc                                                         ;         ;
-; db/lpm_divide_f8m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/db/lpm_divide_f8m.tdf      ;         ;
-; db/sign_div_unsign_dkh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/db/sign_div_unsign_dkh.tdf ;         ;
-; db/alt_u_div_53f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/db/alt_u_div_53f.tdf       ;         ;
-; db/add_sub_unc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/db/add_sub_unc.tdf         ;         ;
-; db/add_sub_vnc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/db/add_sub_vnc.tdf         ;         ;
-; db/lpm_divide_9gm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/db/lpm_divide_9gm.tdf      ;         ;
-; db/sign_div_unsign_akh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/db/sign_div_unsign_akh.tdf ;         ;
-; db/alt_u_div_v2f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/db/alt_u_div_v2f.tdf       ;         ;
-; db/lpm_divide_jhm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/db/lpm_divide_jhm.tdf      ;         ;
-; db/sign_div_unsign_klh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/db/sign_div_unsign_klh.tdf ;         ;
-; db/alt_u_div_j5f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/db/alt_u_div_j5f.tdf       ;         ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                          ;
++-------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path    ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                   ; Library ;
++-------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------------------------+---------+
+; PreescalerTrue.vhd                  ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/PreescalerTrue.vhd                  ;         ;
+; Preescaler.vhd                      ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/Preescaler.vhd                      ;         ;
+; MyPackage.vhd                       ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/MyPackage.vhd                       ;         ;
+; Controle_de_som_vibracao_ssd_v2.vhd ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/Controle_de_som_vibracao_ssd_v2.vhd ;         ;
+; placar.vhd                          ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/placar.vhd                          ;         ;
+; SSDefinitions.vhd                   ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/SSDefinitions.vhd                   ;         ;
+; ssd.vhd                             ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/ssd.vhd                             ;         ;
+; deb_button.vhd                      ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/deb_button.vhd                      ;         ;
+; PongDefinitions.vhd                 ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/PongDefinitions.vhd                 ;         ;
+; debouncer.vhd                       ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/debouncer.vhd                       ;         ;
+; batedor.vhd                         ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/batedor.vhd                         ;         ;
+; VgaDefinitions.vhd                  ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/VgaDefinitions.vhd                  ;         ;
+; sync_mod.vhd                        ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/sync_mod.vhd                        ;         ;
+; ScreenRender.vhd                    ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/ScreenRender.vhd                    ;         ;
+; control.vhd                         ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/control.vhd                         ;         ;
+; pong.vhd                            ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/pong.vhd                            ;         ;
+; lpm_divide.tdf                      ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_divide.tdf                                                                  ;         ;
+; abs_divider.inc                     ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/abs_divider.inc                                                                 ;         ;
+; sign_div_unsign.inc                 ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/sign_div_unsign.inc                                                             ;         ;
+; aglobal131.inc                      ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/aglobal131.inc                                                                  ;         ;
+; db/lpm_divide_f8m.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/db/lpm_divide_f8m.tdf               ;         ;
+; db/sign_div_unsign_dkh.tdf          ; yes             ; Auto-Generated Megafunction  ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/db/sign_div_unsign_dkh.tdf          ;         ;
+; db/alt_u_div_53f.tdf                ; yes             ; Auto-Generated Megafunction  ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/db/alt_u_div_53f.tdf                ;         ;
+; db/add_sub_unc.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/db/add_sub_unc.tdf                  ;         ;
+; db/add_sub_vnc.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/db/add_sub_vnc.tdf                  ;         ;
+; db/lpm_divide_9gm.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/db/lpm_divide_9gm.tdf               ;         ;
+; db/sign_div_unsign_akh.tdf          ; yes             ; Auto-Generated Megafunction  ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/db/sign_div_unsign_akh.tdf          ;         ;
+; db/alt_u_div_v2f.tdf                ; yes             ; Auto-Generated Megafunction  ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/db/alt_u_div_v2f.tdf                ;         ;
+; db/lpm_divide_jhm.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/db/lpm_divide_jhm.tdf               ;         ;
+; db/sign_div_unsign_klh.tdf          ; yes             ; Auto-Generated Megafunction  ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/db/sign_div_unsign_klh.tdf          ;         ;
+; db/alt_u_div_j5f.tdf                ; yes             ; Auto-Generated Megafunction  ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/db/alt_u_div_j5f.tdf                ;         ;
+; lpm_mult.tdf                        ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_mult.tdf                                                                    ;         ;
+; lpm_add_sub.inc                     ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_add_sub.inc                                                                 ;         ;
+; multcore.inc                        ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/multcore.inc                                                                    ;         ;
+; bypassff.inc                        ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/bypassff.inc                                                                    ;         ;
+; altshift.inc                        ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/altshift.inc                                                                    ;         ;
+; multcore.tdf                        ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/multcore.tdf                                                                    ;         ;
+; csa_add.inc                         ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/csa_add.inc                                                                     ;         ;
+; mpar_add.inc                        ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/mpar_add.inc                                                                    ;         ;
+; muleabz.inc                         ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/muleabz.inc                                                                     ;         ;
+; mul_lfrg.inc                        ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/mul_lfrg.inc                                                                    ;         ;
+; mul_boothc.inc                      ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/mul_boothc.inc                                                                  ;         ;
+; alt_ded_mult.inc                    ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/alt_ded_mult.inc                                                                ;         ;
+; alt_ded_mult_y.inc                  ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/alt_ded_mult_y.inc                                                              ;         ;
+; dffpipe.inc                         ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/dffpipe.inc                                                                     ;         ;
+; mpar_add.tdf                        ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/mpar_add.tdf                                                                    ;         ;
+; lpm_add_sub.tdf                     ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_add_sub.tdf                                                                 ;         ;
+; addcore.inc                         ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/addcore.inc                                                                     ;         ;
+; look_add.inc                        ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/look_add.inc                                                                    ;         ;
+; alt_stratix_add_sub.inc             ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc                                                         ;         ;
+; db/add_sub_efh.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/db/add_sub_efh.tdf                  ;         ;
+; altshift.tdf                        ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/altshift.tdf                                                                    ;         ;
++-------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -218,87 +249,97 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 1,676       ;
+; Estimated Total logic elements              ; 1,977       ;
 ;                                             ;             ;
-; Total combinational functions               ; 1676        ;
+; Total combinational functions               ; 1974        ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 515         ;
-;     -- 3 input functions                    ; 382         ;
-;     -- <=2 input functions                  ; 779         ;
+;     -- 4 input functions                    ; 639         ;
+;     -- 3 input functions                    ; 390         ;
+;     -- <=2 input functions                  ; 945         ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 1072        ;
-;     -- arithmetic mode                      ; 604         ;
+;     -- normal mode                          ; 1246        ;
+;     -- arithmetic mode                      ; 728         ;
 ;                                             ;             ;
-; Total registers                             ; 393         ;
-;     -- Dedicated logic registers            ; 393         ;
+; Total registers                             ; 513         ;
+;     -- Dedicated logic registers            ; 513         ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
-; I/O pins                                    ; 52          ;
+; I/O pins                                    ; 53          ;
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ; Maximum fan-out node                        ; clock~input ;
-; Maximum fan-out                             ; 393         ;
-; Total fan-out                               ; 6092        ;
-; Average fan-out                             ; 2.80        ;
+; Maximum fan-out                             ; 474         ;
+; Total fan-out                               ; 7205        ;
+; Average fan-out                             ; 2.77        ;
 +---------------------------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                           ;
-+-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                    ; Library Name ;
-+-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------+--------------+
-; |pong                                     ; 1676 (0)          ; 393 (0)      ; 0           ; 0            ; 0       ; 0         ; 52   ; 0            ; |pong                                                                                                                  ; work         ;
-;    |ScreenRender:vga|                     ; 372 (138)         ; 43 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|ScreenRender:vga                                                                                                 ; work         ;
-;       |lpm_divide:Div0|                   ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|ScreenRender:vga|lpm_divide:Div0                                                                                 ; work         ;
-;          |lpm_divide_jhm:auto_generated|  ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|ScreenRender:vga|lpm_divide:Div0|lpm_divide_jhm:auto_generated                                                   ; work         ;
-;             |sign_div_unsign_klh:divider| ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|ScreenRender:vga|lpm_divide:Div0|lpm_divide_jhm:auto_generated|sign_div_unsign_klh:divider                       ; work         ;
-;                |alt_u_div_j5f:divider|    ; 82 (82)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|ScreenRender:vga|lpm_divide:Div0|lpm_divide_jhm:auto_generated|sign_div_unsign_klh:divider|alt_u_div_j5f:divider ; work         ;
-;       |lpm_divide:Div1|                   ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|ScreenRender:vga|lpm_divide:Div1                                                                                 ; work         ;
-;          |lpm_divide_jhm:auto_generated|  ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|ScreenRender:vga|lpm_divide:Div1|lpm_divide_jhm:auto_generated                                                   ; work         ;
-;             |sign_div_unsign_klh:divider| ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|ScreenRender:vga|lpm_divide:Div1|lpm_divide_jhm:auto_generated|sign_div_unsign_klh:divider                       ; work         ;
-;                |alt_u_div_j5f:divider|    ; 82 (82)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|ScreenRender:vga|lpm_divide:Div1|lpm_divide_jhm:auto_generated|sign_div_unsign_klh:divider|alt_u_div_j5f:divider ; work         ;
-;       |sync_mod:vga_sync|                 ; 70 (70)           ; 43 (43)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|ScreenRender:vga|sync_mod:vga_sync                                                                               ; work         ;
-;    |batedor:batedor1|                     ; 120 (32)          ; 49 (9)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|batedor:batedor1                                                                                                 ; work         ;
-;       |debouncer:batedorLb2|              ; 44 (44)           ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|batedor:batedor1|debouncer:batedorLb2                                                                            ; work         ;
-;       |debouncer:batedorLbl|              ; 44 (44)           ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|batedor:batedor1|debouncer:batedorLbl                                                                            ; work         ;
-;    |batedor:batedor2|                     ; 120 (32)          ; 49 (9)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|batedor:batedor2                                                                                                 ; work         ;
-;       |debouncer:batedorLb2|              ; 44 (44)           ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|batedor:batedor2|debouncer:batedorLb2                                                                            ; work         ;
-;       |debouncer:batedorLbl|              ; 44 (44)           ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|batedor:batedor2|debouncer:batedorLbl                                                                            ; work         ;
-;    |control:controle|                     ; 661 (661)         ; 202 (202)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|control:controle                                                                                                 ; work         ;
-;    |deb_button:atiradeb1|                 ; 35 (35)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|deb_button:atiradeb1                                                                                             ; work         ;
-;    |deb_button:atiradeb2|                 ; 35 (35)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|deb_button:atiradeb2                                                                                             ; work         ;
-;    |placar:p1|                            ; 166 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p1                                                                                                        ; work         ;
-;       |lpm_divide:Div0|                   ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p1|lpm_divide:Div0                                                                                        ; work         ;
-;          |lpm_divide_9gm:auto_generated|  ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p1|lpm_divide:Div0|lpm_divide_9gm:auto_generated                                                          ; work         ;
-;             |sign_div_unsign_akh:divider| ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p1|lpm_divide:Div0|lpm_divide_9gm:auto_generated|sign_div_unsign_akh:divider                              ; work         ;
-;                |alt_u_div_v2f:divider|    ; 46 (46)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p1|lpm_divide:Div0|lpm_divide_9gm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_v2f:divider        ; work         ;
-;       |lpm_divide:Mod0|                   ; 55 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p1|lpm_divide:Mod0                                                                                        ; work         ;
-;          |lpm_divide_f8m:auto_generated|  ; 55 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p1|lpm_divide:Mod0|lpm_divide_f8m:auto_generated                                                          ; work         ;
-;             |sign_div_unsign_dkh:divider| ; 55 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p1|lpm_divide:Mod0|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider                              ; work         ;
-;                |alt_u_div_53f:divider|    ; 55 (55)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p1|lpm_divide:Mod0|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_53f:divider        ; work         ;
-;       |lpm_divide:Mod1|                   ; 23 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p1|lpm_divide:Mod1                                                                                        ; work         ;
-;          |lpm_divide_f8m:auto_generated|  ; 23 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p1|lpm_divide:Mod1|lpm_divide_f8m:auto_generated                                                          ; work         ;
-;             |sign_div_unsign_dkh:divider| ; 23 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p1|lpm_divide:Mod1|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider                              ; work         ;
-;                |alt_u_div_53f:divider|    ; 23 (23)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p1|lpm_divide:Mod1|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_53f:divider        ; work         ;
-;       |ssd:\GEN_SSD:0:ssd_entity|         ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p1|ssd:\GEN_SSD:0:ssd_entity                                                                              ; work         ;
-;       |ssd:\GEN_SSD:1:ssd_entity|         ; 35 (35)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p1|ssd:\GEN_SSD:1:ssd_entity                                                                              ; work         ;
-;    |placar:p2|                            ; 167 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2                                                                                                        ; work         ;
-;       |lpm_divide:Div0|                   ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|lpm_divide:Div0                                                                                        ; work         ;
-;          |lpm_divide_9gm:auto_generated|  ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|lpm_divide:Div0|lpm_divide_9gm:auto_generated                                                          ; work         ;
-;             |sign_div_unsign_akh:divider| ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|lpm_divide:Div0|lpm_divide_9gm:auto_generated|sign_div_unsign_akh:divider                              ; work         ;
-;                |alt_u_div_v2f:divider|    ; 46 (46)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|lpm_divide:Div0|lpm_divide_9gm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_v2f:divider        ; work         ;
-;       |lpm_divide:Mod0|                   ; 55 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|lpm_divide:Mod0                                                                                        ; work         ;
-;          |lpm_divide_f8m:auto_generated|  ; 55 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|lpm_divide:Mod0|lpm_divide_f8m:auto_generated                                                          ; work         ;
-;             |sign_div_unsign_dkh:divider| ; 55 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|lpm_divide:Mod0|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider                              ; work         ;
-;                |alt_u_div_53f:divider|    ; 55 (55)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|lpm_divide:Mod0|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_53f:divider        ; work         ;
-;       |lpm_divide:Mod1|                   ; 23 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|lpm_divide:Mod1                                                                                        ; work         ;
-;          |lpm_divide_f8m:auto_generated|  ; 23 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|lpm_divide:Mod1|lpm_divide_f8m:auto_generated                                                          ; work         ;
-;             |sign_div_unsign_dkh:divider| ; 23 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|lpm_divide:Mod1|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider                              ; work         ;
-;                |alt_u_div_53f:divider|    ; 23 (23)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|lpm_divide:Mod1|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_53f:divider        ; work         ;
-;       |ssd:\GEN_SSD:0:ssd_entity|         ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|ssd:\GEN_SSD:0:ssd_entity                                                                              ; work         ;
-;       |ssd:\GEN_SSD:1:ssd_entity|         ; 36 (36)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|ssd:\GEN_SSD:1:ssd_entity                                                                              ; work         ;
-+-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                     ;
++------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                     ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                         ; Library Name ;
++------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |pong                                          ; 1974 (0)          ; 513 (0)      ; 0           ; 0            ; 0       ; 0         ; 53   ; 0            ; |pong                                                                                                                                       ; work         ;
+;    |Controle_de_som_vibracao_ssd_v2:som|       ; 291 (237)         ; 116 (102)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|Controle_de_som_vibracao_ssd_v2:som                                                                                                   ; work         ;
+;       |PWM:M1|                                 ; 31 (25)           ; 14 (9)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|Controle_de_som_vibracao_ssd_v2:som|PWM:M1                                                                                            ; work         ;
+;          |PRESCALER:U0|                        ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|Controle_de_som_vibracao_ssd_v2:som|PWM:M1|PRESCALER:U0                                                                               ; work         ;
+;       |lpm_mult:Mult0|                         ; 20 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult0                                                                                    ; work         ;
+;          |multcore:mult_core|                  ; 20 (5)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult0|multcore:mult_core                                                                 ; work         ;
+;             |mpar_add:padder|                  ; 15 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                 ; work         ;
+;                |lpm_add_sub:adder[0]|          ; 15 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                            ; work         ;
+;                   |add_sub_efh:auto_generated| ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_efh:auto_generated ; work         ;
+;       |lpm_mult:Mult1|                         ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult1                                                                                    ; work         ;
+;          |multcore:mult_core|                  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult1|multcore:mult_core                                                                 ; work         ;
+;    |ScreenRender:vga|                          ; 372 (138)         ; 43 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|ScreenRender:vga                                                                                                                      ; work         ;
+;       |lpm_divide:Div0|                        ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|ScreenRender:vga|lpm_divide:Div0                                                                                                      ; work         ;
+;          |lpm_divide_jhm:auto_generated|       ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|ScreenRender:vga|lpm_divide:Div0|lpm_divide_jhm:auto_generated                                                                        ; work         ;
+;             |sign_div_unsign_klh:divider|      ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|ScreenRender:vga|lpm_divide:Div0|lpm_divide_jhm:auto_generated|sign_div_unsign_klh:divider                                            ; work         ;
+;                |alt_u_div_j5f:divider|         ; 82 (82)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|ScreenRender:vga|lpm_divide:Div0|lpm_divide_jhm:auto_generated|sign_div_unsign_klh:divider|alt_u_div_j5f:divider                      ; work         ;
+;       |lpm_divide:Div1|                        ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|ScreenRender:vga|lpm_divide:Div1                                                                                                      ; work         ;
+;          |lpm_divide_jhm:auto_generated|       ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|ScreenRender:vga|lpm_divide:Div1|lpm_divide_jhm:auto_generated                                                                        ; work         ;
+;             |sign_div_unsign_klh:divider|      ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|ScreenRender:vga|lpm_divide:Div1|lpm_divide_jhm:auto_generated|sign_div_unsign_klh:divider                                            ; work         ;
+;                |alt_u_div_j5f:divider|         ; 82 (82)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|ScreenRender:vga|lpm_divide:Div1|lpm_divide_jhm:auto_generated|sign_div_unsign_klh:divider|alt_u_div_j5f:divider                      ; work         ;
+;       |sync_mod:vga_sync|                      ; 70 (70)           ; 43 (43)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|ScreenRender:vga|sync_mod:vga_sync                                                                                                    ; work         ;
+;    |batedor:batedor1|                          ; 120 (32)          ; 49 (9)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|batedor:batedor1                                                                                                                      ; work         ;
+;       |debouncer:batedorLb2|                   ; 44 (44)           ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|batedor:batedor1|debouncer:batedorLb2                                                                                                 ; work         ;
+;       |debouncer:batedorLbl|                   ; 44 (44)           ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|batedor:batedor1|debouncer:batedorLbl                                                                                                 ; work         ;
+;    |batedor:batedor2|                          ; 120 (32)          ; 49 (9)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|batedor:batedor2                                                                                                                      ; work         ;
+;       |debouncer:batedorLb2|                   ; 44 (44)           ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|batedor:batedor2|debouncer:batedorLb2                                                                                                 ; work         ;
+;       |debouncer:batedorLbl|                   ; 44 (44)           ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|batedor:batedor2|debouncer:batedorLbl                                                                                                 ; work         ;
+;    |control:controle|                          ; 668 (668)         ; 206 (206)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|control:controle                                                                                                                      ; work         ;
+;    |deb_button:atiradeb1|                      ; 35 (35)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|deb_button:atiradeb1                                                                                                                  ; work         ;
+;    |deb_button:atiradeb2|                      ; 35 (35)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|deb_button:atiradeb2                                                                                                                  ; work         ;
+;    |placar:p1|                                 ; 166 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p1                                                                                                                             ; work         ;
+;       |lpm_divide:Div0|                        ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p1|lpm_divide:Div0                                                                                                             ; work         ;
+;          |lpm_divide_9gm:auto_generated|       ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p1|lpm_divide:Div0|lpm_divide_9gm:auto_generated                                                                               ; work         ;
+;             |sign_div_unsign_akh:divider|      ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p1|lpm_divide:Div0|lpm_divide_9gm:auto_generated|sign_div_unsign_akh:divider                                                   ; work         ;
+;                |alt_u_div_v2f:divider|         ; 46 (46)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p1|lpm_divide:Div0|lpm_divide_9gm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_v2f:divider                             ; work         ;
+;       |lpm_divide:Mod0|                        ; 55 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p1|lpm_divide:Mod0                                                                                                             ; work         ;
+;          |lpm_divide_f8m:auto_generated|       ; 55 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p1|lpm_divide:Mod0|lpm_divide_f8m:auto_generated                                                                               ; work         ;
+;             |sign_div_unsign_dkh:divider|      ; 55 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p1|lpm_divide:Mod0|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider                                                   ; work         ;
+;                |alt_u_div_53f:divider|         ; 55 (55)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p1|lpm_divide:Mod0|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_53f:divider                             ; work         ;
+;       |lpm_divide:Mod1|                        ; 23 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p1|lpm_divide:Mod1                                                                                                             ; work         ;
+;          |lpm_divide_f8m:auto_generated|       ; 23 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p1|lpm_divide:Mod1|lpm_divide_f8m:auto_generated                                                                               ; work         ;
+;             |sign_div_unsign_dkh:divider|      ; 23 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p1|lpm_divide:Mod1|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider                                                   ; work         ;
+;                |alt_u_div_53f:divider|         ; 23 (23)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p1|lpm_divide:Mod1|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_53f:divider                             ; work         ;
+;       |ssd:\GEN_SSD:0:ssd_entity|              ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p1|ssd:\GEN_SSD:0:ssd_entity                                                                                                   ; work         ;
+;       |ssd:\GEN_SSD:1:ssd_entity|              ; 35 (35)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p1|ssd:\GEN_SSD:1:ssd_entity                                                                                                   ; work         ;
+;    |placar:p2|                                 ; 167 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2                                                                                                                             ; work         ;
+;       |lpm_divide:Div0|                        ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|lpm_divide:Div0                                                                                                             ; work         ;
+;          |lpm_divide_9gm:auto_generated|       ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|lpm_divide:Div0|lpm_divide_9gm:auto_generated                                                                               ; work         ;
+;             |sign_div_unsign_akh:divider|      ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|lpm_divide:Div0|lpm_divide_9gm:auto_generated|sign_div_unsign_akh:divider                                                   ; work         ;
+;                |alt_u_div_v2f:divider|         ; 46 (46)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|lpm_divide:Div0|lpm_divide_9gm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_v2f:divider                             ; work         ;
+;       |lpm_divide:Mod0|                        ; 55 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|lpm_divide:Mod0                                                                                                             ; work         ;
+;          |lpm_divide_f8m:auto_generated|       ; 55 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|lpm_divide:Mod0|lpm_divide_f8m:auto_generated                                                                               ; work         ;
+;             |sign_div_unsign_dkh:divider|      ; 55 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|lpm_divide:Mod0|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider                                                   ; work         ;
+;                |alt_u_div_53f:divider|         ; 55 (55)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|lpm_divide:Mod0|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_53f:divider                             ; work         ;
+;       |lpm_divide:Mod1|                        ; 23 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|lpm_divide:Mod1                                                                                                             ; work         ;
+;          |lpm_divide_f8m:auto_generated|       ; 23 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|lpm_divide:Mod1|lpm_divide_f8m:auto_generated                                                                               ; work         ;
+;             |sign_div_unsign_dkh:divider|      ; 23 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|lpm_divide:Mod1|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider                                                   ; work         ;
+;                |alt_u_div_53f:divider|         ; 23 (23)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|lpm_divide:Mod1|lpm_divide_f8m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_53f:divider                             ; work         ;
+;       |ssd:\GEN_SSD:0:ssd_entity|              ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|ssd:\GEN_SSD:0:ssd_entity                                                                                                   ; work         ;
+;       |ssd:\GEN_SSD:1:ssd_entity|              ; 36 (36)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|ssd:\GEN_SSD:1:ssd_entity                                                                                                   ; work         ;
++------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -328,94 +369,142 @@ Encoding Type:  One-Hot
 +---------------+---------------+---------------+---------------+---------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                             ;
-+--------------------------------------------+-------------------------------------------------------------------+
-; Register name                              ; Reason for Removal                                                ;
-+--------------------------------------------+-------------------------------------------------------------------+
-; control:controle|counter[29]               ; Merged with control:controle|\process_2:counter[29]               ;
-; control:controle|counter[28]               ; Merged with control:controle|\process_2:counter[28]               ;
-; control:controle|counter[27]               ; Merged with control:controle|\process_2:counter[27]               ;
-; control:controle|counter[26]               ; Merged with control:controle|\process_2:counter[26]               ;
-; control:controle|counter[25]               ; Merged with control:controle|\process_2:counter[25]               ;
-; control:controle|counter[24]               ; Merged with control:controle|\process_2:counter[24]               ;
-; control:controle|counter[23]               ; Merged with control:controle|\process_2:counter[23]               ;
-; control:controle|counter[22]               ; Merged with control:controle|\process_2:counter[22]               ;
-; control:controle|counter[21]               ; Merged with control:controle|\process_2:counter[21]               ;
-; control:controle|counter[20]               ; Merged with control:controle|\process_2:counter[20]               ;
-; control:controle|counter[19]               ; Merged with control:controle|\process_2:counter[19]               ;
-; control:controle|counter[18]               ; Merged with control:controle|\process_2:counter[18]               ;
-; control:controle|counter[17]               ; Merged with control:controle|\process_2:counter[17]               ;
-; control:controle|counter[16]               ; Merged with control:controle|\process_2:counter[16]               ;
-; control:controle|counter[15]               ; Merged with control:controle|\process_2:counter[15]               ;
-; control:controle|counter[14]               ; Merged with control:controle|\process_2:counter[14]               ;
-; control:controle|counter[13]               ; Merged with control:controle|\process_2:counter[13]               ;
-; control:controle|counter[12]               ; Merged with control:controle|\process_2:counter[12]               ;
-; control:controle|counter[11]               ; Merged with control:controle|\process_2:counter[11]               ;
-; control:controle|counter[10]               ; Merged with control:controle|\process_2:counter[10]               ;
-; control:controle|counter[9]                ; Merged with control:controle|\process_2:counter[9]                ;
-; control:controle|counter[8]                ; Merged with control:controle|\process_2:counter[8]                ;
-; control:controle|counter[7]                ; Merged with control:controle|\process_2:counter[7]                ;
-; control:controle|counter[6]                ; Merged with control:controle|\process_2:counter[6]                ;
-; control:controle|counter[5]                ; Merged with control:controle|\process_2:counter[5]                ;
-; control:controle|counter[4]                ; Merged with control:controle|\process_2:counter[4]                ;
-; control:controle|counter[3]                ; Merged with control:controle|\process_2:counter[3]                ;
-; control:controle|counter[2]                ; Merged with control:controle|\process_2:counter[2]                ;
-; control:controle|counter[1]                ; Merged with control:controle|\process_2:counter[1]                ;
-; control:controle|counter[0]                ; Merged with control:controle|\process_2:counter[0]                ;
-; control:controle|counter_aumenta_tempo[27] ; Merged with control:controle|\process_2:counter_aumenta_tempo[27] ;
-; control:controle|counter_aumenta_tempo[26] ; Merged with control:controle|\process_2:counter_aumenta_tempo[26] ;
-; control:controle|counter_aumenta_tempo[25] ; Merged with control:controle|\process_2:counter_aumenta_tempo[25] ;
-; control:controle|counter_aumenta_tempo[24] ; Merged with control:controle|\process_2:counter_aumenta_tempo[24] ;
-; control:controle|counter_aumenta_tempo[23] ; Merged with control:controle|\process_2:counter_aumenta_tempo[23] ;
-; control:controle|counter_aumenta_tempo[22] ; Merged with control:controle|\process_2:counter_aumenta_tempo[22] ;
-; control:controle|counter_aumenta_tempo[21] ; Merged with control:controle|\process_2:counter_aumenta_tempo[21] ;
-; control:controle|counter_aumenta_tempo[20] ; Merged with control:controle|\process_2:counter_aumenta_tempo[20] ;
-; control:controle|counter_aumenta_tempo[19] ; Merged with control:controle|\process_2:counter_aumenta_tempo[19] ;
-; control:controle|counter_aumenta_tempo[18] ; Merged with control:controle|\process_2:counter_aumenta_tempo[18] ;
-; control:controle|counter_aumenta_tempo[17] ; Merged with control:controle|\process_2:counter_aumenta_tempo[17] ;
-; control:controle|counter_aumenta_tempo[16] ; Merged with control:controle|\process_2:counter_aumenta_tempo[16] ;
-; control:controle|counter_aumenta_tempo[15] ; Merged with control:controle|\process_2:counter_aumenta_tempo[15] ;
-; control:controle|counter_aumenta_tempo[14] ; Merged with control:controle|\process_2:counter_aumenta_tempo[14] ;
-; control:controle|counter_aumenta_tempo[13] ; Merged with control:controle|\process_2:counter_aumenta_tempo[13] ;
-; control:controle|counter_aumenta_tempo[12] ; Merged with control:controle|\process_2:counter_aumenta_tempo[12] ;
-; control:controle|counter_aumenta_tempo[11] ; Merged with control:controle|\process_2:counter_aumenta_tempo[11] ;
-; control:controle|counter_aumenta_tempo[10] ; Merged with control:controle|\process_2:counter_aumenta_tempo[10] ;
-; control:controle|counter_aumenta_tempo[9]  ; Merged with control:controle|\process_2:counter_aumenta_tempo[9]  ;
-; control:controle|counter_aumenta_tempo[8]  ; Merged with control:controle|\process_2:counter_aumenta_tempo[8]  ;
-; control:controle|counter_aumenta_tempo[7]  ; Merged with control:controle|\process_2:counter_aumenta_tempo[7]  ;
-; control:controle|counter_aumenta_tempo[6]  ; Merged with control:controle|\process_2:counter_aumenta_tempo[6]  ;
-; control:controle|counter_aumenta_tempo[5]  ; Merged with control:controle|\process_2:counter_aumenta_tempo[5]  ;
-; control:controle|counter_aumenta_tempo[4]  ; Merged with control:controle|\process_2:counter_aumenta_tempo[4]  ;
-; control:controle|counter_aumenta_tempo[3]  ; Merged with control:controle|\process_2:counter_aumenta_tempo[3]  ;
-; control:controle|counter_aumenta_tempo[2]  ; Merged with control:controle|\process_2:counter_aumenta_tempo[2]  ;
-; control:controle|counter_aumenta_tempo[1]  ; Merged with control:controle|\process_2:counter_aumenta_tempo[1]  ;
-; control:controle|counter_aumenta_tempo[0]  ; Merged with control:controle|\process_2:counter_aumenta_tempo[0]  ;
-; control:controle|counter_missil[18]        ; Merged with control:controle|counter_missi2[18]                   ;
-; control:controle|counter_missil[17]        ; Merged with control:controle|counter_missi2[17]                   ;
-; control:controle|counter_missil[16]        ; Merged with control:controle|counter_missi2[16]                   ;
-; control:controle|counter_missil[15]        ; Merged with control:controle|counter_missi2[15]                   ;
-; control:controle|counter_missil[14]        ; Merged with control:controle|counter_missi2[14]                   ;
-; control:controle|counter_missil[13]        ; Merged with control:controle|counter_missi2[13]                   ;
-; control:controle|counter_missil[12]        ; Merged with control:controle|counter_missi2[12]                   ;
-; control:controle|counter_missil[11]        ; Merged with control:controle|counter_missi2[11]                   ;
-; control:controle|counter_missil[10]        ; Merged with control:controle|counter_missi2[10]                   ;
-; control:controle|counter_missil[9]         ; Merged with control:controle|counter_missi2[9]                    ;
-; control:controle|counter_missil[8]         ; Merged with control:controle|counter_missi2[8]                    ;
-; control:controle|counter_missil[7]         ; Merged with control:controle|counter_missi2[7]                    ;
-; control:controle|counter_missil[6]         ; Merged with control:controle|counter_missi2[6]                    ;
-; control:controle|counter_missil[5]         ; Merged with control:controle|counter_missi2[5]                    ;
-; control:controle|counter_missil[4]         ; Merged with control:controle|counter_missi2[4]                    ;
-; control:controle|counter_missil[3]         ; Merged with control:controle|counter_missi2[3]                    ;
-; control:controle|counter_missil[2]         ; Merged with control:controle|counter_missi2[2]                    ;
-; control:controle|counter_missil[1]         ; Merged with control:controle|counter_missi2[1]                    ;
-; control:controle|counter_missil[0]         ; Merged with control:controle|counter_missi2[0]                    ;
-; control:controle|VY[2]                     ; Stuck at GND due to stuck port data_in                            ;
-; control:controle|COUNTER_2[0]              ; Merged with ScreenRender:vga|sync_mod:vga_sync|counter_mod2       ;
-; batedor:batedor2|pr_state.c1d1             ; Lost fanout                                                       ;
-; batedor:batedor1|pr_state.c1d1             ; Lost fanout                                                       ;
-; Total Number of Removed Registers = 81     ;                                                                   ;
-+--------------------------------------------+-------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                         ;
++--------------------------------------------------------------------+-----------------------------------------------------------------------+
+; Register name                                                      ; Reason for Removal                                                    ;
++--------------------------------------------------------------------+-----------------------------------------------------------------------+
+; control:controle|evento_fim_de_jogo_sig                            ; Stuck at GND due to stuck port data_in                                ;
+; Controle_de_som_vibracao_ssd_v2:som|PWM:M1|PRESCALER:U0|CONT4[0,1] ; Lost fanout                                                           ;
+; Controle_de_som_vibracao_ssd_v2:som|PWM:M1|PRESCALER:U0|CLK4       ; Lost fanout                                                           ;
+; Controle_de_som_vibracao_ssd_v2:som|evento_limit_vibra[4,5]        ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit_vibra[1] ;
+; Controle_de_som_vibracao_ssd_v2:som|evento_limit_vibra[3]          ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit_vibra[2] ;
+; Controle_de_som_vibracao_ssd_v2:som|evento_limit_vibra[7,8]        ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit_vibra[6] ;
+; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[1][4]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]       ;
+; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[1][1]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]       ;
+; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[1][3]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]       ;
+; Controle_de_som_vibracao_ssd_v2:som|evento_limit[4]                ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]       ;
+; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[1][7]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]       ;
+; Controle_de_som_vibracao_ssd_v2:som|evento_limit[5]                ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]       ;
+; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[0][0]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]       ;
+; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[0][1]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]       ;
+; Controle_de_som_vibracao_ssd_v2:som|evento_limit[6]                ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]       ;
+; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[0][3]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]       ;
+; Controle_de_som_vibracao_ssd_v2:som|evento_limit[7,8]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]       ;
+; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[0][6]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]       ;
+; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[0][7]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]       ;
+; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[2][0]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]       ;
+; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[2][1]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]       ;
+; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[2][2]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]       ;
+; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[2][3]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]       ;
+; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[2][6]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]       ;
+; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[2][7]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]       ;
+; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[1][0]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]       ;
+; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[1][5]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[3]       ;
+; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[0][2]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[1][2]     ;
+; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[0][5]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[1][2]     ;
+; control:controle|counter[29]                                       ; Merged with control:controle|\process_3:counter[29]                   ;
+; control:controle|counter[28]                                       ; Merged with control:controle|\process_3:counter[28]                   ;
+; control:controle|counter[27]                                       ; Merged with control:controle|\process_3:counter[27]                   ;
+; control:controle|counter[26]                                       ; Merged with control:controle|\process_3:counter[26]                   ;
+; control:controle|counter[25]                                       ; Merged with control:controle|\process_3:counter[25]                   ;
+; control:controle|counter[24]                                       ; Merged with control:controle|\process_3:counter[24]                   ;
+; control:controle|counter[23]                                       ; Merged with control:controle|\process_3:counter[23]                   ;
+; control:controle|counter[22]                                       ; Merged with control:controle|\process_3:counter[22]                   ;
+; control:controle|counter[21]                                       ; Merged with control:controle|\process_3:counter[21]                   ;
+; control:controle|counter[20]                                       ; Merged with control:controle|\process_3:counter[20]                   ;
+; control:controle|counter[19]                                       ; Merged with control:controle|\process_3:counter[19]                   ;
+; control:controle|counter[18]                                       ; Merged with control:controle|\process_3:counter[18]                   ;
+; control:controle|counter[17]                                       ; Merged with control:controle|\process_3:counter[17]                   ;
+; control:controle|counter[16]                                       ; Merged with control:controle|\process_3:counter[16]                   ;
+; control:controle|counter[15]                                       ; Merged with control:controle|\process_3:counter[15]                   ;
+; control:controle|counter[14]                                       ; Merged with control:controle|\process_3:counter[14]                   ;
+; control:controle|counter[13]                                       ; Merged with control:controle|\process_3:counter[13]                   ;
+; control:controle|counter[12]                                       ; Merged with control:controle|\process_3:counter[12]                   ;
+; control:controle|counter[11]                                       ; Merged with control:controle|\process_3:counter[11]                   ;
+; control:controle|counter[10]                                       ; Merged with control:controle|\process_3:counter[10]                   ;
+; control:controle|counter[9]                                        ; Merged with control:controle|\process_3:counter[9]                    ;
+; control:controle|counter[8]                                        ; Merged with control:controle|\process_3:counter[8]                    ;
+; control:controle|counter[7]                                        ; Merged with control:controle|\process_3:counter[7]                    ;
+; control:controle|counter[6]                                        ; Merged with control:controle|\process_3:counter[6]                    ;
+; control:controle|counter[5]                                        ; Merged with control:controle|\process_3:counter[5]                    ;
+; control:controle|counter[4]                                        ; Merged with control:controle|\process_3:counter[4]                    ;
+; control:controle|counter[3]                                        ; Merged with control:controle|\process_3:counter[3]                    ;
+; control:controle|counter[2]                                        ; Merged with control:controle|\process_3:counter[2]                    ;
+; control:controle|counter[1]                                        ; Merged with control:controle|\process_3:counter[1]                    ;
+; control:controle|counter[0]                                        ; Merged with control:controle|\process_3:counter[0]                    ;
+; control:controle|counter_aumenta_tempo[27]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[27]     ;
+; control:controle|counter_aumenta_tempo[26]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[26]     ;
+; control:controle|counter_aumenta_tempo[25]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[25]     ;
+; control:controle|counter_aumenta_tempo[24]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[24]     ;
+; control:controle|counter_aumenta_tempo[23]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[23]     ;
+; control:controle|counter_aumenta_tempo[22]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[22]     ;
+; control:controle|counter_aumenta_tempo[21]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[21]     ;
+; control:controle|counter_aumenta_tempo[20]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[20]     ;
+; control:controle|counter_aumenta_tempo[19]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[19]     ;
+; control:controle|counter_aumenta_tempo[18]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[18]     ;
+; control:controle|counter_aumenta_tempo[17]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[17]     ;
+; control:controle|counter_aumenta_tempo[16]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[16]     ;
+; control:controle|counter_aumenta_tempo[15]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[15]     ;
+; control:controle|counter_aumenta_tempo[14]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[14]     ;
+; control:controle|counter_aumenta_tempo[13]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[13]     ;
+; control:controle|counter_aumenta_tempo[12]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[12]     ;
+; control:controle|counter_aumenta_tempo[11]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[11]     ;
+; control:controle|counter_aumenta_tempo[10]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[10]     ;
+; control:controle|counter_aumenta_tempo[9]                          ; Merged with control:controle|\process_3:counter_aumenta_tempo[9]      ;
+; control:controle|counter_aumenta_tempo[8]                          ; Merged with control:controle|\process_3:counter_aumenta_tempo[8]      ;
+; control:controle|counter_aumenta_tempo[7]                          ; Merged with control:controle|\process_3:counter_aumenta_tempo[7]      ;
+; control:controle|counter_aumenta_tempo[6]                          ; Merged with control:controle|\process_3:counter_aumenta_tempo[6]      ;
+; control:controle|counter_aumenta_tempo[5]                          ; Merged with control:controle|\process_3:counter_aumenta_tempo[5]      ;
+; control:controle|counter_aumenta_tempo[4]                          ; Merged with control:controle|\process_3:counter_aumenta_tempo[4]      ;
+; control:controle|counter_aumenta_tempo[3]                          ; Merged with control:controle|\process_3:counter_aumenta_tempo[3]      ;
+; control:controle|counter_aumenta_tempo[2]                          ; Merged with control:controle|\process_3:counter_aumenta_tempo[2]      ;
+; control:controle|counter_aumenta_tempo[1]                          ; Merged with control:controle|\process_3:counter_aumenta_tempo[1]      ;
+; control:controle|counter_aumenta_tempo[0]                          ; Merged with control:controle|\process_3:counter_aumenta_tempo[0]      ;
+; control:controle|counter_missil[18]                                ; Merged with control:controle|counter_missi2[18]                       ;
+; control:controle|counter_missil[17]                                ; Merged with control:controle|counter_missi2[17]                       ;
+; control:controle|counter_missil[16]                                ; Merged with control:controle|counter_missi2[16]                       ;
+; control:controle|counter_missil[15]                                ; Merged with control:controle|counter_missi2[15]                       ;
+; control:controle|counter_missil[14]                                ; Merged with control:controle|counter_missi2[14]                       ;
+; control:controle|counter_missil[13]                                ; Merged with control:controle|counter_missi2[13]                       ;
+; control:controle|counter_missil[12]                                ; Merged with control:controle|counter_missi2[12]                       ;
+; control:controle|counter_missil[11]                                ; Merged with control:controle|counter_missi2[11]                       ;
+; control:controle|counter_missil[10]                                ; Merged with control:controle|counter_missi2[10]                       ;
+; control:controle|counter_missil[9]                                 ; Merged with control:controle|counter_missi2[9]                        ;
+; control:controle|counter_missil[8]                                 ; Merged with control:controle|counter_missi2[8]                        ;
+; control:controle|counter_missil[7]                                 ; Merged with control:controle|counter_missi2[7]                        ;
+; control:controle|counter_missil[6]                                 ; Merged with control:controle|counter_missi2[6]                        ;
+; control:controle|counter_missil[5]                                 ; Merged with control:controle|counter_missi2[5]                        ;
+; control:controle|counter_missil[4]                                 ; Merged with control:controle|counter_missi2[4]                        ;
+; control:controle|counter_missil[3]                                 ; Merged with control:controle|counter_missi2[3]                        ;
+; control:controle|counter_missil[2]                                 ; Merged with control:controle|counter_missi2[2]                        ;
+; control:controle|counter_missil[1]                                 ; Merged with control:controle|counter_missi2[1]                        ;
+; control:controle|counter_missil[0]                                 ; Merged with control:controle|counter_missi2[0]                        ;
+; Controle_de_som_vibracao_ssd_v2:som|evento_limit_vibra[6]          ; Stuck at GND due to stuck port data_in                                ;
+; Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]                ; Stuck at GND due to stuck port data_in                                ;
+; Controle_de_som_vibracao_ssd_v2:som|sig_TIMER_SOM[0,1,3,7]         ; Stuck at GND due to stuck port data_in                                ;
+; control:controle|VY[2]                                             ; Stuck at GND due to stuck port data_in                                ;
+; control:controle|COUNTER_2[0]                                      ; Merged with ScreenRender:vga|sync_mod:vga_sync|counter_mod2           ;
+; Controle_de_som_vibracao_ssd_v2:som|evento_limit_vibra[1]          ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit_vibra[0] ;
+; batedor:batedor2|pr_state.c1d1                                     ; Lost fanout                                                           ;
+; batedor:batedor1|pr_state.c1d1                                     ; Lost fanout                                                           ;
+; Controle_de_som_vibracao_ssd_v2:som|evento_limit[3]                ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[0]       ;
+; Total Number of Removed Registers = 122                            ;                                                                       ;
++--------------------------------------------------------------------+-----------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                      ;
++-----------------------------------------+---------------------------+------------------------------------------------------------+
+; Register name                           ; Reason for Removal        ; Registers Removed due to This Register                     ;
++-----------------------------------------+---------------------------+------------------------------------------------------------+
+; control:controle|evento_fim_de_jogo_sig ; Stuck at GND              ; Controle_de_som_vibracao_ssd_v2:som|evento_limit_vibra[6], ;
+;                                         ; due to stuck port data_in ; Controle_de_som_vibracao_ssd_v2:som|evento_limit[2],       ;
+;                                         ;                           ; Controle_de_som_vibracao_ssd_v2:som|sig_TIMER_SOM[0],      ;
+;                                         ;                           ; Controle_de_som_vibracao_ssd_v2:som|sig_TIMER_SOM[1],      ;
+;                                         ;                           ; Controle_de_som_vibracao_ssd_v2:som|sig_TIMER_SOM[3],      ;
+;                                         ;                           ; Controle_de_som_vibracao_ssd_v2:som|sig_TIMER_SOM[7]       ;
++-----------------------------------------+---------------------------+------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -423,62 +512,72 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 393   ;
-; Number of registers using Synchronous Clear  ; 136   ;
+; Total registers                              ; 513   ;
+; Number of registers using Synchronous Clear  ; 144   ;
 ; Number of registers using Synchronous Load   ; 72    ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 14    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 276   ;
+; Number of registers using Clock Enable       ; 290   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; batedor:batedor1|pos_sig[1]            ; 22      ;
-; batedor:batedor1|pos_sig[0]            ; 15      ;
-; batedor:batedor2|pos_sig[1]            ; 22      ;
-; batedor:batedor2|pos_sig[0]            ; 16      ;
-; control:controle|X[5]                  ; 10      ;
-; control:controle|Y[3]                  ; 20      ;
-; control:controle|Y[4]                  ; 20      ;
-; control:controle|VY[0]                 ; 5       ;
-; Total number of inverted registers = 8 ;         ;
-+----------------------------------------+---------+
++---------------------------------------------------------------------+
+; Inverted Register Statistics                                        ;
++-----------------------------------------------------------+---------+
+; Inverted Register                                         ; Fan out ;
++-----------------------------------------------------------+---------+
+; batedor:batedor1|pos_sig[1]                               ; 22      ;
+; batedor:batedor1|pos_sig[0]                               ; 15      ;
+; batedor:batedor2|pos_sig[1]                               ; 22      ;
+; batedor:batedor2|pos_sig[0]                               ; 16      ;
+; control:controle|X[5]                                     ; 10      ;
+; control:controle|Y[3]                                     ; 20      ;
+; control:controle|Y[4]                                     ; 20      ;
+; control:controle|VY[0]                                    ; 5       ;
+; Controle_de_som_vibracao_ssd_v2:som|evento_limit_vibra[0] ; 17      ;
+; Controle_de_som_vibracao_ssd_v2:som|sig_RST_SOM           ; 16      ;
+; Controle_de_som_vibracao_ssd_v2:som|evento_limit[0]       ; 11      ;
+; Total number of inverted registers = 11                   ;         ;
++-----------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
-; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |pong|ScreenRender:vga|sync_mod:vga_sync|x_counter[1]   ;
-; 4:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |pong|deb_button:atiradeb2|counter[0]                   ;
-; 4:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |pong|deb_button:atiradeb1|counter[11]                  ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 0 LEs                ; 14 LEs                 ; Yes        ; |pong|control:controle|PONTOS2[6]                       ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 0 LEs                ; 14 LEs                 ; Yes        ; |pong|control:controle|PONTOS1[0]                       ;
-; 4:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |pong|batedor:batedor2|debouncer:batedorLbl|counter[8]  ;
-; 4:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |pong|batedor:batedor2|debouncer:batedorLb2|counter[9]  ;
-; 4:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |pong|batedor:batedor1|debouncer:batedorLbl|counter[13] ;
-; 4:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |pong|batedor:batedor1|debouncer:batedorLb2|counter[11] ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |pong|control:controle|y_missle_p2_sig[0]               ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |pong|control:controle|y_missle_p1_sig[4]               ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |pong|control:controle|x_missle_p2_sig[4]               ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |pong|control:controle|x_missle_p1_sig[5]               ;
-; 8:1                ; 5 bits    ; 25 LEs        ; 10 LEs               ; 15 LEs                 ; Yes        ; |pong|control:controle|X[2]                             ;
-; 10:1               ; 4 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |pong|control:controle|Y[5]                             ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |pong|batedor:batedor2|pos_sig[2]                       ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |pong|batedor:batedor1|pos_sig[2]                       ;
-; 12:1               ; 2 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |pong|control:controle|VY[2]                            ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |pong|control:controle|Y[3]                             ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |pong|batedor:batedor2|pos_sig[1]                       ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |pong|batedor:batedor1|pos_sig[0]                       ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |pong|placar:p2|ssd:\GEN_SSD:1:ssd_entity|ssd_out[5]    ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |pong|placar:p1|ssd:\GEN_SSD:1:ssd_entity|ssd_out[2]    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |pong|Controle_de_som_vibracao_ssd_v2:som|change_SOUND[2]       ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |pong|Controle_de_som_vibracao_ssd_v2:som|PWM:M1|CONT[6]        ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |pong|ScreenRender:vga|sync_mod:vga_sync|x_counter[9]           ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |pong|Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[2][4]     ;
+; 4:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |pong|deb_button:atiradeb2|counter[4]                           ;
+; 4:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |pong|deb_button:atiradeb1|counter[4]                           ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 0 LEs                ; 14 LEs                 ; Yes        ; |pong|control:controle|PONTOS2[6]                               ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 0 LEs                ; 14 LEs                 ; Yes        ; |pong|control:controle|PONTOS1[6]                               ;
+; 4:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |pong|batedor:batedor2|debouncer:batedorLbl|counter[6]          ;
+; 4:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |pong|batedor:batedor2|debouncer:batedorLb2|counter[12]         ;
+; 4:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |pong|batedor:batedor1|debouncer:batedorLbl|counter[2]          ;
+; 4:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |pong|batedor:batedor1|debouncer:batedorLb2|counter[1]          ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |pong|control:controle|y_missle_p2_sig[5]                       ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |pong|control:controle|y_missle_p1_sig[2]                       ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 0 LEs                ; 12 LEs                 ; Yes        ; |pong|Controle_de_som_vibracao_ssd_v2:som|sig_TIMER_SOM[3]      ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |pong|control:controle|x_missle_p2_sig[1]                       ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |pong|control:controle|x_missle_p1_sig[5]                       ;
+; 8:1                ; 5 bits    ; 25 LEs        ; 10 LEs               ; 15 LEs                 ; Yes        ; |pong|control:controle|X[0]                                     ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |pong|control:controle|Y[5]                                     ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |pong|batedor:batedor2|pos_sig[5]                               ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |pong|batedor:batedor1|pos_sig[3]                               ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |pong|control:controle|VY[2]                                    ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |pong|Controle_de_som_vibracao_ssd_v2:som|evento_limit_vibra[0] ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |pong|Controle_de_som_vibracao_ssd_v2:som|evento_limit[3]       ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |pong|control:controle|Y[4]                                     ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |pong|batedor:batedor2|pos_sig[1]                               ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |pong|batedor:batedor1|pos_sig[1]                               ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |pong|placar:p2|ssd:\GEN_SSD:1:ssd_entity|ssd_out[2]            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |pong|placar:p1|ssd:\GEN_SSD:1:ssd_entity|ssd_out[2]            ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |pong|Controle_de_som_vibracao_ssd_v2:som|change_SOUND          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------+
@@ -555,6 +654,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; num_max        ; 99       ; Signed Integer                    ;
 ; fclock         ; 50000000 ; Signed Integer                    ;
 +----------------+----------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Controle_de_som_vibracao_ssd_v2:som ;
++-------------------+----------+---------------------------------------------------+
+; Parameter Name    ; Value    ; Type                                              ;
++-------------------+----------+---------------------------------------------------+
+; max_value_segment ; 6        ; Signed Integer                                    ;
+; min_value         ; 0        ; Signed Integer                                    ;
+; max_value         ; 99       ; Signed Integer                                    ;
+; max_speed_ms      ; 10       ; Signed Integer                                    ;
+; fclk              ; 50000000 ; Signed Integer                                    ;
+; reso              ; 8        ; Signed Integer                                    ;
+; freq_0            ; 00000000 ; Unsigned Binary                                   ;
+; freq_1            ; 00100000 ; Unsigned Binary                                   ;
+; freq_2            ; 00010000 ; Unsigned Binary                                   ;
+; freq_3            ; 01000100 ; Unsigned Binary                                   ;
+; freq_4            ; 01001001 ; Unsigned Binary                                   ;
+; freq_5            ; 00100100 ; Unsigned Binary                                   ;
++-------------------+----------+---------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -742,6 +862,120 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult0 ;
++------------------------------------------------+-------------+--------------------------------------+
+; Parameter Name                                 ; Value       ; Type                                 ;
++------------------------------------------------+-------------+--------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON          ; AUTO_CARRY                           ;
+; IGNORE_CARRY_BUFFERS                           ; OFF         ; IGNORE_CARRY                         ;
+; AUTO_CASCADE_CHAINS                            ; ON          ; AUTO_CASCADE                         ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF         ; IGNORE_CASCADE                       ;
+; LPM_WIDTHA                                     ; 6           ; Untyped                              ;
+; LPM_WIDTHB                                     ; 19          ; Untyped                              ;
+; LPM_WIDTHP                                     ; 25          ; Untyped                              ;
+; LPM_WIDTHR                                     ; 25          ; Untyped                              ;
+; LPM_WIDTHS                                     ; 1           ; Untyped                              ;
+; LPM_REPRESENTATION                             ; UNSIGNED    ; Untyped                              ;
+; LPM_PIPELINE                                   ; 0           ; Untyped                              ;
+; LATENCY                                        ; 0           ; Untyped                              ;
+; INPUT_A_IS_CONSTANT                            ; NO          ; Untyped                              ;
+; INPUT_B_IS_CONSTANT                            ; YES         ; Untyped                              ;
+; USE_EAB                                        ; OFF         ; Untyped                              ;
+; MAXIMIZE_SPEED                                 ; 5           ; Untyped                              ;
+; DEVICE_FAMILY                                  ; Cyclone III ; Untyped                              ;
+; CARRY_CHAIN                                    ; MANUAL      ; Untyped                              ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT         ; TECH_MAPPER_APEX20K                  ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO        ; Untyped                              ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0           ; Untyped                              ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0           ; Untyped                              ;
+; CBXI_PARAMETER                                 ; NOTHING     ; Untyped                              ;
+; INPUT_A_FIXED_VALUE                            ; Bx          ; Untyped                              ;
+; INPUT_B_FIXED_VALUE                            ; Bx          ; Untyped                              ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF         ; Untyped                              ;
++------------------------------------------------+-------------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult1 ;
++------------------------------------------------+-------------+--------------------------------------+
+; Parameter Name                                 ; Value       ; Type                                 ;
++------------------------------------------------+-------------+--------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON          ; AUTO_CARRY                           ;
+; IGNORE_CARRY_BUFFERS                           ; OFF         ; IGNORE_CARRY                         ;
+; AUTO_CASCADE_CHAINS                            ; ON          ; AUTO_CASCADE                         ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF         ; IGNORE_CASCADE                       ;
+; LPM_WIDTHA                                     ; 4           ; Untyped                              ;
+; LPM_WIDTHB                                     ; 19          ; Untyped                              ;
+; LPM_WIDTHP                                     ; 23          ; Untyped                              ;
+; LPM_WIDTHR                                     ; 23          ; Untyped                              ;
+; LPM_WIDTHS                                     ; 1           ; Untyped                              ;
+; LPM_REPRESENTATION                             ; UNSIGNED    ; Untyped                              ;
+; LPM_PIPELINE                                   ; 0           ; Untyped                              ;
+; LATENCY                                        ; 0           ; Untyped                              ;
+; INPUT_A_IS_CONSTANT                            ; NO          ; Untyped                              ;
+; INPUT_B_IS_CONSTANT                            ; YES         ; Untyped                              ;
+; USE_EAB                                        ; OFF         ; Untyped                              ;
+; MAXIMIZE_SPEED                                 ; 5           ; Untyped                              ;
+; DEVICE_FAMILY                                  ; Cyclone III ; Untyped                              ;
+; CARRY_CHAIN                                    ; MANUAL      ; Untyped                              ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT         ; TECH_MAPPER_APEX20K                  ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO        ; Untyped                              ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0           ; Untyped                              ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0           ; Untyped                              ;
+; CBXI_PARAMETER                                 ; NOTHING     ; Untyped                              ;
+; INPUT_A_FIXED_VALUE                            ; Bx          ; Untyped                              ;
+; INPUT_B_FIXED_VALUE                            ; Bx          ; Untyped                              ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF         ; Untyped                              ;
++------------------------------------------------+-------------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                             ;
++---------------------------------------+----------------------------------------------------+
+; Name                                  ; Value                                              ;
++---------------------------------------+----------------------------------------------------+
+; Number of entity instances            ; 2                                                  ;
+; Entity Instance                       ; Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 6                                                  ;
+;     -- LPM_WIDTHB                     ; 19                                                 ;
+;     -- LPM_WIDTHP                     ; 25                                                 ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                           ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                 ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                                ;
+;     -- USE_EAB                        ; OFF                                                ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                               ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                 ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                 ;
+; Entity Instance                       ; Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult1 ;
+;     -- LPM_WIDTHA                     ; 4                                                  ;
+;     -- LPM_WIDTHB                     ; 19                                                 ;
+;     -- LPM_WIDTHP                     ; 23                                                 ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                           ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                 ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                                ;
+;     -- USE_EAB                        ; OFF                                                ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                               ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                 ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                 ;
++---------------------------------------+----------------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "Controle_de_som_vibracao_ssd_v2:som|PWM:M1" ;
++------------+-------+----------+----------------------------------------+
+; Port       ; Type  ; Severity ; Details                                ;
++------------+-------+----------+----------------------------------------+
+; enable     ; Input ; Info     ; Stuck at VCC                           ;
+; sel_pr[1]  ; Input ; Info     ; Stuck at VCC                           ;
+; sel_pr[0]  ; Input ; Info     ; Stuck at GND                           ;
+; duty[7..1] ; Input ; Info     ; Stuck at GND                           ;
+; duty[0]    ; Input ; Info     ; Stuck at VCC                           ;
++------------+-------+----------+----------------------------------------+
+
+
 +----------------------------------------------------------------+
 ; Port Connectivity Checks: "ScreenRender:vga|sync_mod:vga_sync" ;
 +-------+-------+----------+-------------------------------------+
@@ -767,9 +1001,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sun Dec 10 17:25:14 2017
+    Info: Processing started: Mon Dec 11 16:23:16 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PINGMATRONIX -c PINGMATRONIX
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file preescalertrue.vhd
+    Info (12022): Found design unit 1: PRESCALER-RTL
+    Info (12023): Found entity 1: PRESCALER
+Info (12021): Found 2 design units, including 1 entities, in source file preescaler.vhd
+    Info (12022): Found design unit 1: PWM-RTL
+    Info (12023): Found entity 1: PWM
+Info (12021): Found 2 design units, including 1 entities, in source file int2disp.vhd
+    Info (12022): Found design unit 1: int2disp-int2disp
+    Info (12023): Found entity 1: int2disp
+Info (12021): Found 1 design units, including 0 entities, in source file mypackage.vhd
+    Info (12022): Found design unit 1: MyPackage
+Info (12021): Found 2 design units, including 1 entities, in source file controle_de_som_vibracao_ssd_v2.vhd
+    Info (12022): Found design unit 1: Controle_de_som_vibracao_ssd_v2-projeto
+    Info (12023): Found entity 1: Controle_de_som_vibracao_ssd_v2
 Info (12021): Found 2 design units, including 1 entities, in source file placar.vhd
     Info (12022): Found design unit 1: placar-arch
     Info (12023): Found entity 1: placar
@@ -804,22 +1052,28 @@ Info (12021): Found 2 design units, including 1 entities, in source file pong.vh
     Info (12022): Found design unit 1: pong-arch
     Info (12023): Found entity 1: pong
 Info (12127): Elaborating entity "pong" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at pong.vhd(24): used implicit default value for signal "vibra_1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at pong.vhd(30): used implicit default value for signal "vibra_2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Info (12128): Elaborating entity "batedor" for hierarchy "batedor:batedor1"
 Info (12128): Elaborating entity "debouncer" for hierarchy "batedor:batedor1|debouncer:batedorLbl"
 Info (12128): Elaborating entity "deb_button" for hierarchy "deb_button:atiradeb1"
 Info (12128): Elaborating entity "control" for hierarchy "control:controle"
 Warning (10540): VHDL Signal Declaration warning at control.vhd(43): used explicit default value for signal "TEMPO_ATUALIZACAO" because signal was never assigned a value
 Warning (10540): VHDL Signal Declaration warning at control.vhd(44): used explicit default value for signal "VX" because signal was never assigned a value
-Warning (10492): VHDL Process Statement warning at control.vhd(89): signal "start" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at control.vhd(189): signal "start" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at control.vhd(303): signal "start" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at control.vhd(110): signal "jogo_rodando" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at control.vhd(210): signal "jogo_rodando" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at control.vhd(333): signal "jogo_rodando" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12128): Elaborating entity "ScreenRender" for hierarchy "ScreenRender:vga"
 Info (12128): Elaborating entity "sync_mod" for hierarchy "ScreenRender:vga|sync_mod:vga_sync"
 Info (12128): Elaborating entity "placar" for hierarchy "placar:p1"
 Info (12128): Elaborating entity "ssd" for hierarchy "placar:p1|ssd:\GEN_SSD:0:ssd_entity"
-Info (278001): Inferred 8 megafunctions from design logic
+Info (12128): Elaborating entity "Controle_de_som_vibracao_ssd_v2" for hierarchy "Controle_de_som_vibracao_ssd_v2:som"
+Warning (10540): VHDL Signal Declaration warning at Controle_de_som_vibracao_ssd_v2.vhd(94): used explicit default value for signal "sig_ENABLE" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at Controle_de_som_vibracao_ssd_v2.vhd(95): used explicit default value for signal "sig_SEL_PR" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at Controle_de_som_vibracao_ssd_v2.vhd(96): used explicit default value for signal "sig_DUTY_SOM" because signal was never assigned a value
+Info (12128): Elaborating entity "PWM" for hierarchy "Controle_de_som_vibracao_ssd_v2:som|PWM:M1"
+Info (12128): Elaborating entity "PRESCALER" for hierarchy "Controle_de_som_vibracao_ssd_v2:som|PWM:M1|PRESCALER:U0"
+Warning (19016): Clock multiplexers are found and protected
+    Warning (19017): Found clock multiplexer Controle_de_som_vibracao_ssd_v2:som|PWM:M1|Mux0
+Info (278001): Inferred 10 megafunctions from design logic
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "placar:p2|Mod0"
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "placar:p2|Mod1"
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "placar:p2|Div0"
@@ -828,6 +1082,8 @@ Info (278001): Inferred 8 megafunctions from design logic
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "placar:p1|Div0"
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ScreenRender:vga|Div0"
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ScreenRender:vga|Div1"
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Controle_de_som_vibracao_ssd_v2:som|Mult0"
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Controle_de_som_vibracao_ssd_v2:som|Mult1"
 Info (12130): Elaborated megafunction instantiation "placar:p2|lpm_divide:Mod0"
 Info (12133): Instantiated megafunction "placar:p2|lpm_divide:Mod0" with the following parameter:
     Info (12134): Parameter "LPM_WIDTHN" = "7"
@@ -874,21 +1130,62 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_klh
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_j5f.tdf
     Info (12023): Found entity 1: alt_u_div_j5f
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "vibra_1" is stuck at GND
-    Warning (13410): Pin "vibra_2" is stuck at GND
+Info (12130): Elaborated megafunction instantiation "Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult0"
+Info (12133): Instantiated megafunction "Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHA" = "6"
+    Info (12134): Parameter "LPM_WIDTHB" = "19"
+    Info (12134): Parameter "LPM_WIDTHP" = "25"
+    Info (12134): Parameter "LPM_WIDTHR" = "25"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12131): Elaborated megafunction instantiation "Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult0"
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_efh.tdf
+    Info (12023): Found entity 1: add_sub_efh
+Info (12131): Elaborated megafunction instantiation "Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult0"
+Info (12130): Elaborated megafunction instantiation "Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult1"
+Info (12133): Instantiated megafunction "Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult1" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHA" = "4"
+    Info (12134): Parameter "LPM_WIDTHB" = "19"
+    Info (12134): Parameter "LPM_WIDTHP" = "23"
+    Info (12134): Parameter "LPM_WIDTHR" = "23"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12131): Elaborated megafunction instantiation "Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult1|multcore:mult_core", which is child of megafunction instantiation "Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult1"
+Info (12131): Elaborated megafunction instantiation "Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult1"
+Info (12131): Elaborated megafunction instantiation "Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult1|altshift:external_latency_ffs", which is child of megafunction instantiation "Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult1"
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (17049): 5 registers lost all their fanouts during netlist optimizations.
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_efh:auto_generated|op_1~24"
+    Info (17048): Logic cell "Controle_de_som_vibracao_ssd_v2:som|Add3~8"
+    Info (17048): Logic cell "Controle_de_som_vibracao_ssd_v2:som|Add3~10"
+    Info (17048): Logic cell "Controle_de_som_vibracao_ssd_v2:som|Add3~12"
+    Info (17048): Logic cell "Controle_de_som_vibracao_ssd_v2:som|Add3~14"
+    Info (17048): Logic cell "Controle_de_som_vibracao_ssd_v2:som|Add3~16"
+    Info (17048): Logic cell "Controle_de_som_vibracao_ssd_v2:som|Add3~18"
+    Info (17048): Logic cell "Controle_de_som_vibracao_ssd_v2:som|Add3~20"
+    Info (17048): Logic cell "Controle_de_som_vibracao_ssd_v2:som|Add3~22"
+    Info (17048): Logic cell "Controle_de_som_vibracao_ssd_v2:som|Add3~24"
+    Info (17048): Logic cell "Controle_de_som_vibracao_ssd_v2:som|Add3~26"
+    Info (17048): Logic cell "Controle_de_som_vibracao_ssd_v2:som|Add3~28"
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1786 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2131 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 8 input pins
-    Info (21059): Implemented 44 output pins
-    Info (21061): Implemented 1734 logic cells
+    Info (21059): Implemented 45 output pins
+    Info (21061): Implemented 2078 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 591 megabytes
-    Info: Processing ended: Sun Dec 10 17:25:21 2017
-    Info: Elapsed time: 00:00:07
+    Info: Peak virtual memory: 599 megabytes
+    Info: Processing ended: Mon Dec 11 16:23:24 2017
+    Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:08
 
 
