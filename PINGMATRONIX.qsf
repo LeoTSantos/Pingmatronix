@@ -105,6 +105,18 @@ set_location_assignment PIN_AA3 -to vibra_1
 set_location_assignment PIN_T16 -to vibra_2
 set_instance_assignment -name IO_STANDARD "3.0-V PCI" -to vibra_1
 set_instance_assignment -name IO_STANDARD "3.0-V PCI" -to vibra_2
+set_location_assignment PIN_AB13 -to pwm_som
+set_instance_assignment -name IO_STANDARD "3.0-V PCI" -to pwm_som
+set_instance_assignment -name IO_STANDARD "3.0-V PCI" -to encoder_ckl_1
+set_instance_assignment -name IO_STANDARD "3.0-V PCI" -to encoder_ckl_2
+set_instance_assignment -name IO_STANDARD "3.0-V PCI" -to encoder_d_1
+set_instance_assignment -name IO_STANDARD "3.0-V PCI" -to encoder_d_2
+set_global_assignment -name VHDL_FILE VGA_Test.vhd
+set_global_assignment -name VHDL_FILE Sound.vhd
+set_global_assignment -name VHDL_FILE meupacote.vhd
+set_global_assignment -name VHDL_FILE LEDS_jogo.vhd
+set_global_assignment -name VHDL_FILE int2disp.vhd
+set_global_assignment -name VHDL_FILE debounce.vhd
 set_global_assignment -name VHDL_FILE PreescalerTrue.vhd
 set_global_assignment -name VHDL_FILE Preescaler.vhd
 set_global_assignment -name VHDL_FILE MyPackage.vhd
@@ -121,11 +133,5 @@ set_global_assignment -name VHDL_FILE sync_mod.vhd
 set_global_assignment -name VHDL_FILE ScreenRender.vhd
 set_global_assignment -name VHDL_FILE control.vhd
 set_global_assignment -name VHDL_FILE pong.vhd
-set_location_assignment PIN_AB13 -to pwm_som
-set_instance_assignment -name IO_STANDARD "3.0-V PCI" -to pwm_som
-set_instance_assignment -name IO_STANDARD "3.0-V PCI" -to encoder_ckl_1
-set_instance_assignment -name IO_STANDARD "3.0-V PCI" -to encoder_ckl_2
-set_instance_assignment -name IO_STANDARD "3.0-V PCI" -to encoder_d_1
-set_instance_assignment -name IO_STANDARD "3.0-V PCI" -to encoder_d_2
 set_global_assignment -name VHDL_FILE vibra.vhd
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

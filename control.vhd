@@ -130,7 +130,7 @@ BEGIN
 		
 		--MISSIL 1 ACERTOU RAQUETE 2 -> VOLTA BOLA PRO CENTRO
 		IF x_missle_p1_sig = VGA_MAX_HORIZONTAL - 2 THEN
-			IF y_missle_p1_sig < y_racket_p2 + 2 AND y_missle_p1_sig > y_racket_p2 - 2 THEN
+			IF y_missle_p1_sig <= y_racket_p2 + 2 AND y_missle_p1_sig >= y_racket_p2 - 2 THEN
 				X <= 32; --centro tela
 				Y <= 24;
 			END IF;
@@ -138,7 +138,7 @@ BEGIN
 		
 		--MISSIL 2 ACERTOU RAQUETE 1 -> VOLTA BOLA PRO CENTRO
 		IF x_missle_p2 = 2 THEN
-			IF y_missle_p2 < y_racket_p1 + 2 AND y_missle_p2 > y_racket_p1 - 2 THEN
+			IF y_missle_p2 <= y_racket_p1 + 2 AND y_missle_p2 >= y_racket_p1 - 2 THEN
 				X <= 32; --centro tela
 				Y <= 24;
 			END IF;
@@ -235,7 +235,7 @@ BEGIN
 		
 		--MISSIL ACERTOU RAQUETE 2 -> PONTTO DO JOGADOR 1
 		IF x_missle_p1_sig = VGA_MAX_HORIZONTAL - 2 THEN
-			IF y_missle_p1_sig < y_racket_p2 + 2 AND y_missle_p1_sig > y_racket_p2 - 2 THEN
+			IF y_missle_p1_sig <= y_racket_p2 + 2 AND y_missle_p1_sig >= y_racket_p2 - 2 THEN
 				PONTOS1 <= PONTOS1 + 1;
 				DIR_X <= RANDOM_VX;
 				DIR_Y <= RANDOM_VY;
@@ -246,7 +246,7 @@ BEGIN
 		
 		--MISSIL ACERTOU RAQUETE 1 -> PONTTO DO JOGADOR 2
 		IF x_missle_p2 = 2 THEN
-			IF y_missle_p2 < y_racket_p1 + 2 AND y_missle_p2 > y_racket_p1 - 2 THEN
+			IF y_missle_p2 <= y_racket_p1 + 2 AND y_missle_p2 >= y_racket_p1 - 2 THEN
 				PONTOS2 <= PONTOS2 + 1;
 				DIR_X <= RANDOM_VX;
 				DIR_Y <= RANDOM_VY;
@@ -342,7 +342,7 @@ BEGIN
 		evento_missil_acertou_2_sig <= '0';
 		-- MISSIL 1 ACERTOU -> SOME DA TELA
 		IF x_missle_p1 = VGA_MAX_HORIZONTAL - 2 THEN
-			IF y_missle_p1_sig < y_racket_p2 + 2 AND y_missle_p1_sig > y_racket_p2 - 2 THEN
+			IF y_missle_p1_sig <= y_racket_p2 + 2 AND y_missle_p1_sig >= y_racket_p2 - 2 THEN
 				x_missle_p1_sig <= 0;
 				y_missle_p1_sig <= 0;
 				IS_MISSIL1 := '0';
@@ -375,7 +375,7 @@ BEGIN
 		
 		-- MISSIL 2 ACERTOU -> SOME DA TELA
 		IF x_missle_p2_sig = 2 THEN
-			IF y_missle_p2_sig < y_racket_p1 + 2 AND y_missle_p2_sig > y_racket_p1 - 2 THEN
+			IF y_missle_p2_sig <= y_racket_p1 + 2 AND y_missle_p2_sig >= y_racket_p1 - 2 THEN
 				x_missle_p2_sig <= 0;
 				y_missle_p2_sig <= 0;
 				IS_MISSIL2 := '0';
