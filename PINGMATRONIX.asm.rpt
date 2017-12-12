@@ -1,5 +1,5 @@
 Assembler report for PINGMATRONIX
-Mon Dec 11 16:23:44 2017
+Tue Dec 12 15:22:37 2017
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Dec 11 16:23:44 2017 ;
+; Assembler Status      ; Successful - Tue Dec 12 15:22:37 2017 ;
 ; Revision Name         ; PINGMATRONIX                          ;
 ; Top-level Entity Name ; pong                                  ;
 ; Family                ; Cyclone III                           ;
@@ -92,8 +92,8 @@ applicable agreement for further details.
 ; Option         ; Setting                                                                                                              ;
 +----------------+----------------------------------------------------------------------------------------------------------------------+
 ; Device         ; EP3C16F484C6                                                                                                         ;
-; JTAG usercode  ; 0x001B26F3                                                                                                           ;
-; Checksum       ; 0x001B26F3                                                                                                           ;
+; JTAG usercode  ; 0x001D2CFA                                                                                                           ;
+; Checksum       ; 0x001D2CFA                                                                                                           ;
 +----------------+----------------------------------------------------------------------------------------------------------------------+
 
 
@@ -103,13 +103,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Mon Dec 11 16:23:42 2017
+    Info: Processing started: Tue Dec 12 15:22:35 2017
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off PINGMATRONIX -c PINGMATRONIX
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 508 megabytes
-    Info: Processing ended: Mon Dec 11 16:23:44 2017
+    Info: Peak virtual memory: 497 megabytes
+    Info: Processing ended: Tue Dec 12 15:22:37 2017
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

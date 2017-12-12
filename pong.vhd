@@ -46,7 +46,7 @@ architecture arch of pong is
 	signal atira_1_deb, atira_2_deb : std_logic;
 	signal placar1, placar2 :  NATURAL RANGE 0 TO MAX_PONTOS;
 	
-	signal evento_ponto, evento_rebateu, evento_missil_acertou, evento_fim_de_jogo:  STD_LOGIC;	
+	signal evento_ponto_1, evento_ponto_2, evento_rebateu_1, evento_rebateu_2, evento_missil_acertou_1, evento_missil_acertou_2, evento_fim_de_jogo:  STD_LOGIC;	
 
 begin
 
@@ -75,10 +75,13 @@ begin
 															x_ball => x_ball,
 															y_ball => y_ball,
 															
-															evento_ponto => evento_ponto,
-															evento_rebateu  => evento_rebateu, 
-															evento_missil_acertou  => evento_missil_acertou, 
-															evento_fim_de_jogo  => evento_fim_de_jogo
+															evento_ponto_1 => evento_ponto_1,
+															evento_ponto_2 => evento_ponto_2,
+															evento_rebateu_1 => evento_rebateu_1,
+															evento_rebateu_2 => evento_rebateu_2,
+															evento_missil_acertou_1 => evento_missil_acertou_1,
+															evento_missil_acertou_2 => evento_missil_acertou_2,
+															evento_fim_de_jogo => evento_fim_de_jogo
 															);
 	
 -- 
@@ -104,15 +107,26 @@ begin
 	p2: entity work.placar PORT MAP (pontos => placar2, ssds_out => placar1_ssd); 
 						
 	som: entity work.Controle_de_som_vibracao_ssd_v2 PORT MAP (CLOCK => clock,
-																				  REBATER => evento_rebateu,
-																				  REBATER2 => evento_rebateu,
-																				  MORREU => evento_ponto,
+																				  REBATER => evento_rebateu_1,
+																				  REBATER2 => evento_rebateu_2,
+																				  MORREU => evento_ponto_1 or evento_ponto_2,
 																				  ACABOU => evento_fim_de_jogo,
-																				  MISSIL => evento_missil_acertou,
+																				  MISSIL => evento_missil_acertou_1 or evento_missil_acertou_2,
 																				  
-																				  PWM_OUT_SOM => pwm_som,
-																				  PWM_OUT_VIBRA1 => vibra_1,
-																				  PWM_OUT_VIBRA2 => vibra_2);
-							
+																				  PWM_OUT_SOM => pwm_som
+																				  );
+																				  
+																					
+	vib: entity work.vibra PORT MAP (	clock => clock,
+													evento_ponto_1 => evento_ponto_1,
+													evento_ponto_2 => evento_ponto_2,
+													evento_rebateu_1 => evento_rebateu_1,
+													evento_rebateu_2 => evento_rebateu_2,
+													evento_missil_acertou_1 => evento_missil_acertou_1,
+													evento_missil_acertou_2 => evento_missil_acertou_2,
+													evento_fim_de_jogo => evento_fim_de_jogo,
+													
+													vibra_1 => vibra_1,
+													vibra_2 => vibra_2);
 
 end architecture;

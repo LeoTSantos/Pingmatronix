@@ -9,7 +9,7 @@ use IEEE.math_real.ceil;
 entity debouncer is
 	generic(
 		freq: natural := 50_000_000;
-		tdebounce: real := 0.0035); 
+		tdebounce: real := 0.00075); 
 	port(
 		clock: in std_logic;
 		input: in std_logic;
@@ -34,7 +34,7 @@ begin
 
 
 
-	if falling_edge(clock) then
+	if rising_edge(clock) then
 		if input /= output_temp and change = '0' then
 					
 				counter <= 0;
