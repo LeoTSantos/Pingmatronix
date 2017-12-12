@@ -129,7 +129,7 @@ BEGIN
 		END IF;
 		
 		--MISSIL 1 ACERTOU RAQUETE 2 -> VOLTA BOLA PRO CENTRO
-		IF x_missle_p1_sig = VGA_MAX_HORIZONTAL - 2 THEN
+		IF x_missle_p1_sig = VGA_MAX_HORIZONTAL - 3 THEN
 			IF y_missle_p1_sig <= y_racket_p2 + 2 AND y_missle_p1_sig >= y_racket_p2 - 2 THEN
 				X <= 32; --centro tela
 				Y <= 24;
@@ -234,7 +234,7 @@ BEGIN
 		END IF;
 		
 		--MISSIL ACERTOU RAQUETE 2 -> PONTTO DO JOGADOR 1
-		IF x_missle_p1_sig = VGA_MAX_HORIZONTAL - 2 THEN
+		IF x_missle_p1_sig = VGA_MAX_HORIZONTAL - 3 THEN
 			IF y_missle_p1_sig <= y_racket_p2 + 2 AND y_missle_p1_sig >= y_racket_p2 - 2 THEN
 				PONTOS1 <= PONTOS1 + 1;
 				DIR_X <= RANDOM_VX;
@@ -341,7 +341,7 @@ BEGIN
 		evento_missil_acertou_1_sig <= '0';
 		evento_missil_acertou_2_sig <= '0';
 		-- MISSIL 1 ACERTOU -> SOME DA TELA
-		IF x_missle_p1 = VGA_MAX_HORIZONTAL - 2 THEN
+		IF x_missle_p1 = VGA_MAX_HORIZONTAL - 3 THEN
 			IF y_missle_p1_sig <= y_racket_p2 + 2 AND y_missle_p1_sig >= y_racket_p2 - 2 THEN
 				x_missle_p1_sig <= 0;
 				y_missle_p1_sig <= 0;
@@ -364,7 +364,7 @@ BEGIN
 				IF x_missle_p1_sig = 0 THEN
 					x_missle_p1_sig <= 1;
 					y_missle_p1_sig <= y_racket_p1;
-				ELSIF x_missle_p1_sig < VGA_MAX_HORIZONTAL - 2 THEN
+				ELSIF x_missle_p1_sig < VGA_MAX_HORIZONTAL - 3 THEN
 					x_missle_p1_sig <= x_missle_p1 + 1;
 				ELSE
 					x_missle_p1_sig <= 0;
