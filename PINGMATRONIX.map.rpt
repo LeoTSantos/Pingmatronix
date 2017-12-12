@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PINGMATRONIX
-Tue Dec 12 16:24:36 2017
+Tue Dec 12 16:37:30 2017
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -65,13 +65,13 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Dec 12 16:24:36 2017      ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec 12 16:37:29 2017      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; PINGMATRONIX                               ;
 ; Top-level Entity Name              ; pong                                       ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 1,961                                      ;
-;     Total combinational functions  ; 1,960                                      ;
+; Total logic elements               ; 1,953                                      ;
+;     Total combinational functions  ; 1,952                                      ;
 ;     Dedicated logic registers      ; 628                                        ;
 ; Total registers                    ; 628                                        ;
 ; Total pins                         ; 39                                         ;
@@ -246,16 +246,16 @@ applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 1,961       ;
+; Estimated Total logic elements              ; 1,953       ;
 ;                                             ;             ;
-; Total combinational functions               ; 1960        ;
+; Total combinational functions               ; 1952        ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 596         ;
-;     -- 3 input functions                    ; 376         ;
-;     -- <=2 input functions                  ; 988         ;
+;     -- 4 input functions                    ; 587         ;
+;     -- 3 input functions                    ; 390         ;
+;     -- <=2 input functions                  ; 975         ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 1239        ;
+;     -- normal mode                          ; 1231        ;
 ;     -- arithmetic mode                      ; 721         ;
 ;                                             ;             ;
 ; Total registers                             ; 628         ;
@@ -266,7 +266,7 @@ applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ; Maximum fan-out node                        ; clock~input ;
 ; Maximum fan-out                             ; 589         ;
-; Total fan-out                               ; 7731        ;
+; Total fan-out                               ; 7711        ;
 ; Average fan-out                             ; 2.89        ;
 +---------------------------------------------+-------------+
 
@@ -276,13 +276,13 @@ applicable agreement for further details.
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                    ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------+--------------+
-; |pong                                     ; 1960 (1)          ; 628 (0)      ; 0           ; 0            ; 0       ; 0         ; 39   ; 0            ; |pong                                                                                                                  ; work         ;
-;    |Controle_de_som_vibracao_ssd_v2:som|  ; 170 (136)         ; 86 (72)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|Controle_de_som_vibracao_ssd_v2:som                                                                              ; work         ;
-;       |PWM:M1|                            ; 31 (25)           ; 14 (9)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|Controle_de_som_vibracao_ssd_v2:som|PWM:M1                                                                       ; work         ;
+; |pong                                     ; 1952 (1)          ; 628 (0)      ; 0           ; 0            ; 0       ; 0         ; 39   ; 0            ; |pong                                                                                                                  ; work         ;
+;    |Controle_de_som_vibracao_ssd_v2:som|  ; 174 (139)         ; 86 (72)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|Controle_de_som_vibracao_ssd_v2:som                                                                              ; work         ;
+;       |PWM:M1|                            ; 32 (26)           ; 14 (9)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|Controle_de_som_vibracao_ssd_v2:som|PWM:M1                                                                       ; work         ;
 ;          |PRESCALER:U0|                   ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|Controle_de_som_vibracao_ssd_v2:som|PWM:M1|PRESCALER:U0                                                          ; work         ;
 ;       |lpm_mult:Mult1|                    ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult1                                                               ; work         ;
 ;          |multcore:mult_core|             ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult1|multcore:mult_core                                            ; work         ;
-;    |ScreenRender:vga|                     ; 377 (143)         ; 43 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|ScreenRender:vga                                                                                                 ; work         ;
+;    |ScreenRender:vga|                     ; 376 (142)         ; 43 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|ScreenRender:vga                                                                                                 ; work         ;
 ;       |lpm_divide:Div0|                   ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|ScreenRender:vga|lpm_divide:Div0                                                                                 ; work         ;
 ;          |lpm_divide_jhm:auto_generated|  ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|ScreenRender:vga|lpm_divide:Div0|lpm_divide_jhm:auto_generated                                                   ; work         ;
 ;             |sign_div_unsign_klh:divider| ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|ScreenRender:vga|lpm_divide:Div0|lpm_divide_jhm:auto_generated|sign_div_unsign_klh:divider                       ; work         ;
@@ -298,7 +298,7 @@ applicable agreement for further details.
 ;    |batedor:batedor2|                     ; 112 (32)          ; 45 (9)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|batedor:batedor2                                                                                                 ; work         ;
 ;       |debouncer:batedorLb2|              ; 40 (40)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|batedor:batedor2|debouncer:batedorLb2                                                                            ; work         ;
 ;       |debouncer:batedorLbl|              ; 40 (40)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|batedor:batedor2|debouncer:batedorLbl                                                                            ; work         ;
-;    |control:controle|                     ; 660 (660)         ; 203 (203)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|control:controle                                                                                                 ; work         ;
+;    |control:controle|                     ; 651 (651)         ; 203 (203)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|control:controle                                                                                                 ; work         ;
 ;    |deb_button:atiradeb1|                 ; 35 (35)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|deb_button:atiradeb1                                                                                             ; work         ;
 ;    |deb_button:atiradeb2|                 ; 35 (35)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|deb_button:atiradeb2                                                                                             ; work         ;
 ;    |placar:p1|                            ; 14 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p1                                                                                                        ; work         ;
@@ -313,7 +313,7 @@ applicable agreement for further details.
 ;             |sign_div_unsign_7kh:divider| ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|lpm_divide:Mod0|lpm_divide_98m:auto_generated|sign_div_unsign_7kh:divider                              ; work         ;
 ;                |alt_u_div_p2f:divider|    ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|lpm_divide:Mod0|lpm_divide_98m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_p2f:divider        ; work         ;
 ;       |ssd:\GEN_SSD:0:ssd_entity|         ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|ssd:\GEN_SSD:0:ssd_entity                                                                              ; work         ;
-;    |vibra:vib|                            ; 430 (430)         ; 156 (156)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|vibra:vib                                                                                                        ; work         ;
+;    |vibra:vib|                            ; 428 (428)         ; 156 (156)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|vibra:vib                                                                                                        ; work         ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -498,9 +498,9 @@ Encoding Type:  One-Hot
 +-----------------------------------------------------+---------+
 ; batedor:batedor1|pos_sig[1]                         ; 21      ;
 ; batedor:batedor1|pos_sig[0]                         ; 15      ;
-; batedor:batedor2|pos_sig[1]                         ; 23      ;
-; batedor:batedor2|pos_sig[0]                         ; 16      ;
-; control:controle|X[5]                               ; 11      ;
+; batedor:batedor2|pos_sig[1]                         ; 22      ;
+; batedor:batedor2|pos_sig[0]                         ; 15      ;
+; control:controle|X[5]                               ; 10      ;
 ; control:controle|Y[3]                               ; 20      ;
 ; control:controle|Y[4]                               ; 20      ;
 ; control:controle|VY[0]                              ; 6       ;
@@ -557,7 +557,7 @@ Encoding Type:  One-Hot
 ; Parameter Name ; Value    ; Type                                                   ;
 +----------------+----------+--------------------------------------------------------+
 ; freq           ; 50000000 ; Signed Integer                                         ;
-; tdebounce      ; 0.00075  ; Signed Float                                           ;
+; tdebounce      ; 0.001    ; Signed Float                                           ;
 +----------------+----------+--------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -568,7 +568,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value    ; Type                                                   ;
 +----------------+----------+--------------------------------------------------------+
 ; freq           ; 50000000 ; Signed Integer                                         ;
-; tdebounce      ; 0.00075  ; Signed Float                                           ;
+; tdebounce      ; 0.001    ; Signed Float                                           ;
 +----------------+----------+--------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -579,7 +579,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value    ; Type                                                   ;
 +----------------+----------+--------------------------------------------------------+
 ; freq           ; 50000000 ; Signed Integer                                         ;
-; tdebounce      ; 0.00075  ; Signed Float                                           ;
+; tdebounce      ; 0.001    ; Signed Float                                           ;
 +----------------+----------+--------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -590,7 +590,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value    ; Type                                                   ;
 +----------------+----------+--------------------------------------------------------+
 ; freq           ; 50000000 ; Signed Integer                                         ;
-; tdebounce      ; 0.00075  ; Signed Float                                           ;
+; tdebounce      ; 0.001    ; Signed Float                                           ;
 +----------------+----------+--------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -858,7 +858,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Tue Dec 12 16:24:28 2017
+    Info: Processing started: Tue Dec 12 16:37:21 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PINGMATRONIX -c PINGMATRONIX
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file vga_test.vhd
@@ -1012,13 +1012,13 @@ Info (17016): Found the following redundant logic cells in design
     Info (17048): Logic cell "Controle_de_som_vibracao_ssd_v2:som|Add3~28"
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 2109 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2098 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 8 input pins
     Info (21059): Implemented 31 output pins
-    Info (21061): Implemented 2070 logic cells
+    Info (21061): Implemented 2059 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 612 megabytes
-    Info: Processing ended: Tue Dec 12 16:24:37 2017
+    Info: Peak virtual memory: 616 megabytes
+    Info: Processing ended: Tue Dec 12 16:37:30 2017
     Info: Elapsed time: 00:00:09
     Info: Total CPU time (on all processors): 00:00:08
 

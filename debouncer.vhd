@@ -6,10 +6,12 @@ use IEEE.math_real.ceil;
 
 --
 
+-- tdebounce: real := 0.00075
+
 entity debouncer is
 	generic(
 		freq: natural := 50_000_000;
-		tdebounce: real := 0.00075); 
+		tdebounce: real := 0.001); 
 	port(
 		clock: in std_logic;
 		input: in std_logic;
