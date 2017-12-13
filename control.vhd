@@ -418,73 +418,7 @@ BEGIN
 			IS_MISSIL2 := '1';
 		END IF;
 	END IF;
-	
-	
+		
 END PROCESS;
-
-----ATUALIZA POSICAO DA RAQUETE
---PROCESS (clock)
---BEGIN
---	IF rising_edge(clock) AND start = '1' THEN
---		IF sobe_raquete1 = '1' THEN
---			y_racket_p1 <= y_racket_p1 + 1;
---		END IF;
---		
---		IF desce_raquete1 = '1' THEN
---			y_racket_p1 <= y_racket_p1 - 1;
---		END IF;	
---		
---
---	END IF;
---END PROCESS;
-
---PRINTA PONTOS POR DEBUG  2
---divisor(0) <= 1;
---	G4: FOR i IN 1 TO NATURAL(CEIL(LOG10(REAL(NUM_MAX))))-1 GENERATE
---		divisor(i) <= divisor(i-1)*10;
---	END GENERATE G4;
-
---G6: FOR i IN 0 TO NATURAL(CEIL(LOG10(REAL(NUM_MAX))))-1 GENERATE
---		aux_disp(i) <= (PONTOS1	/ divisor(i)) MOD 10;
---		output_debug1(i) <= num_0 WHEN aux_disp(i) = 0 ELSE
---		  num_1 WHEN aux_disp(i) = 1 ELSE
---		  num_2 WHEN aux_disp(i) = 2 ELSE
---		  num_3 WHEN aux_disp(i) = 3 ELSE
---		  num_4 WHEN aux_disp(i) = 4 ELSE
---		  num_5 WHEN aux_disp(i) = 5 ELSE
---		  num_6 WHEN aux_disp(i) = 6 ELSE
---		  num_7 WHEN aux_disp(i) = 7 ELSE
---		  num_8 WHEN aux_disp(i) = 8 ELSE
---		  num_9 WHEN aux_disp(i) = 9 ELSE
---		  num_a WHEN aux_disp(i) = 10 ELSE
---		  num_b WHEN aux_disp(i) = 11 ELSE
---		  num_c WHEN aux_disp(i) = 12 ELSE
---		  num_d WHEN aux_disp(i) = 13 ELSE
---		  num_e WHEN aux_disp(i) = 14 ELSE
---		  num_f;
---	END GENERATE G6;
---
-----PRINTA PONTOS POR DEBUG  2
---G3: FOR i IN 0 TO NATURAL(CEIL(LOG10(REAL(NUM_MAX))))-1 GENERATE
---		aux_disp2(i) <= (PONTOS2	/ divisor(i)) MOD 10;
---		output_debug2(i) <= num_0 WHEN aux_disp2(i) = 0 ELSE
---		  num_1 WHEN aux_disp2(i) = 1 ELSE
---		  num_2 WHEN aux_disp2(i) = 2 ELSE
---		  num_3 WHEN aux_disp2(i) = 3 ELSE
---		  num_4 WHEN aux_disp2(i) = 4 ELSE
---		  num_5 WHEN aux_disp2(i) = 5 ELSE
---		  num_6 WHEN aux_disp2(i) = 6 ELSE
---		  num_7 WHEN aux_disp2(i) = 7 ELSE
---		  num_8 WHEN aux_disp2(i) = 8 ELSE
---		  num_9 WHEN aux_disp2(i) = 9 ELSE
---		  num_a WHEN aux_disp2(i) = 10 ELSE
---		  num_b WHEN aux_disp2(i) = 11 ELSE
---		  num_c WHEN aux_disp2(i) = 12 ELSE
---		  num_d WHEN aux_disp2(i) = 13 ELSE
---		  num_e WHEN aux_disp2(i) = 14 ELSE
---		  num_f;
---	END GENERATE G3;
-	
-	
 
 END ARCHITECTURE;

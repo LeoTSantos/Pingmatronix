@@ -106,15 +106,15 @@ begin
 	p1: entity work.placar PORT MAP (pontos => placar1, ssds_out => placar2_ssd); 
 	p2: entity work.placar PORT MAP (pontos => placar2, ssds_out => placar1_ssd); 
 						
-	som: entity work.Controle_de_som_vibracao_ssd_v2 PORT MAP (CLOCK => clock,
-																				  REBATER => evento_rebateu_1,
-																				  REBATER2 => evento_rebateu_2,
-																				  MORREU => evento_ponto_1 or evento_ponto_2,
-																				  ACABOU => evento_fim_de_jogo,
-																				  MISSIL => evento_missil_acertou_1 or evento_missil_acertou_2,
-																				  
-																				  PWM_OUT_SOM => pwm_som
-																				  );
+	s: entity work.som PORT MAP (CLOCK => clock,
+										  REBATER => evento_rebateu_1,
+										  REBATER2 => evento_rebateu_2,
+										  MORREU => evento_ponto_1 or evento_ponto_2,
+										  ACABOU => evento_fim_de_jogo,
+										  MISSIL => evento_missil_acertou_1 or evento_missil_acertou_2,
+										  
+										  PWM_OUT_SOM => pwm_som
+										  );
 																				  
 																					
 	vib: entity work.vibra PORT MAP (	clock => clock,

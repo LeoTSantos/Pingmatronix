@@ -14,15 +14,10 @@ use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
 use ieee.numeric_std.all; 
 use ieee.math_real.all;
-use work.MyPackage.all;
 
-entity Controle_de_som_vibracao_ssd_v2 is 
+entity som is 
 generic (
-		------ DISPLAY 7 SEG
-		MAX_VALUE_SEGMENT: INTEGER := 6;   
-		MIN_VALUE: INTEGER := 0;
-		MAX_VALUE: INTEGER := 99;
-		
+			
 		MAX_SPEED_MS: NATURAL := 10;								    -- MÍNIMA TEMPO DE TROCA ENTRE SONS EM UM EVENTO QUALQUER (MAXIMA VELOCIDADE)
 		FCLK: NATURAL := 50_000_000;
 		RESO: NATURAL := 8;											    -- 8 BITS DE RESOLUÇAO PARA O PWM (0-255)
@@ -52,9 +47,9 @@ generic (
 		PWM_OUT_VIBRA2	: out std_logic									-- SAÍDA PARA MOTOR DO CONTROLE DO PLAYER 2
 	);
 
-end Controle_de_som_vibracao_ssd_v2;
+end som;
 	
-architecture projeto of Controle_de_som_vibracao_ssd_v2 IS
+architecture projeto of som IS
 
 component PWM
 	port ( 
