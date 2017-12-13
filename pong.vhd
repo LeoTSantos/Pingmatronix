@@ -33,7 +33,9 @@ entity pong is
 		encoder_d_2: in std_logic;
 		
 		--som
-		pwm_som: out std_logic
+		pwm_som: out std_logic;
+		
+		LEDS: out std_logic_vector(9 DOWNTO 0)
 		
 	);
 end entity;
@@ -128,5 +130,16 @@ begin
 													
 													vibra_1 => vibra_1,
 													vibra_2 => vibra_2);
+													
+	leds_1: entity work.LEDS_jogo PORT MAP ( clock_in => clock,
+													 Raquete => evento_rebateu_1 or evento_rebateu_2,
+													 Ponto => evento_ponto_1 or evento_ponto_2,
+													 Missel => evento_missil_acertou_1 or evento_missil_acertou_2, 
+													 Fim => evento_fim_de_jogo,
+													 LEDS => LEDS);
+	
+
+		
+	
 
 end architecture;

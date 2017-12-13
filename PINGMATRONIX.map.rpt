@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PINGMATRONIX
-Tue Dec 12 16:37:30 2017
+Wed Dec 13 15:50:04 2017
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -27,19 +27,20 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
  19. Parameter Settings for User Entity Instance: deb_button:atiradeb1
  20. Parameter Settings for User Entity Instance: deb_button:atiradeb2
  21. Parameter Settings for User Entity Instance: control:controle
- 22. Parameter Settings for User Entity Instance: Controle_de_som_vibracao_ssd_v2:som
+ 22. Parameter Settings for User Entity Instance: som:s
  23. Parameter Settings for User Entity Instance: vibra:vib
- 24. Parameter Settings for Inferred Entity Instance: placar:p2|lpm_divide:Mod0
- 25. Parameter Settings for Inferred Entity Instance: placar:p1|lpm_divide:Mod0
- 26. Parameter Settings for Inferred Entity Instance: ScreenRender:vga|lpm_divide:Div0
- 27. Parameter Settings for Inferred Entity Instance: ScreenRender:vga|lpm_divide:Div1
- 28. Parameter Settings for Inferred Entity Instance: Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult1
- 29. lpm_mult Parameter Settings by Entity Instance
- 30. Port Connectivity Checks: "Controle_de_som_vibracao_ssd_v2:som|PWM:M1"
- 31. Port Connectivity Checks: "Controle_de_som_vibracao_ssd_v2:som"
- 32. Port Connectivity Checks: "ScreenRender:vga|sync_mod:vga_sync"
- 33. Elapsed Time Per Partition
- 34. Analysis & Synthesis Messages
+ 24. Parameter Settings for User Entity Instance: LEDS_jogo:leds_1
+ 25. Parameter Settings for Inferred Entity Instance: placar:p2|lpm_divide:Mod0
+ 26. Parameter Settings for Inferred Entity Instance: placar:p1|lpm_divide:Mod0
+ 27. Parameter Settings for Inferred Entity Instance: ScreenRender:vga|lpm_divide:Div0
+ 28. Parameter Settings for Inferred Entity Instance: ScreenRender:vga|lpm_divide:Div1
+ 29. Parameter Settings for Inferred Entity Instance: som:s|lpm_mult:Mult1
+ 30. lpm_mult Parameter Settings by Entity Instance
+ 31. Port Connectivity Checks: "som:s|PWM:M1"
+ 32. Port Connectivity Checks: "som:s"
+ 33. Port Connectivity Checks: "ScreenRender:vga|sync_mod:vga_sync"
+ 34. Elapsed Time Per Partition
+ 35. Analysis & Synthesis Messages
 
 
 
@@ -65,16 +66,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Dec 12 16:37:29 2017      ;
+; Analysis & Synthesis Status        ; Successful - Wed Dec 13 15:50:04 2017      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; PINGMATRONIX                               ;
 ; Top-level Entity Name              ; pong                                       ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 1,953                                      ;
-;     Total combinational functions  ; 1,952                                      ;
-;     Dedicated logic registers      ; 628                                        ;
-; Total registers                    ; 628                                        ;
-; Total pins                         ; 39                                         ;
+; Total logic elements               ; 1,992                                      ;
+;     Total combinational functions  ; 1,990                                      ;
+;     Dedicated logic registers      ; 659                                        ;
+; Total registers                    ; 659                                        ;
+; Total pins                         ; 49                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -170,75 +171,68 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-;     Processor 2            ; < 0.1%      ;
-;     Processors 3-4         ;   0.0%      ;
-+----------------------------+-------------+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                        ;
-+-------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path    ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                 ; Library ;
-+-------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------------------------------+---------+
-; PreescalerTrue.vhd                  ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto/Pingmatronix/PreescalerTrue.vhd                  ;         ;
-; Preescaler.vhd                      ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto/Pingmatronix/Preescaler.vhd                      ;         ;
-; MyPackage.vhd                       ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto/Pingmatronix/MyPackage.vhd                       ;         ;
-; Controle_de_som_vibracao_ssd_v2.vhd ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto/Pingmatronix/Controle_de_som_vibracao_ssd_v2.vhd ;         ;
-; placar.vhd                          ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto/Pingmatronix/placar.vhd                          ;         ;
-; SSDefinitions.vhd                   ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto/Pingmatronix/SSDefinitions.vhd                   ;         ;
-; ssd.vhd                             ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto/Pingmatronix/ssd.vhd                             ;         ;
-; deb_button.vhd                      ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto/Pingmatronix/deb_button.vhd                      ;         ;
-; PongDefinitions.vhd                 ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto/Pingmatronix/PongDefinitions.vhd                 ;         ;
-; debouncer.vhd                       ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto/Pingmatronix/debouncer.vhd                       ;         ;
-; batedor.vhd                         ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto/Pingmatronix/batedor.vhd                         ;         ;
-; VgaDefinitions.vhd                  ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto/Pingmatronix/VgaDefinitions.vhd                  ;         ;
-; sync_mod.vhd                        ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto/Pingmatronix/sync_mod.vhd                        ;         ;
-; ScreenRender.vhd                    ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto/Pingmatronix/ScreenRender.vhd                    ;         ;
-; control.vhd                         ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto/Pingmatronix/control.vhd                         ;         ;
-; pong.vhd                            ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto/Pingmatronix/pong.vhd                            ;         ;
-; vibra.vhd                           ; yes             ; User VHDL File               ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto/Pingmatronix/vibra.vhd                           ;         ;
-; lpm_divide.tdf                      ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_divide.tdf                                                                ;         ;
-; abs_divider.inc                     ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/abs_divider.inc                                                               ;         ;
-; sign_div_unsign.inc                 ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/sign_div_unsign.inc                                                           ;         ;
-; aglobal131.inc                      ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/aglobal131.inc                                                                ;         ;
-; db/lpm_divide_98m.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto/Pingmatronix/db/lpm_divide_98m.tdf               ;         ;
-; db/sign_div_unsign_7kh.tdf          ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto/Pingmatronix/db/sign_div_unsign_7kh.tdf          ;         ;
-; db/alt_u_div_p2f.tdf                ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto/Pingmatronix/db/alt_u_div_p2f.tdf                ;         ;
-; db/add_sub_unc.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto/Pingmatronix/db/add_sub_unc.tdf                  ;         ;
-; db/add_sub_vnc.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto/Pingmatronix/db/add_sub_vnc.tdf                  ;         ;
-; db/lpm_divide_jhm.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto/Pingmatronix/db/lpm_divide_jhm.tdf               ;         ;
-; db/sign_div_unsign_klh.tdf          ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto/Pingmatronix/db/sign_div_unsign_klh.tdf          ;         ;
-; db/alt_u_div_j5f.tdf                ; yes             ; Auto-Generated Megafunction  ; C:/Users/paulo/Documents/MEGA/UTFPR/8 Periodo/Logica reconfiguravel/projeto/Pingmatronix/db/alt_u_div_j5f.tdf                ;         ;
-; lpm_mult.tdf                        ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_mult.tdf                                                                  ;         ;
-; lpm_add_sub.inc                     ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_add_sub.inc                                                               ;         ;
-; multcore.inc                        ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/multcore.inc                                                                  ;         ;
-; bypassff.inc                        ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/bypassff.inc                                                                  ;         ;
-; altshift.inc                        ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/altshift.inc                                                                  ;         ;
-; multcore.tdf                        ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/multcore.tdf                                                                  ;         ;
-; csa_add.inc                         ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/csa_add.inc                                                                   ;         ;
-; mpar_add.inc                        ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/mpar_add.inc                                                                  ;         ;
-; muleabz.inc                         ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/muleabz.inc                                                                   ;         ;
-; mul_lfrg.inc                        ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/mul_lfrg.inc                                                                  ;         ;
-; mul_boothc.inc                      ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/mul_boothc.inc                                                                ;         ;
-; alt_ded_mult.inc                    ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/alt_ded_mult.inc                                                              ;         ;
-; alt_ded_mult_y.inc                  ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/alt_ded_mult_y.inc                                                            ;         ;
-; dffpipe.inc                         ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/dffpipe.inc                                                                   ;         ;
-; mpar_add.tdf                        ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/mpar_add.tdf                                                                  ;         ;
-; altshift.tdf                        ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/altshift.tdf                                                                  ;         ;
-+-------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                              ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                          ; Library ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
+; vibra.vhd                        ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/vibra.vhd                  ;         ;
+; VgaDefinitions.vhd               ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/VgaDefinitions.vhd         ;         ;
+; sync_mod.vhd                     ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/sync_mod.vhd               ;         ;
+; SSDefinitions.vhd                ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/SSDefinitions.vhd          ;         ;
+; ssd.vhd                          ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/ssd.vhd                    ;         ;
+; som.vhd                          ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/som.vhd                    ;         ;
+; ScreenRender.vhd                 ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/ScreenRender.vhd           ;         ;
+; PongDefinitions.vhd              ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/PongDefinitions.vhd        ;         ;
+; pong.vhd                         ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/pong.vhd                   ;         ;
+; placar.vhd                       ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/placar.vhd                 ;         ;
+; LEDS_jogo.vhd                    ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/LEDS_jogo.vhd              ;         ;
+; deb_button.vhd                   ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/deb_button.vhd             ;         ;
+; debouncer.vhd                    ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/debouncer.vhd              ;         ;
+; control.vhd                      ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/control.vhd                ;         ;
+; batedor.vhd                      ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/batedor.vhd                ;         ;
+; Preescaler.vhd                   ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/Preescaler.vhd             ;         ;
+; PreescalerTrue.vhd               ; yes             ; User VHDL File               ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/PreescalerTrue.vhd         ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_divide.tdf                                                         ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/abs_divider.inc                                                        ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/sign_div_unsign.inc                                                    ;         ;
+; aglobal131.inc                   ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/aglobal131.inc                                                         ;         ;
+; db/lpm_divide_98m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/db/lpm_divide_98m.tdf      ;         ;
+; db/sign_div_unsign_7kh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/db/sign_div_unsign_7kh.tdf ;         ;
+; db/alt_u_div_p2f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/db/alt_u_div_p2f.tdf       ;         ;
+; db/add_sub_unc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/db/add_sub_unc.tdf         ;         ;
+; db/add_sub_vnc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/db/add_sub_vnc.tdf         ;         ;
+; db/lpm_divide_jhm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/db/lpm_divide_jhm.tdf      ;         ;
+; db/sign_div_unsign_klh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/db/sign_div_unsign_klh.tdf ;         ;
+; db/alt_u_div_j5f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/rafael/Google Drive/Documentos/Estudos/UT/8/LogicaReconfiguravel/APS/Pingmatronix/db/alt_u_div_j5f.tdf       ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_mult.tdf                                                           ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_add_sub.inc                                                        ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/multcore.inc                                                           ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/bypassff.inc                                                           ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/altshift.inc                                                           ;         ;
+; multcore.tdf                     ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/multcore.tdf                                                           ;         ;
+; csa_add.inc                      ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/csa_add.inc                                                            ;         ;
+; mpar_add.inc                     ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/mpar_add.inc                                                           ;         ;
+; muleabz.inc                      ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/muleabz.inc                                                            ;         ;
+; mul_lfrg.inc                     ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/mul_lfrg.inc                                                           ;         ;
+; mul_boothc.inc                   ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/mul_boothc.inc                                                         ;         ;
+; alt_ded_mult.inc                 ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/alt_ded_mult.inc                                                       ;         ;
+; alt_ded_mult_y.inc               ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/alt_ded_mult_y.inc                                                     ;         ;
+; dffpipe.inc                      ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/dffpipe.inc                                                            ;         ;
+; mpar_add.tdf                     ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/mpar_add.tdf                                                           ;         ;
+; altshift.tdf                     ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/altshift.tdf                                                           ;         ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -246,28 +240,28 @@ applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 1,953       ;
+; Estimated Total logic elements              ; 1,992       ;
 ;                                             ;             ;
-; Total combinational functions               ; 1952        ;
+; Total combinational functions               ; 1990        ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 587         ;
-;     -- 3 input functions                    ; 390         ;
-;     -- <=2 input functions                  ; 975         ;
+;     -- 4 input functions                    ; 594         ;
+;     -- 3 input functions                    ; 392         ;
+;     -- <=2 input functions                  ; 1004        ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 1231        ;
-;     -- arithmetic mode                      ; 721         ;
+;     -- normal mode                          ; 1243        ;
+;     -- arithmetic mode                      ; 747         ;
 ;                                             ;             ;
-; Total registers                             ; 628         ;
-;     -- Dedicated logic registers            ; 628         ;
+; Total registers                             ; 659         ;
+;     -- Dedicated logic registers            ; 659         ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
-; I/O pins                                    ; 39          ;
+; I/O pins                                    ; 49          ;
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ; Maximum fan-out node                        ; clock~input ;
-; Maximum fan-out                             ; 589         ;
-; Total fan-out                               ; 7711        ;
-; Average fan-out                             ; 2.89        ;
+; Maximum fan-out                             ; 620         ;
+; Total fan-out                               ; 7931        ;
+; Average fan-out                             ; 2.88        ;
 +---------------------------------------------+-------------+
 
 
@@ -276,12 +270,8 @@ applicable agreement for further details.
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                    ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------+--------------+
-; |pong                                     ; 1952 (1)          ; 628 (0)      ; 0           ; 0            ; 0       ; 0         ; 39   ; 0            ; |pong                                                                                                                  ; work         ;
-;    |Controle_de_som_vibracao_ssd_v2:som|  ; 174 (139)         ; 86 (72)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|Controle_de_som_vibracao_ssd_v2:som                                                                              ; work         ;
-;       |PWM:M1|                            ; 32 (26)           ; 14 (9)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|Controle_de_som_vibracao_ssd_v2:som|PWM:M1                                                                       ; work         ;
-;          |PRESCALER:U0|                   ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|Controle_de_som_vibracao_ssd_v2:som|PWM:M1|PRESCALER:U0                                                          ; work         ;
-;       |lpm_mult:Mult1|                    ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult1                                                               ; work         ;
-;          |multcore:mult_core|             ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult1|multcore:mult_core                                            ; work         ;
+; |pong                                     ; 1990 (1)          ; 659 (0)      ; 0           ; 0            ; 0       ; 0         ; 49   ; 0            ; |pong                                                                                                                  ; work         ;
+;    |LEDS_jogo:leds_1|                     ; 38 (38)           ; 31 (31)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|LEDS_jogo:leds_1                                                                                                 ; work         ;
 ;    |ScreenRender:vga|                     ; 376 (142)         ; 43 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|ScreenRender:vga                                                                                                 ; work         ;
 ;       |lpm_divide:Div0|                   ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|ScreenRender:vga|lpm_divide:Div0                                                                                 ; work         ;
 ;          |lpm_divide_jhm:auto_generated|  ; 82 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|ScreenRender:vga|lpm_divide:Div0|lpm_divide_jhm:auto_generated                                                   ; work         ;
@@ -298,7 +288,7 @@ applicable agreement for further details.
 ;    |batedor:batedor2|                     ; 112 (32)          ; 45 (9)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|batedor:batedor2                                                                                                 ; work         ;
 ;       |debouncer:batedorLb2|              ; 40 (40)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|batedor:batedor2|debouncer:batedorLb2                                                                            ; work         ;
 ;       |debouncer:batedorLbl|              ; 40 (40)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|batedor:batedor2|debouncer:batedorLbl                                                                            ; work         ;
-;    |control:controle|                     ; 651 (651)         ; 203 (203)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|control:controle                                                                                                 ; work         ;
+;    |control:controle|                     ; 652 (652)         ; 203 (203)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|control:controle                                                                                                 ; work         ;
 ;    |deb_button:atiradeb1|                 ; 35 (35)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|deb_button:atiradeb1                                                                                             ; work         ;
 ;    |deb_button:atiradeb2|                 ; 35 (35)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|deb_button:atiradeb2                                                                                             ; work         ;
 ;    |placar:p1|                            ; 14 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p1                                                                                                        ; work         ;
@@ -313,6 +303,11 @@ applicable agreement for further details.
 ;             |sign_div_unsign_7kh:divider| ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|lpm_divide:Mod0|lpm_divide_98m:auto_generated|sign_div_unsign_7kh:divider                              ; work         ;
 ;                |alt_u_div_p2f:divider|    ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|lpm_divide:Mod0|lpm_divide_98m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_p2f:divider        ; work         ;
 ;       |ssd:\GEN_SSD:0:ssd_entity|         ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|placar:p2|ssd:\GEN_SSD:0:ssd_entity                                                                              ; work         ;
+;    |som:s|                                ; 173 (139)         ; 86 (72)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|som:s                                                                                                            ; work         ;
+;       |PWM:M1|                            ; 31 (25)           ; 14 (9)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|som:s|PWM:M1                                                                                                     ; work         ;
+;          |PRESCALER:U0|                   ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|som:s|PWM:M1|PRESCALER:U0                                                                                        ; work         ;
+;       |lpm_mult:Mult1|                    ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|som:s|lpm_mult:Mult1                                                                                             ; work         ;
+;          |multcore:mult_core|             ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|som:s|lpm_mult:Mult1|multcore:mult_core                                                                          ; work         ;
 ;    |vibra:vib|                            ; 428 (428)         ; 156 (156)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|vibra:vib                                                                                                        ; work         ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -344,136 +339,134 @@ Encoding Type:  One-Hot
 +---------------+---------------+---------------+---------------+---------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                     ;
-+--------------------------------------------------------------------+-------------------------------------------------------------------+
-; Register name                                                      ; Reason for Removal                                                ;
-+--------------------------------------------------------------------+-------------------------------------------------------------------+
-; control:controle|evento_fim_de_jogo_sig                            ; Stuck at GND due to stuck port data_in                            ;
-; Controle_de_som_vibracao_ssd_v2:som|PWM:M1|PRESCALER:U0|CONT4[0,1] ; Lost fanout                                                       ;
-; Controle_de_som_vibracao_ssd_v2:som|PWM:M1|PRESCALER:U0|CLK4       ; Lost fanout                                                       ;
-; Controle_de_som_vibracao_ssd_v2:som|evento_limit[4,8]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]   ;
-; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[2][3]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]   ;
-; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[2][7]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]   ;
-; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[1][3]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]   ;
-; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[1][7]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]   ;
-; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[0][3]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]   ;
-; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[0][7]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]   ;
-; Controle_de_som_vibracao_ssd_v2:som|evento_limit[6]                ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]   ;
-; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[2][1]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]   ;
-; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[1][1]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]   ;
-; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[0][1]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]   ;
-; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[1][5]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[3]   ;
-; Controle_de_som_vibracao_ssd_v2:som|evento_limit[7]                ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[5]   ;
-; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[2][0]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[5]   ;
-; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[2][2]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[5]   ;
-; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[2][6]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[5]   ;
-; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[1][0]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[5]   ;
-; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[1][4]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[5]   ;
-; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[0][0]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[5]   ;
-; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[0][6]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[5]   ;
-; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[0][5]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[1][2] ;
-; Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[0][2]              ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[1][2] ;
-; Controle_de_som_vibracao_ssd_v2:som|evento_limit[5]                ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]   ;
-; control:controle|counter[29]                                       ; Merged with control:controle|\process_3:counter[29]               ;
-; control:controle|counter[28]                                       ; Merged with control:controle|\process_3:counter[28]               ;
-; control:controle|counter[27]                                       ; Merged with control:controle|\process_3:counter[27]               ;
-; control:controle|counter[26]                                       ; Merged with control:controle|\process_3:counter[26]               ;
-; control:controle|counter[25]                                       ; Merged with control:controle|\process_3:counter[25]               ;
-; control:controle|counter[24]                                       ; Merged with control:controle|\process_3:counter[24]               ;
-; control:controle|counter[23]                                       ; Merged with control:controle|\process_3:counter[23]               ;
-; control:controle|counter[22]                                       ; Merged with control:controle|\process_3:counter[22]               ;
-; control:controle|counter[21]                                       ; Merged with control:controle|\process_3:counter[21]               ;
-; control:controle|counter[20]                                       ; Merged with control:controle|\process_3:counter[20]               ;
-; control:controle|counter[19]                                       ; Merged with control:controle|\process_3:counter[19]               ;
-; control:controle|counter[18]                                       ; Merged with control:controle|\process_3:counter[18]               ;
-; control:controle|counter[17]                                       ; Merged with control:controle|\process_3:counter[17]               ;
-; control:controle|counter[16]                                       ; Merged with control:controle|\process_3:counter[16]               ;
-; control:controle|counter[15]                                       ; Merged with control:controle|\process_3:counter[15]               ;
-; control:controle|counter[14]                                       ; Merged with control:controle|\process_3:counter[14]               ;
-; control:controle|counter[13]                                       ; Merged with control:controle|\process_3:counter[13]               ;
-; control:controle|counter[12]                                       ; Merged with control:controle|\process_3:counter[12]               ;
-; control:controle|counter[11]                                       ; Merged with control:controle|\process_3:counter[11]               ;
-; control:controle|counter[10]                                       ; Merged with control:controle|\process_3:counter[10]               ;
-; control:controle|counter[9]                                        ; Merged with control:controle|\process_3:counter[9]                ;
-; control:controle|counter[8]                                        ; Merged with control:controle|\process_3:counter[8]                ;
-; control:controle|counter[7]                                        ; Merged with control:controle|\process_3:counter[7]                ;
-; control:controle|counter[6]                                        ; Merged with control:controle|\process_3:counter[6]                ;
-; control:controle|counter[5]                                        ; Merged with control:controle|\process_3:counter[5]                ;
-; control:controle|counter[4]                                        ; Merged with control:controle|\process_3:counter[4]                ;
-; control:controle|counter[3]                                        ; Merged with control:controle|\process_3:counter[3]                ;
-; control:controle|counter[2]                                        ; Merged with control:controle|\process_3:counter[2]                ;
-; control:controle|counter[1]                                        ; Merged with control:controle|\process_3:counter[1]                ;
-; control:controle|counter[0]                                        ; Merged with control:controle|\process_3:counter[0]                ;
-; control:controle|counter_aumenta_tempo[27]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[27] ;
-; control:controle|counter_aumenta_tempo[26]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[26] ;
-; control:controle|counter_aumenta_tempo[25]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[25] ;
-; control:controle|counter_aumenta_tempo[24]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[24] ;
-; control:controle|counter_aumenta_tempo[23]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[23] ;
-; control:controle|counter_aumenta_tempo[22]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[22] ;
-; control:controle|counter_aumenta_tempo[21]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[21] ;
-; control:controle|counter_aumenta_tempo[20]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[20] ;
-; control:controle|counter_aumenta_tempo[19]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[19] ;
-; control:controle|counter_aumenta_tempo[18]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[18] ;
-; control:controle|counter_aumenta_tempo[17]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[17] ;
-; control:controle|counter_aumenta_tempo[16]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[16] ;
-; control:controle|counter_aumenta_tempo[15]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[15] ;
-; control:controle|counter_aumenta_tempo[14]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[14] ;
-; control:controle|counter_aumenta_tempo[13]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[13] ;
-; control:controle|counter_aumenta_tempo[12]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[12] ;
-; control:controle|counter_aumenta_tempo[11]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[11] ;
-; control:controle|counter_aumenta_tempo[10]                         ; Merged with control:controle|\process_3:counter_aumenta_tempo[10] ;
-; control:controle|counter_aumenta_tempo[9]                          ; Merged with control:controle|\process_3:counter_aumenta_tempo[9]  ;
-; control:controle|counter_aumenta_tempo[8]                          ; Merged with control:controle|\process_3:counter_aumenta_tempo[8]  ;
-; control:controle|counter_aumenta_tempo[7]                          ; Merged with control:controle|\process_3:counter_aumenta_tempo[7]  ;
-; control:controle|counter_aumenta_tempo[6]                          ; Merged with control:controle|\process_3:counter_aumenta_tempo[6]  ;
-; control:controle|counter_aumenta_tempo[5]                          ; Merged with control:controle|\process_3:counter_aumenta_tempo[5]  ;
-; control:controle|counter_aumenta_tempo[4]                          ; Merged with control:controle|\process_3:counter_aumenta_tempo[4]  ;
-; control:controle|counter_aumenta_tempo[3]                          ; Merged with control:controle|\process_3:counter_aumenta_tempo[3]  ;
-; control:controle|counter_aumenta_tempo[2]                          ; Merged with control:controle|\process_3:counter_aumenta_tempo[2]  ;
-; control:controle|counter_aumenta_tempo[1]                          ; Merged with control:controle|\process_3:counter_aumenta_tempo[1]  ;
-; control:controle|counter_aumenta_tempo[0]                          ; Merged with control:controle|\process_3:counter_aumenta_tempo[0]  ;
-; control:controle|counter_missil[18]                                ; Merged with control:controle|counter_missi2[18]                   ;
-; control:controle|counter_missil[17]                                ; Merged with control:controle|counter_missi2[17]                   ;
-; control:controle|counter_missil[16]                                ; Merged with control:controle|counter_missi2[16]                   ;
-; control:controle|counter_missil[15]                                ; Merged with control:controle|counter_missi2[15]                   ;
-; control:controle|counter_missil[14]                                ; Merged with control:controle|counter_missi2[14]                   ;
-; control:controle|counter_missil[13]                                ; Merged with control:controle|counter_missi2[13]                   ;
-; control:controle|counter_missil[12]                                ; Merged with control:controle|counter_missi2[12]                   ;
-; control:controle|counter_missil[11]                                ; Merged with control:controle|counter_missi2[11]                   ;
-; control:controle|counter_missil[10]                                ; Merged with control:controle|counter_missi2[10]                   ;
-; control:controle|counter_missil[9]                                 ; Merged with control:controle|counter_missi2[9]                    ;
-; control:controle|counter_missil[8]                                 ; Merged with control:controle|counter_missi2[8]                    ;
-; control:controle|counter_missil[7]                                 ; Merged with control:controle|counter_missi2[7]                    ;
-; control:controle|counter_missil[6]                                 ; Merged with control:controle|counter_missi2[6]                    ;
-; control:controle|counter_missil[5]                                 ; Merged with control:controle|counter_missi2[5]                    ;
-; control:controle|counter_missil[4]                                 ; Merged with control:controle|counter_missi2[4]                    ;
-; control:controle|counter_missil[3]                                 ; Merged with control:controle|counter_missi2[3]                    ;
-; control:controle|counter_missil[2]                                 ; Merged with control:controle|counter_missi2[2]                    ;
-; control:controle|counter_missil[1]                                 ; Merged with control:controle|counter_missi2[1]                    ;
-; control:controle|counter_missil[0]                                 ; Merged with control:controle|counter_missi2[0]                    ;
-; Controle_de_som_vibracao_ssd_v2:som|evento_limit[2]                ; Stuck at GND due to stuck port data_in                            ;
-; Controle_de_som_vibracao_ssd_v2:som|sig_TIMER_SOM[0,1,3,7]         ; Stuck at GND due to stuck port data_in                            ;
-; control:controle|VY[2]                                             ; Stuck at GND due to stuck port data_in                            ;
-; control:controle|COUNTER_2[0]                                      ; Merged with ScreenRender:vga|sync_mod:vga_sync|counter_mod2       ;
-; batedor:batedor2|pr_state.c1d1                                     ; Lost fanout                                                       ;
-; batedor:batedor1|pr_state.c1d1                                     ; Lost fanout                                                       ;
-; Controle_de_som_vibracao_ssd_v2:som|evento_limit[3]                ; Merged with Controle_de_som_vibracao_ssd_v2:som|evento_limit[0]   ;
-; Total Number of Removed Registers = 115                            ;                                                                   ;
-+--------------------------------------------------------------------+-------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                             ;
++--------------------------------------------+-------------------------------------------------------------------+
+; Register name                              ; Reason for Removal                                                ;
++--------------------------------------------+-------------------------------------------------------------------+
+; control:controle|evento_fim_de_jogo_sig    ; Stuck at GND due to stuck port data_in                            ;
+; som:s|PWM:M1|PRESCALER:U0|CONT4[0,1]       ; Lost fanout                                                       ;
+; som:s|PWM:M1|PRESCALER:U0|CLK4             ; Lost fanout                                                       ;
+; LEDS_jogo:leds_1|LEDS[0..6,8]              ; Stuck at GND due to stuck port data_in                            ;
+; som:s|evento_limit[6]                      ; Merged with som:s|evento_limit[2]                                 ;
+; som:s|evento_FREQ[2][1]                    ; Merged with som:s|evento_limit[2]                                 ;
+; som:s|evento_FREQ[1][1]                    ; Merged with som:s|evento_limit[2]                                 ;
+; som:s|evento_FREQ[0][1]                    ; Merged with som:s|evento_limit[2]                                 ;
+; som:s|evento_limit[4,8]                    ; Merged with som:s|evento_limit[2]                                 ;
+; som:s|evento_FREQ[2][3]                    ; Merged with som:s|evento_limit[2]                                 ;
+; som:s|evento_FREQ[2][7]                    ; Merged with som:s|evento_limit[2]                                 ;
+; som:s|evento_FREQ[1][3]                    ; Merged with som:s|evento_limit[2]                                 ;
+; som:s|evento_FREQ[1][7]                    ; Merged with som:s|evento_limit[2]                                 ;
+; som:s|evento_FREQ[0][3]                    ; Merged with som:s|evento_limit[2]                                 ;
+; som:s|evento_FREQ[0][7]                    ; Merged with som:s|evento_limit[2]                                 ;
+; som:s|evento_limit[7]                      ; Merged with som:s|evento_limit[5]                                 ;
+; som:s|evento_FREQ[2][0]                    ; Merged with som:s|evento_limit[5]                                 ;
+; som:s|evento_FREQ[2][2]                    ; Merged with som:s|evento_limit[5]                                 ;
+; som:s|evento_FREQ[2][6]                    ; Merged with som:s|evento_limit[5]                                 ;
+; som:s|evento_FREQ[1][0]                    ; Merged with som:s|evento_limit[5]                                 ;
+; som:s|evento_FREQ[1][4]                    ; Merged with som:s|evento_limit[5]                                 ;
+; som:s|evento_FREQ[0][0]                    ; Merged with som:s|evento_limit[5]                                 ;
+; som:s|evento_FREQ[0][6]                    ; Merged with som:s|evento_limit[5]                                 ;
+; som:s|evento_FREQ[0][2]                    ; Merged with som:s|evento_FREQ[1][2]                               ;
+; som:s|evento_limit[5]                      ; Merged with som:s|evento_limit[2]                                 ;
+; som:s|evento_FREQ[1][5]                    ; Merged with som:s|evento_limit[3]                                 ;
+; som:s|evento_FREQ[0][5]                    ; Merged with som:s|evento_FREQ[1][2]                               ;
+; control:controle|counter[29]               ; Merged with control:controle|\process_3:counter[29]               ;
+; control:controle|counter[28]               ; Merged with control:controle|\process_3:counter[28]               ;
+; control:controle|counter[27]               ; Merged with control:controle|\process_3:counter[27]               ;
+; control:controle|counter[26]               ; Merged with control:controle|\process_3:counter[26]               ;
+; control:controle|counter[25]               ; Merged with control:controle|\process_3:counter[25]               ;
+; control:controle|counter[24]               ; Merged with control:controle|\process_3:counter[24]               ;
+; control:controle|counter[23]               ; Merged with control:controle|\process_3:counter[23]               ;
+; control:controle|counter[22]               ; Merged with control:controle|\process_3:counter[22]               ;
+; control:controle|counter[21]               ; Merged with control:controle|\process_3:counter[21]               ;
+; control:controle|counter[20]               ; Merged with control:controle|\process_3:counter[20]               ;
+; control:controle|counter[19]               ; Merged with control:controle|\process_3:counter[19]               ;
+; control:controle|counter[18]               ; Merged with control:controle|\process_3:counter[18]               ;
+; control:controle|counter[17]               ; Merged with control:controle|\process_3:counter[17]               ;
+; control:controle|counter[16]               ; Merged with control:controle|\process_3:counter[16]               ;
+; control:controle|counter[15]               ; Merged with control:controle|\process_3:counter[15]               ;
+; control:controle|counter[14]               ; Merged with control:controle|\process_3:counter[14]               ;
+; control:controle|counter[13]               ; Merged with control:controle|\process_3:counter[13]               ;
+; control:controle|counter[12]               ; Merged with control:controle|\process_3:counter[12]               ;
+; control:controle|counter[11]               ; Merged with control:controle|\process_3:counter[11]               ;
+; control:controle|counter[10]               ; Merged with control:controle|\process_3:counter[10]               ;
+; control:controle|counter[9]                ; Merged with control:controle|\process_3:counter[9]                ;
+; control:controle|counter[8]                ; Merged with control:controle|\process_3:counter[8]                ;
+; control:controle|counter[7]                ; Merged with control:controle|\process_3:counter[7]                ;
+; control:controle|counter[6]                ; Merged with control:controle|\process_3:counter[6]                ;
+; control:controle|counter[5]                ; Merged with control:controle|\process_3:counter[5]                ;
+; control:controle|counter[4]                ; Merged with control:controle|\process_3:counter[4]                ;
+; control:controle|counter[3]                ; Merged with control:controle|\process_3:counter[3]                ;
+; control:controle|counter[2]                ; Merged with control:controle|\process_3:counter[2]                ;
+; control:controle|counter[1]                ; Merged with control:controle|\process_3:counter[1]                ;
+; control:controle|counter[0]                ; Merged with control:controle|\process_3:counter[0]                ;
+; control:controle|counter_aumenta_tempo[27] ; Merged with control:controle|\process_3:counter_aumenta_tempo[27] ;
+; control:controle|counter_aumenta_tempo[26] ; Merged with control:controle|\process_3:counter_aumenta_tempo[26] ;
+; control:controle|counter_aumenta_tempo[25] ; Merged with control:controle|\process_3:counter_aumenta_tempo[25] ;
+; control:controle|counter_aumenta_tempo[24] ; Merged with control:controle|\process_3:counter_aumenta_tempo[24] ;
+; control:controle|counter_aumenta_tempo[23] ; Merged with control:controle|\process_3:counter_aumenta_tempo[23] ;
+; control:controle|counter_aumenta_tempo[22] ; Merged with control:controle|\process_3:counter_aumenta_tempo[22] ;
+; control:controle|counter_aumenta_tempo[21] ; Merged with control:controle|\process_3:counter_aumenta_tempo[21] ;
+; control:controle|counter_aumenta_tempo[20] ; Merged with control:controle|\process_3:counter_aumenta_tempo[20] ;
+; control:controle|counter_aumenta_tempo[19] ; Merged with control:controle|\process_3:counter_aumenta_tempo[19] ;
+; control:controle|counter_aumenta_tempo[18] ; Merged with control:controle|\process_3:counter_aumenta_tempo[18] ;
+; control:controle|counter_aumenta_tempo[17] ; Merged with control:controle|\process_3:counter_aumenta_tempo[17] ;
+; control:controle|counter_aumenta_tempo[16] ; Merged with control:controle|\process_3:counter_aumenta_tempo[16] ;
+; control:controle|counter_aumenta_tempo[15] ; Merged with control:controle|\process_3:counter_aumenta_tempo[15] ;
+; control:controle|counter_aumenta_tempo[14] ; Merged with control:controle|\process_3:counter_aumenta_tempo[14] ;
+; control:controle|counter_aumenta_tempo[13] ; Merged with control:controle|\process_3:counter_aumenta_tempo[13] ;
+; control:controle|counter_aumenta_tempo[12] ; Merged with control:controle|\process_3:counter_aumenta_tempo[12] ;
+; control:controle|counter_aumenta_tempo[11] ; Merged with control:controle|\process_3:counter_aumenta_tempo[11] ;
+; control:controle|counter_aumenta_tempo[10] ; Merged with control:controle|\process_3:counter_aumenta_tempo[10] ;
+; control:controle|counter_aumenta_tempo[9]  ; Merged with control:controle|\process_3:counter_aumenta_tempo[9]  ;
+; control:controle|counter_aumenta_tempo[8]  ; Merged with control:controle|\process_3:counter_aumenta_tempo[8]  ;
+; control:controle|counter_aumenta_tempo[7]  ; Merged with control:controle|\process_3:counter_aumenta_tempo[7]  ;
+; control:controle|counter_aumenta_tempo[6]  ; Merged with control:controle|\process_3:counter_aumenta_tempo[6]  ;
+; control:controle|counter_aumenta_tempo[5]  ; Merged with control:controle|\process_3:counter_aumenta_tempo[5]  ;
+; control:controle|counter_aumenta_tempo[4]  ; Merged with control:controle|\process_3:counter_aumenta_tempo[4]  ;
+; control:controle|counter_aumenta_tempo[3]  ; Merged with control:controle|\process_3:counter_aumenta_tempo[3]  ;
+; control:controle|counter_aumenta_tempo[2]  ; Merged with control:controle|\process_3:counter_aumenta_tempo[2]  ;
+; control:controle|counter_aumenta_tempo[1]  ; Merged with control:controle|\process_3:counter_aumenta_tempo[1]  ;
+; control:controle|counter_aumenta_tempo[0]  ; Merged with control:controle|\process_3:counter_aumenta_tempo[0]  ;
+; control:controle|counter_missil[18]        ; Merged with control:controle|counter_missi2[18]                   ;
+; control:controle|counter_missil[17]        ; Merged with control:controle|counter_missi2[17]                   ;
+; control:controle|counter_missil[16]        ; Merged with control:controle|counter_missi2[16]                   ;
+; control:controle|counter_missil[15]        ; Merged with control:controle|counter_missi2[15]                   ;
+; control:controle|counter_missil[14]        ; Merged with control:controle|counter_missi2[14]                   ;
+; control:controle|counter_missil[13]        ; Merged with control:controle|counter_missi2[13]                   ;
+; control:controle|counter_missil[12]        ; Merged with control:controle|counter_missi2[12]                   ;
+; control:controle|counter_missil[11]        ; Merged with control:controle|counter_missi2[11]                   ;
+; control:controle|counter_missil[10]        ; Merged with control:controle|counter_missi2[10]                   ;
+; control:controle|counter_missil[9]         ; Merged with control:controle|counter_missi2[9]                    ;
+; control:controle|counter_missil[8]         ; Merged with control:controle|counter_missi2[8]                    ;
+; control:controle|counter_missil[7]         ; Merged with control:controle|counter_missi2[7]                    ;
+; control:controle|counter_missil[6]         ; Merged with control:controle|counter_missi2[6]                    ;
+; control:controle|counter_missil[5]         ; Merged with control:controle|counter_missi2[5]                    ;
+; control:controle|counter_missil[4]         ; Merged with control:controle|counter_missi2[4]                    ;
+; control:controle|counter_missil[3]         ; Merged with control:controle|counter_missi2[3]                    ;
+; control:controle|counter_missil[2]         ; Merged with control:controle|counter_missi2[2]                    ;
+; control:controle|counter_missil[1]         ; Merged with control:controle|counter_missi2[1]                    ;
+; control:controle|counter_missil[0]         ; Merged with control:controle|counter_missi2[0]                    ;
+; som:s|evento_limit[2]                      ; Stuck at GND due to stuck port data_in                            ;
+; som:s|sig_TIMER_SOM[0,1,3,7]               ; Stuck at GND due to stuck port data_in                            ;
+; control:controle|VY[2]                     ; Stuck at GND due to stuck port data_in                            ;
+; control:controle|COUNTER_2[0]              ; Merged with ScreenRender:vga|sync_mod:vga_sync|counter_mod2       ;
+; batedor:batedor2|pr_state.c1d1             ; Lost fanout                                                       ;
+; batedor:batedor1|pr_state.c1d1             ; Lost fanout                                                       ;
+; som:s|evento_limit[3]                      ; Merged with som:s|evento_limit[0]                                 ;
+; Total Number of Removed Registers = 123    ;                                                                   ;
++--------------------------------------------+-------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                 ;
-+-----------------------------------------+---------------------------+-------------------------------------------------------+
-; Register name                           ; Reason for Removal        ; Registers Removed due to This Register                ;
-+-----------------------------------------+---------------------------+-------------------------------------------------------+
-; control:controle|evento_fim_de_jogo_sig ; Stuck at GND              ; Controle_de_som_vibracao_ssd_v2:som|evento_limit[2],  ;
-;                                         ; due to stuck port data_in ; Controle_de_som_vibracao_ssd_v2:som|sig_TIMER_SOM[0], ;
-;                                         ;                           ; Controle_de_som_vibracao_ssd_v2:som|sig_TIMER_SOM[1], ;
-;                                         ;                           ; Controle_de_som_vibracao_ssd_v2:som|sig_TIMER_SOM[3], ;
-;                                         ;                           ; Controle_de_som_vibracao_ssd_v2:som|sig_TIMER_SOM[7]  ;
-+-----------------------------------------+---------------------------+-------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                  ;
++-----------------------------------------+---------------------------+------------------------------------------------------------------------+
+; Register name                           ; Reason for Removal        ; Registers Removed due to This Register                                 ;
++-----------------------------------------+---------------------------+------------------------------------------------------------------------+
+; control:controle|evento_fim_de_jogo_sig ; Stuck at GND              ; som:s|evento_limit[2], som:s|sig_TIMER_SOM[0], som:s|sig_TIMER_SOM[1], ;
+;                                         ; due to stuck port data_in ; som:s|sig_TIMER_SOM[3], som:s|sig_TIMER_SOM[7]                         ;
++-----------------------------------------+---------------------------+------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -481,74 +474,74 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 628   ;
-; Number of registers using Synchronous Clear  ; 286   ;
+; Total registers                              ; 659   ;
+; Number of registers using Synchronous Clear  ; 313   ;
 ; Number of registers using Synchronous Load   ; 214   ;
 ; Number of registers using Asynchronous Clear ; 14    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 277   ;
+; Number of registers using Clock Enable       ; 306   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------------------+
-; Inverted Register Statistics                                  ;
-+-----------------------------------------------------+---------+
-; Inverted Register                                   ; Fan out ;
-+-----------------------------------------------------+---------+
-; batedor:batedor1|pos_sig[1]                         ; 21      ;
-; batedor:batedor1|pos_sig[0]                         ; 15      ;
-; batedor:batedor2|pos_sig[1]                         ; 22      ;
-; batedor:batedor2|pos_sig[0]                         ; 15      ;
-; control:controle|X[5]                               ; 10      ;
-; control:controle|Y[3]                               ; 20      ;
-; control:controle|Y[4]                               ; 20      ;
-; control:controle|VY[0]                              ; 6       ;
-; Controle_de_som_vibracao_ssd_v2:som|sig_RST_SOM     ; 16      ;
-; Controle_de_som_vibracao_ssd_v2:som|evento_limit[0] ; 11      ;
-; Total number of inverted registers = 10             ;         ;
-+-----------------------------------------------------+---------+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; batedor:batedor1|pos_sig[1]             ; 21      ;
+; batedor:batedor1|pos_sig[0]             ; 15      ;
+; batedor:batedor2|pos_sig[1]             ; 22      ;
+; batedor:batedor2|pos_sig[0]             ; 15      ;
+; control:controle|X[5]                   ; 11      ;
+; control:controle|Y[3]                   ; 20      ;
+; control:controle|Y[4]                   ; 20      ;
+; control:controle|VY[0]                  ; 5       ;
+; som:s|sig_RST_SOM                       ; 16      ;
+; som:s|evento_limit[0]                   ; 11      ;
+; Total number of inverted registers = 10 ;         ;
++-----------------------------------------+---------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |pong|Controle_de_som_vibracao_ssd_v2:som|change_SOUND[0]   ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |pong|Controle_de_som_vibracao_ssd_v2:som|PWM:M1|CONT[7]    ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |pong|ScreenRender:vga|sync_mod:vga_sync|x_counter[6]       ;
-; 4:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; Yes        ; |pong|vibra:vib|counter_ponto_1[20]                         ;
-; 4:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; Yes        ; |pong|vibra:vib|counter_ponto_2[23]                         ;
-; 4:1                ; 27 bits   ; 54 LEs        ; 54 LEs               ; 0 LEs                  ; Yes        ; |pong|vibra:vib|counter_morre_1[7]                          ;
-; 4:1                ; 23 bits   ; 46 LEs        ; 46 LEs               ; 0 LEs                  ; Yes        ; |pong|vibra:vib|counter_batida_1[18]                        ;
-; 4:1                ; 27 bits   ; 54 LEs        ; 54 LEs               ; 0 LEs                  ; Yes        ; |pong|vibra:vib|counter_morre_2[25]                         ;
-; 4:1                ; 23 bits   ; 46 LEs        ; 46 LEs               ; 0 LEs                  ; Yes        ; |pong|vibra:vib|counter_batida_2[19]                        ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |pong|Controle_de_som_vibracao_ssd_v2:som|evento_FREQ[1][2] ;
-; 4:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |pong|deb_button:atiradeb2|counter[21]                      ;
-; 4:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |pong|deb_button:atiradeb1|counter[3]                       ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |pong|batedor:batedor2|debouncer:batedorLbl|counter[9]      ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |pong|batedor:batedor2|debouncer:batedorLb2|counter[1]      ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |pong|batedor:batedor1|debouncer:batedorLbl|counter[6]      ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |pong|batedor:batedor1|debouncer:batedorLb2|counter[7]      ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |pong|control:controle|PONTOS2[3]                           ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |pong|control:controle|PONTOS1[2]                           ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |pong|control:controle|y_missle_p2_sig[5]                   ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |pong|control:controle|y_missle_p1_sig[0]                   ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 0 LEs                ; 12 LEs                 ; Yes        ; |pong|Controle_de_som_vibracao_ssd_v2:som|sig_TIMER_SOM[1]  ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |pong|control:controle|x_missle_p2_sig[1]                   ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |pong|control:controle|x_missle_p1_sig[0]                   ;
-; 8:1                ; 5 bits    ; 25 LEs        ; 10 LEs               ; 15 LEs                 ; Yes        ; |pong|control:controle|X[1]                                 ;
-; 10:1               ; 4 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |pong|control:controle|Y[1]                                 ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |pong|batedor:batedor2|pos_sig[5]                           ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |pong|batedor:batedor1|pos_sig[5]                           ;
-; 12:1               ; 2 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |pong|control:controle|VY[1]                                ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |pong|Controle_de_som_vibracao_ssd_v2:som|evento_limit[0]   ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |pong|control:controle|Y[3]                                 ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |pong|batedor:batedor2|pos_sig[1]                           ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |pong|batedor:batedor1|pos_sig[0]                           ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |pong|Controle_de_som_vibracao_ssd_v2:som|change_SOUND      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |pong|som:s|change_SOUND[1]                             ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |pong|som:s|PWM:M1|CONT[6]                              ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |pong|ScreenRender:vga|sync_mod:vga_sync|x_counter[1]   ;
+; 4:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; Yes        ; |pong|vibra:vib|counter_ponto_1[7]                      ;
+; 4:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; Yes        ; |pong|vibra:vib|counter_ponto_2[24]                     ;
+; 4:1                ; 27 bits   ; 54 LEs        ; 54 LEs               ; 0 LEs                  ; Yes        ; |pong|vibra:vib|counter_morre_1[6]                      ;
+; 4:1                ; 23 bits   ; 46 LEs        ; 46 LEs               ; 0 LEs                  ; Yes        ; |pong|vibra:vib|counter_batida_1[14]                    ;
+; 4:1                ; 27 bits   ; 54 LEs        ; 54 LEs               ; 0 LEs                  ; Yes        ; |pong|vibra:vib|counter_morre_2[0]                      ;
+; 4:1                ; 23 bits   ; 46 LEs        ; 46 LEs               ; 0 LEs                  ; Yes        ; |pong|vibra:vib|counter_batida_2[7]                     ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |pong|som:s|evento_FREQ[1][2]                           ;
+; 4:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |pong|deb_button:atiradeb2|counter[15]                  ;
+; 4:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |pong|deb_button:atiradeb1|counter[11]                  ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |pong|batedor:batedor2|debouncer:batedorLbl|counter[3]  ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |pong|batedor:batedor2|debouncer:batedorLb2|counter[15] ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |pong|batedor:batedor1|debouncer:batedorLbl|counter[7]  ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |pong|batedor:batedor1|debouncer:batedorLb2|counter[11] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |pong|control:controle|PONTOS2[0]                       ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |pong|control:controle|PONTOS1[1]                       ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |pong|control:controle|y_missle_p2_sig[5]               ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |pong|control:controle|y_missle_p1_sig[0]               ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 0 LEs                ; 12 LEs                 ; Yes        ; |pong|som:s|sig_TIMER_SOM[7]                            ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |pong|control:controle|x_missle_p2_sig[5]               ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |pong|control:controle|x_missle_p1_sig[4]               ;
+; 8:1                ; 5 bits    ; 25 LEs        ; 10 LEs               ; 15 LEs                 ; Yes        ; |pong|control:controle|X[3]                             ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |pong|control:controle|Y[5]                             ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |pong|batedor:batedor2|pos_sig[5]                       ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |pong|batedor:batedor1|pos_sig[5]                       ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |pong|control:controle|VY[2]                            ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |pong|som:s|evento_limit[3]                             ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |pong|control:controle|Y[3]                             ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |pong|batedor:batedor2|pos_sig[0]                       ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |pong|batedor:batedor1|pos_sig[1]                       ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |pong|som:s|change_SOUND                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------+
@@ -628,24 +621,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Controle_de_som_vibracao_ssd_v2:som ;
-+-------------------+----------+---------------------------------------------------+
-; Parameter Name    ; Value    ; Type                                              ;
-+-------------------+----------+---------------------------------------------------+
-; max_value_segment ; 6        ; Signed Integer                                    ;
-; min_value         ; 0        ; Signed Integer                                    ;
-; max_value         ; 99       ; Signed Integer                                    ;
-; max_speed_ms      ; 10       ; Signed Integer                                    ;
-; fclk              ; 50000000 ; Signed Integer                                    ;
-; reso              ; 8        ; Signed Integer                                    ;
-; freq_0            ; 00000000 ; Unsigned Binary                                   ;
-; freq_1            ; 00100000 ; Unsigned Binary                                   ;
-; freq_2            ; 00010000 ; Unsigned Binary                                   ;
-; freq_3            ; 01000100 ; Unsigned Binary                                   ;
-; freq_4            ; 01001001 ; Unsigned Binary                                   ;
-; freq_5            ; 00100100 ; Unsigned Binary                                   ;
-+-------------------+----------+---------------------------------------------------+
++----------------------------------------------------+
+; Parameter Settings for User Entity Instance: som:s ;
++----------------+----------+------------------------+
+; Parameter Name ; Value    ; Type                   ;
++----------------+----------+------------------------+
+; max_speed_ms   ; 10       ; Signed Integer         ;
+; fclk           ; 50000000 ; Signed Integer         ;
+; reso           ; 8        ; Signed Integer         ;
+; freq_0         ; 00000000 ; Unsigned Binary        ;
+; freq_1         ; 00100000 ; Unsigned Binary        ;
+; freq_2         ; 00010000 ; Unsigned Binary        ;
+; freq_3         ; 01000100 ; Unsigned Binary        ;
+; freq_4         ; 01001001 ; Unsigned Binary        ;
+; freq_5         ; 00100100 ; Unsigned Binary        ;
++----------------+----------+------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -660,6 +650,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; t_ponto_on     ; 0.15     ; Signed Float               ;
 ; t_ponto_off    ; 0.08     ; Signed Float               ;
 +----------------+----------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LEDS_jogo:leds_1 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; n_leds         ; 10    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -755,76 +755,76 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult1 ;
-+------------------------------------------------+-------------+--------------------------------------+
-; Parameter Name                                 ; Value       ; Type                                 ;
-+------------------------------------------------+-------------+--------------------------------------+
-; AUTO_CARRY_CHAINS                              ; ON          ; AUTO_CARRY                           ;
-; IGNORE_CARRY_BUFFERS                           ; OFF         ; IGNORE_CARRY                         ;
-; AUTO_CASCADE_CHAINS                            ; ON          ; AUTO_CASCADE                         ;
-; IGNORE_CASCADE_BUFFERS                         ; OFF         ; IGNORE_CASCADE                       ;
-; LPM_WIDTHA                                     ; 4           ; Untyped                              ;
-; LPM_WIDTHB                                     ; 19          ; Untyped                              ;
-; LPM_WIDTHP                                     ; 23          ; Untyped                              ;
-; LPM_WIDTHR                                     ; 23          ; Untyped                              ;
-; LPM_WIDTHS                                     ; 1           ; Untyped                              ;
-; LPM_REPRESENTATION                             ; UNSIGNED    ; Untyped                              ;
-; LPM_PIPELINE                                   ; 0           ; Untyped                              ;
-; LATENCY                                        ; 0           ; Untyped                              ;
-; INPUT_A_IS_CONSTANT                            ; NO          ; Untyped                              ;
-; INPUT_B_IS_CONSTANT                            ; YES         ; Untyped                              ;
-; USE_EAB                                        ; OFF         ; Untyped                              ;
-; MAXIMIZE_SPEED                                 ; 5           ; Untyped                              ;
-; DEVICE_FAMILY                                  ; Cyclone III ; Untyped                              ;
-; CARRY_CHAIN                                    ; MANUAL      ; Untyped                              ;
-; APEX20K_TECHNOLOGY_MAPPER                      ; LUT         ; TECH_MAPPER_APEX20K                  ;
-; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO        ; Untyped                              ;
-; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0           ; Untyped                              ;
-; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0           ; Untyped                              ;
-; CBXI_PARAMETER                                 ; NOTHING     ; Untyped                              ;
-; INPUT_A_FIXED_VALUE                            ; Bx          ; Untyped                              ;
-; INPUT_B_FIXED_VALUE                            ; Bx          ; Untyped                              ;
-; USE_AHDL_IMPLEMENTATION                        ; OFF         ; Untyped                              ;
-+------------------------------------------------+-------------+--------------------------------------+
++------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: som:s|lpm_mult:Mult1              ;
++------------------------------------------------+-------------+---------------------+
+; Parameter Name                                 ; Value       ; Type                ;
++------------------------------------------------+-------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON          ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF         ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON          ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF         ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 4           ; Untyped             ;
+; LPM_WIDTHB                                     ; 19          ; Untyped             ;
+; LPM_WIDTHP                                     ; 23          ; Untyped             ;
+; LPM_WIDTHR                                     ; 23          ; Untyped             ;
+; LPM_WIDTHS                                     ; 1           ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED    ; Untyped             ;
+; LPM_PIPELINE                                   ; 0           ; Untyped             ;
+; LATENCY                                        ; 0           ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO          ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; YES         ; Untyped             ;
+; USE_EAB                                        ; OFF         ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5           ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone III ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL      ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT         ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO        ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0           ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0           ; Untyped             ;
+; CBXI_PARAMETER                                 ; NOTHING     ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx          ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx          ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF         ; Untyped             ;
++------------------------------------------------+-------------+---------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------------------------------------+
-; lpm_mult Parameter Settings by Entity Instance                                             ;
-+---------------------------------------+----------------------------------------------------+
-; Name                                  ; Value                                              ;
-+---------------------------------------+----------------------------------------------------+
-; Number of entity instances            ; 1                                                  ;
-; Entity Instance                       ; Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult1 ;
-;     -- LPM_WIDTHA                     ; 4                                                  ;
-;     -- LPM_WIDTHB                     ; 19                                                 ;
-;     -- LPM_WIDTHP                     ; 23                                                 ;
-;     -- LPM_REPRESENTATION             ; UNSIGNED                                           ;
-;     -- INPUT_A_IS_CONSTANT            ; NO                                                 ;
-;     -- INPUT_B_IS_CONSTANT            ; YES                                                ;
-;     -- USE_EAB                        ; OFF                                                ;
-;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                               ;
-;     -- INPUT_A_FIXED_VALUE            ; Bx                                                 ;
-;     -- INPUT_B_FIXED_VALUE            ; Bx                                                 ;
-+---------------------------------------+----------------------------------------------------+
++--------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance               ;
++---------------------------------------+----------------------+
+; Name                                  ; Value                ;
++---------------------------------------+----------------------+
+; Number of entity instances            ; 1                    ;
+; Entity Instance                       ; som:s|lpm_mult:Mult1 ;
+;     -- LPM_WIDTHA                     ; 4                    ;
+;     -- LPM_WIDTHB                     ; 19                   ;
+;     -- LPM_WIDTHP                     ; 23                   ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED             ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                   ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                  ;
+;     -- USE_EAB                        ; OFF                  ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                 ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                   ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                   ;
++---------------------------------------+----------------------+
 
 
-+------------------------------------------------------------------------+
-; Port Connectivity Checks: "Controle_de_som_vibracao_ssd_v2:som|PWM:M1" ;
-+------------+-------+----------+----------------------------------------+
-; Port       ; Type  ; Severity ; Details                                ;
-+------------+-------+----------+----------------------------------------+
-; enable     ; Input ; Info     ; Stuck at VCC                           ;
-; sel_pr[1]  ; Input ; Info     ; Stuck at VCC                           ;
-; sel_pr[0]  ; Input ; Info     ; Stuck at GND                           ;
-; duty[7..1] ; Input ; Info     ; Stuck at GND                           ;
-; duty[0]    ; Input ; Info     ; Stuck at VCC                           ;
-+------------+-------+----------+----------------------------------------+
++----------------------------------------------+
+; Port Connectivity Checks: "som:s|PWM:M1"     ;
++------------+-------+----------+--------------+
+; Port       ; Type  ; Severity ; Details      ;
++------------+-------+----------+--------------+
+; enable     ; Input ; Info     ; Stuck at VCC ;
+; sel_pr[1]  ; Input ; Info     ; Stuck at VCC ;
+; sel_pr[0]  ; Input ; Info     ; Stuck at GND ;
+; duty[7..1] ; Input ; Info     ; Stuck at GND ;
+; duty[0]    ; Input ; Info     ; Stuck at VCC ;
++------------+-------+----------+--------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Controle_de_som_vibracao_ssd_v2:som"                                                          ;
+; Port Connectivity Checks: "som:s"                                                                                        ;
 +----------------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port           ; Type   ; Severity ; Details                                                                             ;
 +----------------+--------+----------+-------------------------------------------------------------------------------------+
@@ -858,73 +858,57 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Tue Dec 12 16:37:21 2017
+    Info: Processing started: Wed Dec 13 15:49:57 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PINGMATRONIX -c PINGMATRONIX
-Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
-Info (12021): Found 2 design units, including 1 entities, in source file vga_test.vhd
-    Info (12022): Found design unit 1: VGA_Test-arch
-    Info (12023): Found entity 1: VGA_Test
-Info (12021): Found 2 design units, including 1 entities, in source file sound.vhd
-    Info (12022): Found design unit 1: Sound-arch
-    Info (12023): Found entity 1: Sound
-Info (12021): Found 1 design units, including 0 entities, in source file meupacote.vhd
-    Info (12022): Found design unit 1: meupacote
-Info (12021): Found 2 design units, including 1 entities, in source file leds_jogo.vhd
-    Info (12022): Found design unit 1: LEDS_jogo-arch
-    Info (12023): Found entity 1: LEDS_jogo
-Info (12021): Found 2 design units, including 1 entities, in source file int2disp.vhd
-    Info (12022): Found design unit 1: int2disp-int2disp
-    Info (12023): Found entity 1: int2disp
-Info (12021): Found 2 design units, including 1 entities, in source file debounce.vhd
-    Info (12022): Found design unit 1: debounce-arch
-    Info (12023): Found entity 1: debounce
-Info (12021): Found 2 design units, including 1 entities, in source file preescalertrue.vhd
-    Info (12022): Found design unit 1: PRESCALER-RTL
-    Info (12023): Found entity 1: PRESCALER
-Info (12021): Found 2 design units, including 1 entities, in source file preescaler.vhd
-    Info (12022): Found design unit 1: PWM-RTL
-    Info (12023): Found entity 1: PWM
-Info (12021): Found 1 design units, including 0 entities, in source file mypackage.vhd
-    Info (12022): Found design unit 1: MyPackage
-Info (12021): Found 2 design units, including 1 entities, in source file controle_de_som_vibracao_ssd_v2.vhd
-    Info (12022): Found design unit 1: Controle_de_som_vibracao_ssd_v2-projeto
-    Info (12023): Found entity 1: Controle_de_som_vibracao_ssd_v2
-Info (12021): Found 2 design units, including 1 entities, in source file placar.vhd
-    Info (12022): Found design unit 1: placar-arch
-    Info (12023): Found entity 1: placar
-Info (12021): Found 1 design units, including 0 entities, in source file ssdefinitions.vhd
-    Info (12022): Found design unit 1: SSDefinitions
-Info (12021): Found 2 design units, including 1 entities, in source file ssd.vhd
-    Info (12022): Found design unit 1: ssd-arch
-    Info (12023): Found entity 1: ssd
-Info (12021): Found 2 design units, including 1 entities, in source file deb_button.vhd
-    Info (12022): Found design unit 1: deb_button-arch
-    Info (12023): Found entity 1: deb_button
-Info (12021): Found 1 design units, including 0 entities, in source file pongdefinitions.vhd
-    Info (12022): Found design unit 1: PongDefinitions
-Info (12021): Found 2 design units, including 1 entities, in source file debouncer.vhd
-    Info (12022): Found design unit 1: debouncer-arch
-    Info (12023): Found entity 1: debouncer
-Info (12021): Found 2 design units, including 1 entities, in source file batedor.vhd
-    Info (12022): Found design unit 1: batedor-batedor
-    Info (12023): Found entity 1: batedor
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file vibra.vhd
+    Info (12022): Found design unit 1: vibra-arch
+    Info (12023): Found entity 1: vibra
 Info (12021): Found 1 design units, including 0 entities, in source file vgadefinitions.vhd
     Info (12022): Found design unit 1: VgaDefinitions
 Info (12021): Found 2 design units, including 1 entities, in source file sync_mod.vhd
     Info (12022): Found design unit 1: sync_mod-Behavioral
     Info (12023): Found entity 1: sync_mod
+Info (12021): Found 1 design units, including 0 entities, in source file ssdefinitions.vhd
+    Info (12022): Found design unit 1: SSDefinitions
+Info (12021): Found 2 design units, including 1 entities, in source file ssd.vhd
+    Info (12022): Found design unit 1: ssd-arch
+    Info (12023): Found entity 1: ssd
+Info (12021): Found 2 design units, including 1 entities, in source file som.vhd
+    Info (12022): Found design unit 1: som-projeto
+    Info (12023): Found entity 1: som
 Info (12021): Found 2 design units, including 1 entities, in source file screenrender.vhd
     Info (12022): Found design unit 1: ScreenRender-arch
     Info (12023): Found entity 1: ScreenRender
-Info (12021): Found 2 design units, including 1 entities, in source file control.vhd
-    Info (12022): Found design unit 1: control-arch
-    Info (12023): Found entity 1: control
+Info (12021): Found 1 design units, including 0 entities, in source file pongdefinitions.vhd
+    Info (12022): Found design unit 1: PongDefinitions
 Info (12021): Found 2 design units, including 1 entities, in source file pong.vhd
     Info (12022): Found design unit 1: pong-arch
     Info (12023): Found entity 1: pong
-Info (12021): Found 2 design units, including 1 entities, in source file vibra.vhd
-    Info (12022): Found design unit 1: vibra-arch
-    Info (12023): Found entity 1: vibra
+Info (12021): Found 2 design units, including 1 entities, in source file placar.vhd
+    Info (12022): Found design unit 1: placar-arch
+    Info (12023): Found entity 1: placar
+Info (12021): Found 2 design units, including 1 entities, in source file leds_jogo.vhd
+    Info (12022): Found design unit 1: LEDS_jogo-arch
+    Info (12023): Found entity 1: LEDS_jogo
+Info (12021): Found 2 design units, including 1 entities, in source file deb_button.vhd
+    Info (12022): Found design unit 1: deb_button-arch
+    Info (12023): Found entity 1: deb_button
+Info (12021): Found 2 design units, including 1 entities, in source file debouncer.vhd
+    Info (12022): Found design unit 1: debouncer-arch
+    Info (12023): Found entity 1: debouncer
+Info (12021): Found 2 design units, including 1 entities, in source file control.vhd
+    Info (12022): Found design unit 1: control-arch
+    Info (12023): Found entity 1: control
+Info (12021): Found 2 design units, including 1 entities, in source file batedor.vhd
+    Info (12022): Found design unit 1: batedor-batedor
+    Info (12023): Found entity 1: batedor
+Info (12021): Found 2 design units, including 1 entities, in source file preescaler.vhd
+    Info (12022): Found design unit 1: PWM-RTL
+    Info (12023): Found entity 1: PWM
+Info (12021): Found 2 design units, including 1 entities, in source file preescalertrue.vhd
+    Info (12022): Found design unit 1: PRESCALER-RTL
+    Info (12023): Found entity 1: PRESCALER
 Info (12127): Elaborating entity "pong" for the top level hierarchy
 Info (12128): Elaborating entity "batedor" for hierarchy "batedor:batedor1"
 Info (12128): Elaborating entity "debouncer" for hierarchy "batedor:batedor1|debouncer:batedorLbl"
@@ -939,21 +923,22 @@ Info (12128): Elaborating entity "ScreenRender" for hierarchy "ScreenRender:vga"
 Info (12128): Elaborating entity "sync_mod" for hierarchy "ScreenRender:vga|sync_mod:vga_sync"
 Info (12128): Elaborating entity "placar" for hierarchy "placar:p1"
 Info (12128): Elaborating entity "ssd" for hierarchy "placar:p1|ssd:\GEN_SSD:0:ssd_entity"
-Info (12128): Elaborating entity "Controle_de_som_vibracao_ssd_v2" for hierarchy "Controle_de_som_vibracao_ssd_v2:som"
-Warning (10540): VHDL Signal Declaration warning at Controle_de_som_vibracao_ssd_v2.vhd(94): used explicit default value for signal "sig_ENABLE" because signal was never assigned a value
-Warning (10540): VHDL Signal Declaration warning at Controle_de_som_vibracao_ssd_v2.vhd(95): used explicit default value for signal "sig_SEL_PR" because signal was never assigned a value
-Warning (10540): VHDL Signal Declaration warning at Controle_de_som_vibracao_ssd_v2.vhd(96): used explicit default value for signal "sig_DUTY_SOM" because signal was never assigned a value
-Info (12128): Elaborating entity "PWM" for hierarchy "Controle_de_som_vibracao_ssd_v2:som|PWM:M1"
-Info (12128): Elaborating entity "PRESCALER" for hierarchy "Controle_de_som_vibracao_ssd_v2:som|PWM:M1|PRESCALER:U0"
+Info (12128): Elaborating entity "som" for hierarchy "som:s"
+Warning (10540): VHDL Signal Declaration warning at som.vhd(89): used explicit default value for signal "sig_ENABLE" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at som.vhd(90): used explicit default value for signal "sig_SEL_PR" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at som.vhd(91): used explicit default value for signal "sig_DUTY_SOM" because signal was never assigned a value
+Info (12128): Elaborating entity "PWM" for hierarchy "som:s|PWM:M1"
+Info (12128): Elaborating entity "PRESCALER" for hierarchy "som:s|PWM:M1|PRESCALER:U0"
 Info (12128): Elaborating entity "vibra" for hierarchy "vibra:vib"
+Info (12128): Elaborating entity "LEDS_jogo" for hierarchy "LEDS_jogo:leds_1"
 Warning (19016): Clock multiplexers are found and protected
-    Warning (19017): Found clock multiplexer Controle_de_som_vibracao_ssd_v2:som|PWM:M1|Mux0
+    Warning (19017): Found clock multiplexer som:s|PWM:M1|Mux0
 Info (278001): Inferred 5 megafunctions from design logic
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "placar:p2|Mod0"
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "placar:p1|Mod0"
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ScreenRender:vga|Div0"
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ScreenRender:vga|Div1"
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Controle_de_som_vibracao_ssd_v2:som|Mult1"
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "som:s|Mult1"
 Info (12130): Elaborated megafunction instantiation "placar:p2|lpm_divide:Mod0"
 Info (12133): Instantiated megafunction "placar:p2|lpm_divide:Mod0" with the following parameter:
     Info (12134): Parameter "LPM_WIDTHN" = "4"
@@ -982,8 +967,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_klh
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_j5f.tdf
     Info (12023): Found entity 1: alt_u_div_j5f
-Info (12130): Elaborated megafunction instantiation "Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult1"
-Info (12133): Instantiated megafunction "Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult1" with the following parameter:
+Info (12130): Elaborated megafunction instantiation "som:s|lpm_mult:Mult1"
+Info (12133): Instantiated megafunction "som:s|lpm_mult:Mult1" with the following parameter:
     Info (12134): Parameter "LPM_WIDTHA" = "4"
     Info (12134): Parameter "LPM_WIDTHB" = "19"
     Info (12134): Parameter "LPM_WIDTHP" = "23"
@@ -993,33 +978,42 @@ Info (12133): Instantiated megafunction "Controle_de_som_vibracao_ssd_v2:som|lpm
     Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
     Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
     Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
-Info (12131): Elaborated megafunction instantiation "Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult1|multcore:mult_core", which is child of megafunction instantiation "Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult1"
-Info (12131): Elaborated megafunction instantiation "Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult1"
-Info (12131): Elaborated megafunction instantiation "Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult1|altshift:external_latency_ffs", which is child of megafunction instantiation "Controle_de_som_vibracao_ssd_v2:som|lpm_mult:Mult1"
+Info (12131): Elaborated megafunction instantiation "som:s|lpm_mult:Mult1|multcore:mult_core", which is child of megafunction instantiation "som:s|lpm_mult:Mult1"
+Info (12131): Elaborated megafunction instantiation "som:s|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "som:s|lpm_mult:Mult1"
+Info (12131): Elaborated megafunction instantiation "som:s|lpm_mult:Mult1|altshift:external_latency_ffs", which is child of megafunction instantiation "som:s|lpm_mult:Mult1"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDS[0]" is stuck at GND
+    Warning (13410): Pin "LEDS[1]" is stuck at GND
+    Warning (13410): Pin "LEDS[2]" is stuck at GND
+    Warning (13410): Pin "LEDS[3]" is stuck at GND
+    Warning (13410): Pin "LEDS[4]" is stuck at GND
+    Warning (13410): Pin "LEDS[5]" is stuck at GND
+    Warning (13410): Pin "LEDS[6]" is stuck at GND
+    Warning (13410): Pin "LEDS[8]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 5 registers lost all their fanouts during netlist optimizations.
 Info (17016): Found the following redundant logic cells in design
-    Info (17048): Logic cell "Controle_de_som_vibracao_ssd_v2:som|Add3~8"
-    Info (17048): Logic cell "Controle_de_som_vibracao_ssd_v2:som|Add3~10"
-    Info (17048): Logic cell "Controle_de_som_vibracao_ssd_v2:som|Add3~12"
-    Info (17048): Logic cell "Controle_de_som_vibracao_ssd_v2:som|Add3~14"
-    Info (17048): Logic cell "Controle_de_som_vibracao_ssd_v2:som|Add3~16"
-    Info (17048): Logic cell "Controle_de_som_vibracao_ssd_v2:som|Add3~18"
-    Info (17048): Logic cell "Controle_de_som_vibracao_ssd_v2:som|Add3~20"
-    Info (17048): Logic cell "Controle_de_som_vibracao_ssd_v2:som|Add3~22"
-    Info (17048): Logic cell "Controle_de_som_vibracao_ssd_v2:som|Add3~24"
-    Info (17048): Logic cell "Controle_de_som_vibracao_ssd_v2:som|Add3~26"
-    Info (17048): Logic cell "Controle_de_som_vibracao_ssd_v2:som|Add3~28"
+    Info (17048): Logic cell "som:s|Add3~8"
+    Info (17048): Logic cell "som:s|Add3~10"
+    Info (17048): Logic cell "som:s|Add3~12"
+    Info (17048): Logic cell "som:s|Add3~14"
+    Info (17048): Logic cell "som:s|Add3~16"
+    Info (17048): Logic cell "som:s|Add3~18"
+    Info (17048): Logic cell "som:s|Add3~20"
+    Info (17048): Logic cell "som:s|Add3~22"
+    Info (17048): Logic cell "som:s|Add3~24"
+    Info (17048): Logic cell "som:s|Add3~26"
+    Info (17048): Logic cell "som:s|Add3~28"
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 2098 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2147 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 8 input pins
-    Info (21059): Implemented 31 output pins
-    Info (21061): Implemented 2059 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 616 megabytes
-    Info: Processing ended: Tue Dec 12 16:37:30 2017
-    Info: Elapsed time: 00:00:09
+    Info (21059): Implemented 41 output pins
+    Info (21061): Implemented 2098 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 20 warnings
+    Info: Peak virtual memory: 596 megabytes
+    Info: Processing ended: Wed Dec 13 15:50:04 2017
+    Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:08
 
 

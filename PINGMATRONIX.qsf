@@ -111,27 +111,31 @@ set_instance_assignment -name IO_STANDARD "3.0-V PCI" -to encoder_ckl_1
 set_instance_assignment -name IO_STANDARD "3.0-V PCI" -to encoder_ckl_2
 set_instance_assignment -name IO_STANDARD "3.0-V PCI" -to encoder_d_1
 set_instance_assignment -name IO_STANDARD "3.0-V PCI" -to encoder_d_2
-set_global_assignment -name VHDL_FILE VGA_Test.vhd
-set_global_assignment -name VHDL_FILE Sound.vhd
-set_global_assignment -name VHDL_FILE meupacote.vhd
-set_global_assignment -name VHDL_FILE LEDS_jogo.vhd
-set_global_assignment -name VHDL_FILE int2disp.vhd
-set_global_assignment -name VHDL_FILE debounce.vhd
-set_global_assignment -name VHDL_FILE PreescalerTrue.vhd
-set_global_assignment -name VHDL_FILE Preescaler.vhd
-set_global_assignment -name VHDL_FILE MyPackage.vhd
-set_global_assignment -name VHDL_FILE Controle_de_som_vibracao_ssd_v2.vhd
-set_global_assignment -name VHDL_FILE placar.vhd
-set_global_assignment -name VHDL_FILE SSDefinitions.vhd
-set_global_assignment -name VHDL_FILE ssd.vhd
-set_global_assignment -name VHDL_FILE deb_button.vhd
-set_global_assignment -name VHDL_FILE PongDefinitions.vhd
-set_global_assignment -name VHDL_FILE debouncer.vhd
-set_global_assignment -name VHDL_FILE batedor.vhd
+set_global_assignment -name VHDL_FILE vibra.vhd
 set_global_assignment -name VHDL_FILE VgaDefinitions.vhd
 set_global_assignment -name VHDL_FILE sync_mod.vhd
+set_global_assignment -name VHDL_FILE SSDefinitions.vhd
+set_global_assignment -name VHDL_FILE ssd.vhd
+set_global_assignment -name VHDL_FILE som.vhd
 set_global_assignment -name VHDL_FILE ScreenRender.vhd
-set_global_assignment -name VHDL_FILE control.vhd
+set_global_assignment -name VHDL_FILE PongDefinitions.vhd
 set_global_assignment -name VHDL_FILE pong.vhd
-set_global_assignment -name VHDL_FILE vibra.vhd
+set_global_assignment -name VHDL_FILE placar.vhd
+set_global_assignment -name VHDL_FILE LEDS_jogo.vhd
+set_global_assignment -name VHDL_FILE deb_button.vhd
+set_global_assignment -name VHDL_FILE debouncer.vhd
+set_global_assignment -name VHDL_FILE control.vhd
+set_global_assignment -name VHDL_FILE batedor.vhd
+set_global_assignment -name VHDL_FILE Preescaler.vhd
+set_global_assignment -name VHDL_FILE PreescalerTrue.vhd
+set_location_assignment PIN_J1 -to LEDS[0]
+set_location_assignment PIN_J2 -to LEDS[1]
+set_location_assignment PIN_J3 -to LEDS[2]
+set_location_assignment PIN_H1 -to LEDS[3]
+set_location_assignment PIN_F2 -to LEDS[4]
+set_location_assignment PIN_E1 -to LEDS[5]
+set_location_assignment PIN_C1 -to LEDS[6]
+set_location_assignment PIN_C2 -to LEDS[7]
+set_location_assignment PIN_B2 -to LEDS[8]
+set_location_assignment PIN_B1 -to LEDS[9]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
